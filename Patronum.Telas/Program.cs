@@ -27,7 +27,7 @@ namespace Patronum.Telas
                 Console.WriteLine();
                 Console.WriteLine("0 - Sair");
                 opcao = Convert.ToInt32(Console.ReadLine());
-
+                
                 switch (opcao)
                 {
                     case 0:
@@ -53,7 +53,7 @@ namespace Patronum.Telas
             Console.Write("Digite o nome do Setor: ");
             novoPatrimonio.Setor = Console.ReadLine();
             Console.Write("Digite o nome do Gestor: ");
-            novoPatrimonio.Setor = Console.ReadLine();
+            novoPatrimonio.Gestor = Console.ReadLine();
             Console.Write("Digite o nome do Fornecedor: ");
             novoPatrimonio.Fornecedor = Console.ReadLine();
             Console.Write("Digite a Data de Aquisição: ");

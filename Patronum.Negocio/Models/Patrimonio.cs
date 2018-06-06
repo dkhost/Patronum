@@ -20,7 +20,7 @@ namespace Patronum.Negocio.Models
 
         public String Descrever()
         {
-            return String.Format($"{this.Id} - {this.Nome} - {this.Setor} - {this.Gestor} - {this.Fornecedor} - {this.DataAquisi} - {this.PrazGarant}");
+            return String.Format($"{this.Id} - {this.Nome} - {this.Gestor} - {this.Setor} - {this.Fornecedor} - {this.DataAquisi} - {this.PrazGarant}");
         }
     }
 }
