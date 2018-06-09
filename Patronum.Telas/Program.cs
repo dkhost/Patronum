@@ -52,6 +52,8 @@ namespace Patronum.Telas
             novoPatrimonio.Nome = Console.ReadLine();
             Console.Write("Digite o nome do Fornecedor deste produto: ");
             novoPatrimonio.Fornecedor = Console.ReadLine();
+            Console.Write("Digite o código da Nota Fiscal: ");
+            novoPatrimonio.Nfe = Convert.ToInt64(Console.ReadLine());
             Console.Write("Digite o nome do Setor/Local deste produto: ");
             novoPatrimonio.Setor = Console.ReadLine();
             Console.Write("Digite o nome do Gestor/Responsável por este patrimônio: ");
@@ -60,6 +62,8 @@ namespace Patronum.Telas
             novoPatrimonio.DataAquisi = Convert.ToDateTime(Console.ReadLine());
             Console.Write("Digite o Prazo da Garantia: ");
             novoPatrimonio.PrazGarant = Convert.ToDateTime(Console.ReadLine());
+            Console.Write("Digite a service tag do proturo: ");
+            novoPatrimonio.Servicetag = Convert.ToInt64(Console.ReadLine());
 
             gerenciador.CadastrarPatrimonio(novoPatrimonio);
             Console.WriteLine("Patrimônio cadastrado com sucesso!");
