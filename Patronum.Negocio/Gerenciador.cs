@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Patronum.Negocio.Persistencia;
 
 namespace Patronum.Negocio
 {
     public class Gerenciador
     {
-        private List<Patrimonio> Patrimonios;
-
+        private Banco banco = new Banco();
         public Gerenciador()
         {
-            this.Patrimonios = new List<Patrimonio>();
+            
         }
 
         public Validacao CadastrarPatrimonio (Patrimonio patrimonioAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.Patrimonios.Where(c=> c.Id == patrimonioAdicionado.Id).Any())
+            if (this.banco.Patrimonios.Where(c=> c.Id == patrimonioAdicionado.Id).Any())
             {
                 validacao.Mensagens.Add("Id", "Já existe um patrimônio com esse código");
             }
@@ -46,7 +46,8 @@ namespace Patronum.Negocio
 
             if(validacao.Valido)
             {
-                this.Patrimonios.Add(patrimonioAdicionado);
+                this.banco.Patrimonios.Add(patrimonioAdicionado);
+                this.banco.SalvarDados();
             }
             return validacao;
 
@@ -54,7 +55,7 @@ namespace Patronum.Negocio
 
          public List<Patrimonio> TodosOsPatrimonios()
         {
-            return this.Patrimonios.ToList();
+            return this.banco.Patrimonios.ToList();
         }
     }
 }
