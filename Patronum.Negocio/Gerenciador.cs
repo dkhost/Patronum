@@ -10,41 +10,51 @@ namespace Patronum.Negocio
     public class Gerenciador
     {
         private List<Patrimonio> Patrimonios;
-        private List<Setor> Setores;
 
         public Gerenciador()
         {
             this.Patrimonios = new List<Patrimonio>();
-            this.Setores = new List<Setor>();
         }
 
-        public void CadastrarPatrimonio (Patrimonio patrimonioAdicionado)
+        public Validacao CadastrarPatrimonio (Patrimonio patrimonioAdicionado)
         {
-
+            Validacao validacao = new Validacao();
+            if (this.Patrimonios.Where(c=> c.Id == patrimonioAdicionado.Id).Any())
+            {
+                validacao.Mensagens.Add("Id", "Já existe um patrimônio com esse código");
+            }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nome))
             {
-                return;
+                validacao.Mensagens.Add("Nome", "O campo Nome não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Setor))
+            {
+                validacao.Mensagens.Add("Setor", "O campo Setor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Gestor))
+            {
+                validacao.Mensagens.Add("Gestor", "O campo Gestor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Fornecedor))
+            {
+                validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Servicetag))
+            {
+                validacao.Mensagens.Add("ServiceTag", "O campo ServiceTag não pode ser nulo");
             }
 
-            this.Patrimonios.Add(patrimonioAdicionado);
+            if(validacao.Valido)
+            {
+                this.Patrimonios.Add(patrimonioAdicionado);
+            }
+            return validacao;
+
         }
 
          public List<Patrimonio> TodosOsPatrimonios()
         {
             return this.Patrimonios.ToList();
-        }
-
-        public List<Setor> TodosOsSetores()
-        {
-            return this.Setores.ToList();
-        }
-
-        public void CadastrarSetor (Setor setorAdicionado)
-        {
-            if (String.IsNullOrEmpty(setorAdicionado.Nome))
-            {
-                return;
-            }
         }
     }
 }

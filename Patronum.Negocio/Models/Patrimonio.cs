@@ -16,11 +16,11 @@ namespace Patronum.Negocio.Models
         public DateTime DataAquisi { get; set; }
         public DateTime PrazGarant { get; set; }
         public long Nfe { get; set; }
-        public long Servicetag { get; set; }
+        public String Servicetag { get; set; }
 
         public String Descrever()
         {
-            return String.Format($"{this.Id} - {this.Nome} - {this.Gestor} - {this.Setor} - {this.Fornecedor} - {this.DataAquisi} - {this.PrazGarant}");
+            return String.Format($"{this.Id} - {this.Nome} - {this.Setor} - {this.Gestor} - {this.Fornecedor} - {this.DataAquisi} - {this.PrazGarant} - {this.Nfe} - {this.Servicetag}");
         }
     }
 }
