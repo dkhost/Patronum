@@ -63,8 +63,16 @@ namespace Patronum.Negocio
             {
                 validacao.Mensagens.Add("ServiceTag", "O campo ServiceTag não pode ser nulo");
             }
+            if (this.banco.Patrimonios.Where(c => c.Nfe == patrimonioAdicionado.Nfe).Any())
+            {
+                validacao.Mensagens.Add("Nfe", "Já existe um patrimônio com essa Nota Fiscal");
+            }
+            if (this.banco.Patrimonios.Where(c => c.Id == patrimonioAdicionado.Id).Any())
+            {
+                validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
+            }
 
-            if(validacao.Valido)
+            if (validacao.Valido)
             {
                 this.banco.Patrimonios.Add(patrimonioAdicionado);
                 this.banco.SaveChanges();

@@ -37,7 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbId = new System.Windows.Forms.TextBox();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbSetor = new System.Windows.Forms.TextBox();
             this.tbGestor = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.tbServiceTag = new System.Windows.Forms.TextBox();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
+            this.tbId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -64,9 +64,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nome:";
+            this.label2.Text = "Nome do Patrimônio:";
             // 
             // label3
             // 
@@ -131,18 +131,11 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "ServiceTag:";
             // 
-            // tbId
-            // 
-            this.tbId.Location = new System.Drawing.Point(61, 11);
-            this.tbId.Name = "tbId";
-            this.tbId.Size = new System.Drawing.Size(100, 20);
-            this.tbId.TabIndex = 9;
-            // 
             // tbNome
             // 
-            this.tbNome.Location = new System.Drawing.Point(61, 33);
+            this.tbNome.Location = new System.Drawing.Point(119, 34);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(727, 20);
+            this.tbNome.Size = new System.Drawing.Size(669, 20);
             this.tbNome.TabIndex = 10;
             // 
             // tbSetor
@@ -214,6 +207,13 @@
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
+            // tbId
+            // 
+            this.tbId.Location = new System.Drawing.Point(61, 11);
+            this.tbId.Name = "tbId";
+            this.tbId.Size = new System.Drawing.Size(100, 20);
+            this.tbId.TabIndex = 9;
+            // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +259,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.TextBox tbSetor;
         private System.Windows.Forms.TextBox tbGestor;
@@ -270,5 +269,6 @@
         private System.Windows.Forms.TextBox tbServiceTag;
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.TextBox tbId;
     }
 }
