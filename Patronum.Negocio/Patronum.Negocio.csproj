@@ -55,12 +55,6 @@
     <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Patronum.Persistencia\Patronum.Persistencia.csproj">
-      <Project>{bcff073f-cea4-4819-969a-1673c771d4e2}</Project>
-      <Name>Patronum.Persistencia</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

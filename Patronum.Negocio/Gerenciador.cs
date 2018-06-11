@@ -11,9 +11,29 @@ namespace Patronum.Negocio
     public class Gerenciador
     {
         private Banco banco = new Banco();
-        public Gerenciador()
+
+        public Validacao RemoverPatrimonio (Patrimonio patrimonio )
         {
-            
+            Validacao validacao = new Validacao();
+            banco.Patrimonios.Remove(patrimonio);
+            banco.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao AlterarPatrimonio(Patrimonio patrimonioAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Patrimonio patrimonioBanco = BuscaPatrimonioPorId(patrimonioAlterado.Id);
+            patrimonioBanco.Nome = patrimonioAlterado.Nome;
+            patrimonioBanco.Setor = patrimonioAlterado.Setor;
+            patrimonioBanco.Gestor = patrimonioAlterado.Gestor;
+            patrimonioBanco.Fornecedor = patrimonioAlterado.Fornecedor;
+            patrimonioBanco.DataAquisi = Convert.ToDateTime(patrimonioAlterado.DataAquisi);
+            patrimonioBanco.PrazoGarant = Convert.ToDateTime(patrimonioAlterado.PrazoGarant);
+            patrimonioBanco.Nfe = Convert.ToInt64(patrimonioAlterado.Nfe);
+            patrimonioBanco.ServiceTag = patrimonioAlterado.ServiceTag;
+            this.banco.SaveChanges();
+            return validacao;
         }
 
         public Validacao CadastrarPatrimonio (Patrimonio patrimonioAdicionado)
@@ -39,7 +59,7 @@ namespace Patronum.Negocio
             {
                 validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
             }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.Servicetag))
+            if (String.IsNullOrEmpty(patrimonioAdicionado.ServiceTag))
             {
                 validacao.Mensagens.Add("ServiceTag", "O campo ServiceTag não pode ser nulo");
             }
@@ -47,10 +67,15 @@ namespace Patronum.Negocio
             if(validacao.Valido)
             {
                 this.banco.Patrimonios.Add(patrimonioAdicionado);
-                this.banco.SalvarDados();
+                this.banco.SaveChanges();
             }
             return validacao;
 
+        }
+
+        public Patrimonio BuscaPatrimonioPorId(long id)
+        {
+            return this.banco.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
         }
 
          public List<Patrimonio> TodosOsPatrimonios()

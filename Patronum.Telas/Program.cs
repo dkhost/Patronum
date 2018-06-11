@@ -60,9 +60,9 @@ namespace Patronum.Telas
             Console.Write("Digite a Data de Aquisição:");
             novoPatrimonio.DataAquisi = Convert.ToDateTime(Console.ReadLine());
             Console.Write("Digite o Prazo da Garantia: ");
-            novoPatrimonio.PrazGarant = Convert.ToDateTime(Console.ReadLine());
+            novoPatrimonio.PrazoGarant = Convert.ToDateTime(Console.ReadLine());
             Console.Write("Digite a service tag do produto: ");
-            novoPatrimonio.Servicetag = Console.ReadLine();
+            novoPatrimonio.ServiceTag = Console.ReadLine();
 
             Validacao validacao = gerenciador.CadastrarPatrimonio(novoPatrimonio);
             if(validacao.Valido)

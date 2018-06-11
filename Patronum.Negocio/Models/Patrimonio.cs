@@ -14,13 +14,13 @@ namespace Patronum.Negocio.Models
         public String Gestor { get; set; }
         public String Fornecedor { get; set; }
         public DateTime DataAquisi { get; set; }
-        public DateTime PrazGarant { get; set; }
+        public DateTime PrazoGarant { get; set; }
         public long Nfe { get; set; }
-        public String Servicetag { get; set; }
+        public String ServiceTag { get; set; }
 
         public String Descrever()
         {
-            return String.Format($"{this.Id} - {this.Nome} - {this.Setor} - {this.Gestor} - {this.Fornecedor} - {this.DataAquisi} - {this.PrazGarant} - {this.Nfe} - {this.Servicetag}");
+            return String.Format($"{this.Id} - {this.Nome} - {this.Setor} - {this.Gestor} - {this.Fornecedor} - {this.DataAquisi} - {this.PrazoGarant} - {this.Nfe} - {this.ServiceTag}");
         }
     }
 }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patronum.Telas", "Patronum.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patronum.Negocio", "Patronum.Negocio\Patronum.Negocio.csproj", "{1636D952-D45B-4F90-9934-900CC82DB769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patronum.Persistencia", "Patronum.Persistencia\Patronum.Persistencia.csproj", "{BCFF073F-CEA4-4819-969A-1673C771D4E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patronum.Grafico", "Patronum.Grafico\Patronum.Grafico.csproj", "{F064D6B1-E818-440F-9F5C-5690BE0420F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{1636D952-D45B-4F90-9934-900CC82DB769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1636D952-D45B-4F90-9934-900CC82DB769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1636D952-D45B-4F90-9934-900CC82DB769}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCFF073F-CEA4-4819-969A-1673C771D4E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCFF073F-CEA4-4819-969A-1673C771D4E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCFF073F-CEA4-4819-969A-1673C771D4E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCFF073F-CEA4-4819-969A-1673C771D4E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
