@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,14 +49,14 @@
   <ItemGroup>
     <Compile Include="Gerenciador.cs" />
     <Compile Include="Models\Patrimonio.cs" />
-    <Compile Include="Models\Setor.cs" />
+    <Compile Include="Persistencia\Banco.cs" />
+    <Compile Include="Persistencia\Dados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Patronum.Persistencia\Patronum.Persistencia.csproj">
-      <Project>{bcff073f-cea4-4819-969a-1673c771d4e2}</Project>
-      <Name>Patronum.Persistencia</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

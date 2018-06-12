@@ -23,7 +23,6 @@ namespace Patronum.Telas
                 Console.WriteLine();
                 Console.WriteLine("1 - Cadastrar patrimonio");
                 Console.WriteLine("2 - Listar patrimonios");
-                Console.WriteLine("3 - Cadastrar setor");
                 Console.WriteLine();
                 Console.WriteLine("0 - Sair");
                 opcao = Convert.ToInt32(Console.ReadLine());
@@ -61,13 +60,25 @@ namespace Patronum.Telas
             Console.Write("Digite a Data de Aquisição:");
             novoPatrimonio.DataAquisi = Convert.ToDateTime(Console.ReadLine());
             Console.Write("Digite o Prazo da Garantia: ");
-            novoPatrimonio.PrazGarant = Convert.ToDateTime(Console.ReadLine());
-            Console.Write("Digite a service tag do proturo: ");
-            novoPatrimonio.Servicetag = Convert.ToInt64(Console.ReadLine());
+            novoPatrimonio.PrazoGarant = Convert.ToDateTime(Console.ReadLine());
+            Console.Write("Digite a service tag do produto: ");
+            novoPatrimonio.ServiceTag = Console.ReadLine();
 
-            gerenciador.CadastrarPatrimonio(novoPatrimonio);
-            Console.WriteLine("Patrimônio cadastrado com sucesso!");
-            Console.ReadLine();
+            Validacao validacao = gerenciador.CadastrarPatrimonio(novoPatrimonio);
+            if(validacao.Valido)
+            {
+                Console.WriteLine("Patrimônio cadastrado com sucesso!");
+                Console.ReadLine();
+            }
+            else
+            {
+                foreach (var key in validacao.Mensagens.Keys)
+                {
+                    String mensagem = validacao.Mensagens[key];
+                    Console.WriteLine($"{key}: {mensagem}");
+                }
+            }
+            
         }
 
         public static void ListarPatrimonio()
