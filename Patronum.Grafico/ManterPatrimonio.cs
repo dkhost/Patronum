@@ -36,6 +36,7 @@ namespace Patronum.Grafico
                 patrimonio.Id = -1;
             }
 
+            patrimonio.Id = Convert.ToInt64(tbId.Text);
             patrimonio.Nome = tbNome.Text;
             patrimonio.Setor = tbSetor.Text;
             patrimonio.Gestor = tbGestor.Text;
@@ -85,6 +86,7 @@ namespace Patronum.Grafico
         {
             if(PatrimonioSelecionado != null)
             {
+                this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
                 this.tbSetor.Text = PatrimonioSelecionado.Setor;
                 this.tbGestor.Text = PatrimonioSelecionado.Gestor;
