@@ -14,7 +14,10 @@ namespace Patronum.Grafico
 {
     public partial class ManterPatrimonio : Form
     {
+        public virtual bool ReadOnly { get; set; }
+
         public Patrimonio PatrimonioSelecionado { get; set; }
+  
         public ManterPatrimonio()
         {
             InitializeComponent();
@@ -33,7 +36,6 @@ namespace Patronum.Grafico
                 patrimonio.Id = -1;
             }
 
-            patrimonio.Id = Convert.ToInt64(tbId.Text);
             patrimonio.Nome = tbNome.Text;
             patrimonio.Setor = tbSetor.Text;
             patrimonio.Gestor = tbGestor.Text;
@@ -46,11 +48,12 @@ namespace Patronum.Grafico
             Validacao validacao;
             if(PatrimonioSelecionado != null)
             {
-                validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
+                validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
             }
             else
             {
-                validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
+                validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
+                
             }
 
             if (!validacao.Valido)
@@ -82,7 +85,6 @@ namespace Patronum.Grafico
         {
             if(PatrimonioSelecionado != null)
             {
-                this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
                 this.tbSetor.Text = PatrimonioSelecionado.Setor;
                 this.tbGestor.Text = PatrimonioSelecionado.Gestor;
@@ -92,6 +94,12 @@ namespace Patronum.Grafico
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
                 this.tbPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
             }
+        }
+
+        protected void tbId_TextChanged(object sender, EventArgs e)
+        {
+            tbId.Enabled = true;
+            tbId.ReadOnly = true;
         }
     }
 }

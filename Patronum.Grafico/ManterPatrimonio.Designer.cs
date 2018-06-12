@@ -136,56 +136,56 @@
             this.tbNome.Location = new System.Drawing.Point(119, 34);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(669, 20);
-            this.tbNome.TabIndex = 10;
+            this.tbNome.TabIndex = 9;
             // 
             // tbSetor
             // 
             this.tbSetor.Location = new System.Drawing.Point(61, 57);
             this.tbSetor.Name = "tbSetor";
             this.tbSetor.Size = new System.Drawing.Size(727, 20);
-            this.tbSetor.TabIndex = 11;
+            this.tbSetor.TabIndex = 10;
             // 
             // tbGestor
             // 
             this.tbGestor.Location = new System.Drawing.Point(61, 79);
             this.tbGestor.Name = "tbGestor";
             this.tbGestor.Size = new System.Drawing.Size(727, 20);
-            this.tbGestor.TabIndex = 12;
+            this.tbGestor.TabIndex = 11;
             // 
             // tbFornecedor
             // 
             this.tbFornecedor.Location = new System.Drawing.Point(82, 103);
             this.tbFornecedor.Name = "tbFornecedor";
             this.tbFornecedor.Size = new System.Drawing.Size(706, 20);
-            this.tbFornecedor.TabIndex = 13;
+            this.tbFornecedor.TabIndex = 12;
             // 
             // tbDataAquisi
             // 
             this.tbDataAquisi.Location = new System.Drawing.Point(115, 176);
             this.tbDataAquisi.Name = "tbDataAquisi";
             this.tbDataAquisi.Size = new System.Drawing.Size(100, 20);
-            this.tbDataAquisi.TabIndex = 16;
+            this.tbDataAquisi.TabIndex = 15;
             // 
             // tbPrazoGarant
             // 
             this.tbPrazoGarant.Location = new System.Drawing.Point(115, 201);
             this.tbPrazoGarant.Name = "tbPrazoGarant";
             this.tbPrazoGarant.Size = new System.Drawing.Size(100, 20);
-            this.tbPrazoGarant.TabIndex = 17;
+            this.tbPrazoGarant.TabIndex = 16;
             // 
             // tbNfe
             // 
             this.tbNfe.Location = new System.Drawing.Point(82, 129);
             this.tbNfe.Name = "tbNfe";
-            this.tbNfe.Size = new System.Drawing.Size(707, 20);
-            this.tbNfe.TabIndex = 14;
+            this.tbNfe.Size = new System.Drawing.Size(706, 20);
+            this.tbNfe.TabIndex = 13;
             // 
             // tbServiceTag
             // 
             this.tbServiceTag.Location = new System.Drawing.Point(82, 152);
             this.tbServiceTag.Name = "tbServiceTag";
-            this.tbServiceTag.Size = new System.Drawing.Size(707, 20);
-            this.tbServiceTag.TabIndex = 15;
+            this.tbServiceTag.Size = new System.Drawing.Size(706, 20);
+            this.tbServiceTag.TabIndex = 14;
             // 
             // btSalvar
             // 
@@ -202,17 +202,21 @@
             this.btCancelar.Location = new System.Drawing.Point(632, 238);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 19;
+            this.btCancelar.TabIndex = 17;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // tbId
             // 
+            this.tbId.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.tbId.Location = new System.Drawing.Point(61, 11);
             this.tbId.Name = "tbId";
+            this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(100, 20);
-            this.tbId.TabIndex = 9;
+            this.tbId.TabIndex = 100;
+            this.tbId.TabStop = false;
+            this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
             // ManterPatrimonio
             // 

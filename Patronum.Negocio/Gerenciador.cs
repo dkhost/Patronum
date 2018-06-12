@@ -90,5 +90,6 @@ namespace Patronum.Negocio
         {
             return this.banco.Patrimonios.ToList();
         }
+
     }
 }
