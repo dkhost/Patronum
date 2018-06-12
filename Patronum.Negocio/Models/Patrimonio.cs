@@ -15,7 +15,7 @@ namespace Patronum.Negocio.Models
         public String Fornecedor { get; set; }
         public DateTime DataAquisi { get; set; }
         public DateTime PrazoGarant { get; set; }
-        public long Nfe { get; set; }
+        public String Nfe { get; set; }
         public String ServiceTag { get; set; }
     }
 }

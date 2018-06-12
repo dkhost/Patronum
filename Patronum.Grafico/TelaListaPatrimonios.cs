@@ -20,7 +20,6 @@ namespace Patronum.Grafico
         private void AbreTelaInclusaoAlteracao(Patrimonio patrimonioSelecionado)
         {
             ManterPatrimonio tela = new ManterPatrimonio();
-            tela.MdiParent = this.MdiParent;
             tela.PatrimonioSelecionado = patrimonioSelecionado;
             tela.FormClosed += Tela_FormClosed;
             tela.Show();

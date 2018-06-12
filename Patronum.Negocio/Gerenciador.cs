@@ -30,7 +30,7 @@ namespace Patronum.Negocio
             patrimonioBanco.Fornecedor = patrimonioAlterado.Fornecedor;
             patrimonioBanco.DataAquisi = Convert.ToDateTime(patrimonioAlterado.DataAquisi);
             patrimonioBanco.PrazoGarant = Convert.ToDateTime(patrimonioAlterado.PrazoGarant);
-            patrimonioBanco.Nfe = Convert.ToInt64(patrimonioAlterado.Nfe);
+            patrimonioBanco.Nfe = patrimonioAlterado.Nfe;
             patrimonioBanco.ServiceTag = patrimonioAlterado.ServiceTag;
             this.banco.SaveChanges();
             return validacao;

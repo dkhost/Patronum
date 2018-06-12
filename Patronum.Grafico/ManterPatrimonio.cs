@@ -36,12 +36,11 @@ namespace Patronum.Grafico
                 patrimonio.Id = -1;
             }
 
-            patrimonio.Id = Convert.ToInt64(tbId.Text);
             patrimonio.Nome = tbNome.Text;
             patrimonio.Setor = tbSetor.Text;
             patrimonio.Gestor = tbGestor.Text;
             patrimonio.Fornecedor = tbFornecedor.Text;
-            patrimonio.Nfe = Convert.ToInt64(tbNfe.Text);
+            patrimonio.Nfe = tbNfe.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
             patrimonio.PrazoGarant = Convert.ToDateTime(tbPrazoGarant.Text);
