@@ -17,5 +17,6 @@ namespace Patronum.Negocio.Models
         public DateTime PrazoGarant { get; set; }
         public String Nfe { get; set; }
         public String ServiceTag { get; set; }
+        public String Obs { get; set; }
     }
 }

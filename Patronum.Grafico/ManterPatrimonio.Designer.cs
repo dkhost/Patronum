@@ -1,4 +1,6 @@
-﻿namespace Patronum.Grafico
+﻿using System;
+
+namespace Patronum.Grafico
 {
     partial class ManterPatrimonio
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManterPatrimonio));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +52,10 @@
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbObs = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -219,11 +226,32 @@
             this.tbId.TabStop = false;
             this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
+            // tbObs
+            // 
+            this.tbObs.Location = new System.Drawing.Point(115, 227);
+            this.tbObs.Multiline = true;
+            this.tbObs.Name = "tbObs";
+            this.tbObs.Size = new System.Drawing.Size(490, 52);
+            this.tbObs.TabIndex = 101;
+            this.tbObs.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 230);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 102;
+            this.label10.Text = "Observações:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 281);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tbObs);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.tbServiceTag);
@@ -248,10 +276,17 @@
             this.Name = "ManterPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes do Patrimônio";
+            this.Load += new System.EventHandler(this.ManterPatrimonio_Load);
             this.Shown += new System.EventHandler(this.ManterPatrimonio_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
 
         #endregion
@@ -276,5 +311,8 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.TextBox tbId;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox tbObs;
+        private System.Windows.Forms.Label label10;
     }
 }

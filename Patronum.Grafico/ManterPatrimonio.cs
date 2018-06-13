@@ -44,6 +44,7 @@ namespace Patronum.Grafico
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
             patrimonio.PrazoGarant = Convert.ToDateTime(tbPrazoGarant.Text);
+            patrimonio.Obs = tbObs.Text; 
 
             Validacao validacao;
             if(PatrimonioSelecionado != null)
@@ -94,6 +95,7 @@ namespace Patronum.Grafico
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
                 this.tbPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
+                this.tbObs.Text = PatrimonioSelecionado.Obs;
             }
         }
 
@@ -101,6 +103,21 @@ namespace Patronum.Grafico
         {
             tbId.Enabled = true;
             tbId.ReadOnly = true;
+        }
+
+        private void ManterPatrimonio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbObs_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
