@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
@@ -43,7 +44,9 @@
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdicionar
@@ -204,6 +207,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaListaPatrimonios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,5 +228,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

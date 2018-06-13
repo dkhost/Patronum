@@ -64,7 +64,7 @@ namespace Patronum.Grafico
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 14);
+            this.label1.Location = new System.Drawing.Point(22, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
@@ -73,7 +73,7 @@ namespace Patronum.Grafico
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 36);
+            this.label2.Location = new System.Drawing.Point(11, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 1;
@@ -82,7 +82,7 @@ namespace Patronum.Grafico
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 60);
+            this.label3.Location = new System.Drawing.Point(23, 60);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
@@ -100,7 +100,7 @@ namespace Patronum.Grafico
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 106);
+            this.label5.Location = new System.Drawing.Point(15, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 4;
@@ -109,7 +109,7 @@ namespace Patronum.Grafico
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 180);
+            this.label6.Location = new System.Drawing.Point(14, 179);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 5;
@@ -118,7 +118,7 @@ namespace Patronum.Grafico
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 205);
+            this.label7.Location = new System.Drawing.Point(17, 204);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 6;
@@ -127,7 +127,7 @@ namespace Patronum.Grafico
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 133);
+            this.label8.Location = new System.Drawing.Point(16, 133);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 7;
@@ -136,7 +136,7 @@ namespace Patronum.Grafico
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 155);
+            this.label9.Location = new System.Drawing.Point(14, 155);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 13);
             this.label9.TabIndex = 8;
@@ -271,7 +271,7 @@ namespace Patronum.Grafico
             // Observacoes
             // 
             this.Observacoes.AutoSize = true;
-            this.Observacoes.Location = new System.Drawing.Point(20, 227);
+            this.Observacoes.Location = new System.Drawing.Point(36, 230);
             this.Observacoes.Name = "Observacoes";
             this.Observacoes.Size = new System.Drawing.Size(76, 13);
             this.Observacoes.TabIndex = 104;
