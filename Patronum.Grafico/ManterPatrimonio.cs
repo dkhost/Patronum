@@ -119,5 +119,11 @@ namespace Patronum.Grafico
         {
 
         }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.checkbox = Ativo.Checked;
+            Properties.Settings.Default.Save();
+        }
     }
 }

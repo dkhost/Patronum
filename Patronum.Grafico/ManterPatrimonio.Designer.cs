@@ -55,6 +55,9 @@ namespace Patronum.Grafico
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbObs = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.Ativo = new System.Windows.Forms.CheckBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -245,11 +248,45 @@ namespace Patronum.Grafico
             this.label10.Text = "Observações:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // Ativo
+            // 
+            this.Ativo.AutoSize = true;
+            this.Ativo.Checked = true;
+            this.Ativo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.Ativo.Location = new System.Drawing.Point(192, 10);
+            this.Ativo.Name = "Ativo";
+            this.Ativo.Size = new System.Drawing.Size(50, 17);
+            this.Ativo.TabIndex = 103;
+            this.Ativo.Text = "Ativo";
+            this.Ativo.UseVisualStyleBackColor = true;
+            this.Ativo.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 195);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 104;
+            this.button1.Text = "Imprimir";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 281);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Ativo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbObs);
             this.Controls.Add(this.btCancelar);
@@ -314,5 +351,8 @@ namespace Patronum.Grafico
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TextBox tbObs;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox Ativo;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }
