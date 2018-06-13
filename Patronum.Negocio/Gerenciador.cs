@@ -42,7 +42,11 @@ namespace Patronum.Negocio
             Validacao validacao = new Validacao();
             if (this.banco.Patrimonios.Where(c=> c.Id == patrimonioAdicionado.Id).Any())
             {
-                validacao.Mensagens.Add("Id", "Já existe um patrimônio com esse código");
+                validacao.Mensagens.Add("Id", "Já existe um patrimônio com esse Código");
+            }
+            if (this.banco.Patrimonios.Where(c => c.Id == patrimonioAdicionado.Id).Any())
+            {
+                validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
             }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nome))
             {
@@ -60,19 +64,14 @@ namespace Patronum.Negocio
             {
                 validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
             }
+            if(String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
+            {
+                validacao.Mensagens.Add("Nfe", "O campo Nfe não pode ser nulo");
+            }
             if (String.IsNullOrEmpty(patrimonioAdicionado.ServiceTag))
             {
                 validacao.Mensagens.Add("ServiceTag", "O campo ServiceTag não pode ser nulo");
             }
-            if (this.banco.Patrimonios.Where(c => c.Nfe == patrimonioAdicionado.Nfe).Any())
-            {
-                validacao.Mensagens.Add("Nfe", "Já existe um patrimônio com essa Nota Fiscal");
-            }
-            if (this.banco.Patrimonios.Where(c => c.Id == patrimonioAdicionado.Id).Any())
-            {
-                validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
-            }
-
             if (validacao.Valido)
             {
                 this.banco.Patrimonios.Add(patrimonioAdicionado);

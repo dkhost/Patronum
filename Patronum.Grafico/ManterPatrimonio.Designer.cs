@@ -54,10 +54,10 @@ namespace Patronum.Grafico
             this.tbId = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbObs = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.Ativo = new System.Windows.Forms.CheckBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
+            this.Observacoes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,7 +203,7 @@ namespace Patronum.Grafico
             this.btSalvar.Location = new System.Drawing.Point(713, 238);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 18;
+            this.btSalvar.TabIndex = 19;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -213,21 +213,20 @@ namespace Patronum.Grafico
             this.btCancelar.Location = new System.Drawing.Point(632, 238);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 17;
+            this.btCancelar.TabIndex = 18;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // tbId
             // 
-            this.tbId.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.tbId.Location = new System.Drawing.Point(61, 11);
+            this.tbId.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbId.Location = new System.Drawing.Point(66, 7);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(100, 20);
-            this.tbId.TabIndex = 100;
+            this.tbId.TabIndex = 21;
             this.tbId.TabStop = false;
-            this.tbId.TextChanged += new System.EventHandler(this.tbId_TextChanged);
             // 
             // tbObs
             // 
@@ -235,18 +234,7 @@ namespace Patronum.Grafico
             this.tbObs.Multiline = true;
             this.tbObs.Name = "tbObs";
             this.tbObs.Size = new System.Drawing.Size(490, 52);
-            this.tbObs.TabIndex = 101;
-            this.tbObs.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 230);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
-            this.label10.TabIndex = 102;
-            this.label10.Text = "Observações:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.tbObs.TabIndex = 17;
             // 
             // Ativo
             // 
@@ -276,18 +264,27 @@ namespace Patronum.Grafico
             this.button1.Location = new System.Drawing.Point(713, 195);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 104;
+            this.button1.TabIndex = 20;
             this.button1.Text = "Imprimir";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // Observacoes
+            // 
+            this.Observacoes.AutoSize = true;
+            this.Observacoes.Location = new System.Drawing.Point(20, 227);
+            this.Observacoes.Name = "Observacoes";
+            this.Observacoes.Size = new System.Drawing.Size(76, 13);
+            this.Observacoes.TabIndex = 104;
+            this.Observacoes.Text = "Observações: ";
             // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 281);
+            this.ClientSize = new System.Drawing.Size(824, 311);
+            this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Ativo);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.tbObs);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
@@ -313,17 +310,11 @@ namespace Patronum.Grafico
             this.Name = "ManterPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes do Patrimônio";
-            this.Load += new System.EventHandler(this.ManterPatrimonio_Load);
             this.Shown += new System.EventHandler(this.ManterPatrimonio_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         #endregion
@@ -350,9 +341,9 @@ namespace Patronum.Grafico
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TextBox tbObs;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox Ativo;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Observacoes;
     }
 }

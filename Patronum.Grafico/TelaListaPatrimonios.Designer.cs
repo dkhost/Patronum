@@ -42,6 +42,7 @@
             this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,9 +78,8 @@
             // 
             // dgPatrimonios
             // 
-            this.dgPatrimonios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgPatrimonios.AllowUserToDeleteRows = false;
+            this.dgPatrimonios.AllowUserToOrderColumns = true;
             this.dgPatrimonios.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -91,11 +91,12 @@
             this.Nfe,
             this.ServiceTag,
             this.DataAquisi,
-            this.PrazoGarant});
+            this.PrazoGarant,
+            this.Obs});
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 41);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1252, 884);
+            this.dgPatrimonios.Size = new System.Drawing.Size(1379, 875);
             this.dgPatrimonios.TabIndex = 3;
             // 
             // Id
@@ -161,16 +162,27 @@
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
             // 
+            // Obs
+            // 
+            this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Obs.DataPropertyName = "Obs";
+            this.Obs.HeaderText = "Observações";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 937);
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1444, 928);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "TelaListaPatrimonios";
             this.Text = "Lista de Patrimônios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -195,5 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
     }
 }
