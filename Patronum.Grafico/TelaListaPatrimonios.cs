@@ -37,8 +37,8 @@ namespace Patronum.Grafico
 
         private void CarregarPatrimonios()
         {
-            dgPatrimonios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dgPatrimonios.MultiSelect = false;
+            dgPatrimonios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgPatrimonios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgPatrimonios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgPatrimonios.AutoGenerateColumns = false;  
             List<Patrimonio> patrimonios = Program.Gerenciador.TodosOsPatrimonios();

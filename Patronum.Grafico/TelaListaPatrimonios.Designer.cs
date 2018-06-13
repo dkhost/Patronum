@@ -78,8 +78,14 @@
             // 
             // dgPatrimonios
             // 
+            this.dgPatrimonios.AllowUserToAddRows = false;
             this.dgPatrimonios.AllowUserToDeleteRows = false;
             this.dgPatrimonios.AllowUserToOrderColumns = true;
+            this.dgPatrimonios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgPatrimonios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgPatrimonios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgPatrimonios.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -94,9 +100,12 @@
             this.PrazoGarant,
             this.Obs});
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 41);
+            this.dgPatrimonios.Margin = new System.Windows.Forms.Padding(0);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1379, 875);
+            this.dgPatrimonios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgPatrimonios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgPatrimonios.Size = new System.Drawing.Size(1895, 1001);
             this.dgPatrimonios.TabIndex = 3;
             // 
             // Id
@@ -105,6 +114,7 @@
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Width = 65;
             // 
             // Nome
             // 
@@ -112,6 +122,7 @@
             this.Nome.HeaderText = "Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Width = 81;
             // 
             // Setor
             // 
@@ -119,6 +130,7 @@
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
+            this.Setor.Width = 57;
             // 
             // Gestor
             // 
@@ -126,6 +138,7 @@
             this.Gestor.HeaderText = "Gestor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
+            this.Gestor.Width = 63;
             // 
             // Fornecedor
             // 
@@ -133,6 +146,7 @@
             this.Fornecedor.HeaderText = "Fornecedor";
             this.Fornecedor.Name = "Fornecedor";
             this.Fornecedor.ReadOnly = true;
+            this.Fornecedor.Width = 86;
             // 
             // Nfe
             // 
@@ -140,6 +154,7 @@
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
+            this.Nfe.Width = 78;
             // 
             // ServiceTag
             // 
@@ -147,6 +162,7 @@
             this.ServiceTag.HeaderText = "ServiceTag";
             this.ServiceTag.Name = "ServiceTag";
             this.ServiceTag.ReadOnly = true;
+            this.ServiceTag.Width = 87;
             // 
             // DataAquisi
             // 
@@ -154,6 +170,7 @@
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
+            this.DataAquisi.Width = 109;
             // 
             // PrazoGarant
             // 
@@ -161,6 +178,7 @@
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
+            this.PrazoGarant.Width = 107;
             // 
             // Obs
             // 
@@ -174,9 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1444, 928);
+            this.ClientSize = new System.Drawing.Size(1916, 1054);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btRemover);
