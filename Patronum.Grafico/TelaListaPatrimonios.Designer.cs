@@ -36,12 +36,7 @@
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btFiltro = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.patronumdbDataSet = new Patronum.Grafico.PatronumdbDataSet();
-            this.patronumdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patrimoniosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patrimoniosTableAdapter = new Patronum.Grafico.PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter();
-            this.patrimoniosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dgPatrimonios = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.setorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +45,17 @@
             this.dataAquisiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prazoGarantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patrimoniosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.patronumdbDataSet = new Patronum.Grafico.PatronumdbDataSet();
+            this.patronumdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patrimoniosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patrimoniosTableAdapter = new Patronum.Grafico.PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdicionar
@@ -117,14 +117,14 @@
             this.btFiltro.Text = "Filtrar";
             this.btFiltro.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgPatrimonios
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgPatrimonios.AllowUserToAddRows = false;
+            this.dgPatrimonios.AllowUserToDeleteRows = false;
+            this.dgPatrimonios.AllowUserToOrderColumns = true;
+            this.dgPatrimonios.AutoGenerateColumns = false;
+            this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
             this.setorDataGridViewTextBoxColumn,
@@ -133,36 +133,12 @@
             this.dataAquisiDataGridViewTextBoxColumn,
             this.prazoGarantDataGridViewTextBoxColumn,
             this.obsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.patrimoniosBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1900, 1008);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // patronumdbDataSet
-            // 
-            this.patronumdbDataSet.DataSetName = "PatronumdbDataSet";
-            this.patronumdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patronumdbDataSetBindingSource
-            // 
-            this.patronumdbDataSetBindingSource.DataSource = this.patronumdbDataSet;
-            this.patronumdbDataSetBindingSource.Position = 0;
-            // 
-            // patrimoniosBindingSource
-            // 
-            this.patrimoniosBindingSource.DataMember = "Patrimonios";
-            this.patrimoniosBindingSource.DataSource = this.patronumdbDataSetBindingSource;
-            // 
-            // patrimoniosTableAdapter
-            // 
-            this.patrimoniosTableAdapter.ClearBeforeFill = true;
-            // 
-            // patrimoniosBindingSource1
-            // 
-            this.patrimoniosBindingSource1.DataMember = "Patrimonios";
-            this.patrimoniosBindingSource1.DataSource = this.patronumdbDataSet;
+            this.dgPatrimonios.DataSource = this.patrimoniosBindingSource1;
+            this.dgPatrimonios.Location = new System.Drawing.Point(12, 42);
+            this.dgPatrimonios.Name = "dgPatrimonios";
+            this.dgPatrimonios.ReadOnly = true;
+            this.dgPatrimonios.Size = new System.Drawing.Size(1900, 1008);
+            this.dgPatrimonios.TabIndex = 9;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -220,6 +196,30 @@
             this.obsDataGridViewTextBoxColumn.Name = "obsDataGridViewTextBoxColumn";
             this.obsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // patrimoniosBindingSource1
+            // 
+            this.patrimoniosBindingSource1.DataMember = "Patrimonios";
+            this.patrimoniosBindingSource1.DataSource = this.patronumdbDataSet;
+            // 
+            // patronumdbDataSet
+            // 
+            this.patronumdbDataSet.DataSetName = "PatronumdbDataSet";
+            this.patronumdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // patronumdbDataSetBindingSource
+            // 
+            this.patronumdbDataSetBindingSource.DataSource = this.patronumdbDataSet;
+            this.patronumdbDataSetBindingSource.Position = 0;
+            // 
+            // patrimoniosBindingSource
+            // 
+            this.patrimoniosBindingSource.DataMember = "Patrimonios";
+            this.patrimoniosBindingSource.DataSource = this.patronumdbDataSetBindingSource;
+            // 
+            // patrimoniosTableAdapter
+            // 
+            this.patrimoniosTableAdapter.ClearBeforeFill = true;
+            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,7 +227,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1062);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbFiltro);
@@ -241,11 +241,11 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaListaPatrimonios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +259,7 @@
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btFiltro;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgPatrimonios;
         private System.Windows.Forms.BindingSource patronumdbDataSetBindingSource;
         private PatronumdbDataSet patronumdbDataSet;
         private System.Windows.Forms.BindingSource patrimoniosBindingSource;

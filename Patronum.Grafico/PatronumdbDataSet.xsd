@@ -106,7 +106,7 @@ SELECT Id, Nome, Setor, Gestor, Fornecedor, DataAquisi, PrazoGarant, Obs FROM Pa
         <xs:element name="Patrimonios" msprop:Generator_TableClassName="PatrimoniosDataTable" msprop:Generator_TableVarName="tablePatrimonios" msprop:Generator_RowChangedName="PatrimoniosRowChanged" msprop:Generator_TablePropName="Patrimonios" msprop:Generator_RowDeletingName="PatrimoniosRowDeleting" msprop:Generator_RowChangingName="PatrimoniosRowChanging" msprop:Generator_RowEvHandlerName="PatrimoniosRowChangeEventHandler" msprop:Generator_RowDeletedName="PatrimoniosRowDeleted" msprop:Generator_RowClassName="PatrimoniosRow" msprop:Generator_UserTableName="Patrimonios" msprop:Generator_RowEvArgName="PatrimoniosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
               <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -145,6 +145,7 @@ SELECT Id, Nome, Setor, Gestor, Fornecedor, DataAquisi, PrazoGarant, Obs FROM Pa
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Nfe" msprop:Generator_ColumnVarNameInTable="columnNfe" msprop:Generator_ColumnPropNameInRow="Nfe" msprop:Generator_ColumnPropNameInTable="NfeColumn" msprop:Generator_UserColumnName="Nfe" type="xs:string" minOccurs="0" />
+              <xs:element name="ServiceTag" msprop:Generator_ColumnVarNameInTable="columnServiceTag" msprop:Generator_ColumnPropNameInRow="ServiceTag" msprop:Generator_ColumnPropNameInTable="ServiceTagColumn" msprop:Generator_UserColumnName="ServiceTag" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

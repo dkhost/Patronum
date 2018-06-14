@@ -297,6 +297,8 @@ namespace Patronum.Grafico {
             
             private global::System.Data.DataColumn columnNfe;
             
+            private global::System.Data.DataColumn columnServiceTag;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PatrimoniosDataTable() {
@@ -404,6 +406,14 @@ namespace Patronum.Grafico {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ServiceTagColumn {
+                get {
+                    return this.columnServiceTag;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,10 +449,10 @@ namespace Patronum.Grafico {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PatrimoniosRow AddPatrimoniosRow(int Id, string Nome, string Setor, string Gestor, string Fornecedor, System.DateTime DataAquisi, System.DateTime PrazoGarant, string Obs, string Nfe) {
+            public PatrimoniosRow AddPatrimoniosRow(string Nome, string Setor, string Gestor, string Fornecedor, System.DateTime DataAquisi, System.DateTime PrazoGarant, string Obs, string Nfe, string ServiceTag) {
                 PatrimoniosRow rowPatrimoniosRow = ((PatrimoniosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Nome,
                         Setor,
                         Gestor,
@@ -450,7 +460,8 @@ namespace Patronum.Grafico {
                         DataAquisi,
                         PrazoGarant,
                         Obs,
-                        Nfe};
+                        Nfe,
+                        ServiceTag};
                 rowPatrimoniosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPatrimoniosRow);
                 return rowPatrimoniosRow;
@@ -489,6 +500,7 @@ namespace Patronum.Grafico {
                 this.columnPrazoGarant = base.Columns["PrazoGarant"];
                 this.columnObs = base.Columns["Obs"];
                 this.columnNfe = base.Columns["Nfe"];
+                this.columnServiceTag = base.Columns["ServiceTag"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -512,8 +524,11 @@ namespace Patronum.Grafico {
                 base.Columns.Add(this.columnObs);
                 this.columnNfe = new global::System.Data.DataColumn("Nfe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNfe);
+                this.columnServiceTag = new global::System.Data.DataColumn("ServiceTag", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnServiceTag);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnNome.MaxLength = 50;
@@ -794,6 +809,22 @@ namespace Patronum.Grafico {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ServiceTag {
+                get {
+                    try {
+                        return ((string)(this[this.tablePatrimonios.ServiceTagColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'ServiceTag\' na tabela \'Patrimonios\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePatrimonios.ServiceTagColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNomeNull() {
                 return this.IsNull(this.tablePatrimonios.NomeColumn);
             }
@@ -862,6 +893,18 @@ namespace Patronum.Grafico {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetNfeNull() {
                 this[this.tablePatrimonios.NfeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsServiceTagNull() {
+                return this.IsNull(this.tablePatrimonios.ServiceTagColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetServiceTagNull() {
+                this[this.tablePatrimonios.ServiceTagColumn] = global::System.Convert.DBNull;
             }
         }
         

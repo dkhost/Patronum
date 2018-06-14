@@ -37,9 +37,9 @@ namespace Patronum.Grafico
             }
 
             patrimonio.Nome = tbNome.Text;
-            patrimonio.Setor = tbSetor.Text;
-            patrimonio.Gestor = tbGestor.Text;
-            patrimonio.Fornecedor = tbFornecedor.Text;
+            patrimonio.Setor = cbSetor.Text;
+            patrimonio.Gestor = cbGestor.Text;
+            patrimonio.Fornecedor = cbFornecedor.Text;
             patrimonio.Nfe = tbNfe.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
@@ -105,10 +105,18 @@ namespace Patronum.Grafico
             Properties.Settings.Default.Save();
         }
 
-        private void ManterPatrimonio_Load(object sender, EventArgs e)
+        private void cbSetor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'patronumdbDataSet.Patrimonios'. Você pode movê-la ou removê-la conforme necessário.
-            this.patrimoniosTableAdapter.Fill(this.patronumdbDataSet.Patrimonios);
+
+        }
+
+        private void cbGestor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
