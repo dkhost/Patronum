@@ -109,7 +109,7 @@
             this.dgPatrimonios.ReadOnly = true;
             this.dgPatrimonios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgPatrimonios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1335, 688);
+            this.dgPatrimonios.Size = new System.Drawing.Size(1903, 1009);
             this.dgPatrimonios.TabIndex = 3;
             // 
             // Id
@@ -118,7 +118,7 @@
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 63;
+            this.Id.Width = 65;
             // 
             // Nome
             // 
@@ -126,7 +126,7 @@
             this.Nome.HeaderText = "Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 79;
+            this.Nome.Width = 81;
             // 
             // Setor
             // 
@@ -134,7 +134,7 @@
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
-            this.Setor.Width = 55;
+            this.Setor.Width = 57;
             // 
             // Gestor
             // 
@@ -142,7 +142,7 @@
             this.Gestor.HeaderText = "Gestor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 61;
+            this.Gestor.Width = 63;
             // 
             // Fornecedor
             // 
@@ -150,7 +150,7 @@
             this.Fornecedor.HeaderText = "Fornecedor";
             this.Fornecedor.Name = "Fornecedor";
             this.Fornecedor.ReadOnly = true;
-            this.Fornecedor.Width = 84;
+            this.Fornecedor.Width = 86;
             // 
             // Nfe
             // 
@@ -158,7 +158,7 @@
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 76;
+            this.Nfe.Width = 78;
             // 
             // ServiceTag
             // 
@@ -166,7 +166,7 @@
             this.ServiceTag.HeaderText = "ServiceTag";
             this.ServiceTag.Name = "ServiceTag";
             this.ServiceTag.ReadOnly = true;
-            this.ServiceTag.Width = 85;
+            this.ServiceTag.Width = 87;
             // 
             // DataAquisi
             // 
@@ -174,7 +174,7 @@
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 107;
+            this.DataAquisi.Width = 109;
             // 
             // PrazoGarant
             // 
@@ -182,7 +182,7 @@
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 105;
+            this.PrazoGarant.Width = 107;
             // 
             // Obs
             // 
@@ -226,7 +226,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.ClientSize = new System.Drawing.Size(1924, 1062);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbFiltro);
