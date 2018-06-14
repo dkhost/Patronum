@@ -54,16 +54,17 @@
             // 
             // cadastrosToolStripMenuItem
             // 
+            this.cadastrosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patrimôniosToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.cadastrosToolStripMenuItem.Text = "Patronum";
             // 
             // patrimôniosToolStripMenuItem
             // 
             this.patrimôniosToolStripMenuItem.Name = "patrimôniosToolStripMenuItem";
-            this.patrimôniosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patrimôniosToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.patrimôniosToolStripMenuItem.Text = "Patrimônios";
             this.patrimôniosToolStripMenuItem.Click += new System.EventHandler(this.patrimoniosToolStripMenuItem_Click);
             // 
@@ -103,6 +104,7 @@
             this.Name = "TelaPrincipal";
             this.Text = "Patronum - Gestão de Patrimônios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

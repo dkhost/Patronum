@@ -116,5 +116,10 @@ namespace Patronum.Grafico
             Sobre tela = new Sobre();
             tela.Show();
         }
+
+        private void TelaPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

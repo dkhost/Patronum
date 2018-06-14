@@ -45,6 +45,7 @@
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -191,11 +192,24 @@
             this.Obs.Name = "Obs";
             this.Obs.ReadOnly = true;
             // 
+            // tbPesquisa
+            // 
+            this.tbPesquisa.BackColor = System.Drawing.SystemColors.InfoText;
+            this.tbPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbPesquisa.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.tbPesquisa.Location = new System.Drawing.Point(488, 12);
+            this.tbPesquisa.Name = "tbPesquisa";
+            this.tbPesquisa.Size = new System.Drawing.Size(150, 20);
+            this.tbPesquisa.TabIndex = 4;
+            this.tbPesquisa.Text = "Pesquisar...";
+            this.tbPesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1916, 1054);
+            this.Controls.Add(this.tbPesquisa);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btRemover);
@@ -209,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -229,5 +244,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox tbPesquisa;
     }
 }

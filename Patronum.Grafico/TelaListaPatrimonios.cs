@@ -89,5 +89,10 @@ namespace Patronum.Grafico
                 AbreTelaInclusaoAlteracao(patrimonioSelecionado);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
