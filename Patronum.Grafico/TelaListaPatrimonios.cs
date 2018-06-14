@@ -90,9 +90,19 @@ namespace Patronum.Grafico
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        string GrayedText;
+        private void tbFiltro_Enter(object sender, System.EventArgs e)
         {
+            GrayedText = tbFiltro.Text;
+            tbFiltro.Text = "";
+            tbFiltro.ReadOnly = false;
+        }
 
+        private void tbFiltro_Leave(object sender, System.EventArgs e)
+        {
+            tbFiltro.ReadOnly = true; // Returns to being grayed out
+            tbFiltro.Text = GrayedText; // Returns old text if you want
+            tbFiltro.Text = "Filtrar Patrimônio";
         }
     }
 }
