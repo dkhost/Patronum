@@ -220,11 +220,12 @@ namespace Patronum.Grafico
             // 
             // tbId
             // 
-            this.tbId.BackColor = System.Drawing.Color.Silver;
+            this.tbId.BackColor = System.Drawing.Color.LightGray;
+            this.tbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbId.Location = new System.Drawing.Point(66, 7);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
-            this.tbId.Size = new System.Drawing.Size(100, 20);
+            this.tbId.Size = new System.Drawing.Size(100, 22);
             this.tbId.TabIndex = 21;
             this.tbId.TabStop = false;
             // 
@@ -281,7 +282,7 @@ namespace Patronum.Grafico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(824, 311);
             this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);

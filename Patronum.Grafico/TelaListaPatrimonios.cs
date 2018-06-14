@@ -1,4 +1,5 @@
-﻿using Patronum.Negocio.Models;
+﻿using MySql.Data.MySqlClient;
+using Patronum.Negocio.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
