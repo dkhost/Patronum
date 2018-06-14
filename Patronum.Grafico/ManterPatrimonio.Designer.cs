@@ -350,7 +350,6 @@ namespace Patronum.Grafico
             ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -38,6 +38,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.setoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +62,9 @@
             // 
             this.cadastrosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.patrimôniosToolStripMenuItem});
+            this.patrimôniosToolStripMenuItem,
+            this.setoresToolStripMenuItem,
+            this.fornecedoresToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -101,6 +105,18 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // setoresToolStripMenuItem
+            // 
+            this.setoresToolStripMenuItem.Name = "setoresToolStripMenuItem";
+            this.setoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setoresToolStripMenuItem.Text = "Setores";
+            // 
+            // fornecedoresToolStripMenuItem
+            // 
+            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +153,8 @@
         private System.Windows.Forms.ToolStripMenuItem patrimôniosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
     }
 }
 
