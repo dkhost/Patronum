@@ -25,46 +25,15 @@ namespace Patronum.Negocio
             Validacao validacao = new Validacao();
             Patrimonio patrimonioBanco = BuscaPatrimonioPorId(patrimonioAlterado.Id);
             patrimonioBanco.Nome = patrimonioAlterado.Nome;
+            patrimonioBanco.Setor = patrimonioAlterado.Setor;
+            patrimonioBanco.Gestor = patrimonioAlterado.Gestor;
+            patrimonioBanco.Fornecedor = patrimonioAlterado.Fornecedor;
             patrimonioBanco.DataAquisi = Convert.ToDateTime(patrimonioAlterado.DataAquisi);
             patrimonioBanco.PrazoGarant = Convert.ToDateTime(patrimonioAlterado.PrazoGarant);
             patrimonioBanco.Nfe = patrimonioAlterado.Nfe;
             patrimonioBanco.ServiceTag = patrimonioAlterado.ServiceTag;
             patrimonioBanco.Obs = patrimonioAlterado.Obs;
             this.banco.SaveChanges();
-            return validacao;
-        }
-
-        public Validacao CadastrarSetor(Setor setorAdicionado)
-        {
-            Validacao validacao = new Validacao();
-            if (this.banco.Setores.Where(c => c.Nome == setorAdicionado.Nome).Any())
-            {
-                validacao.Mensagens.Add("Nome", "Já existe um Setor com esse Nome");
-            }
-            if (this.banco.Setores.Where(c => c.Gestor == setorAdicionado.Gestor).Any())
-            {
-                validacao.Mensagens.Add("Gestor", "Já existe um Gestor com esse Nome");
-            }
-            if(validacao.Valido)
-            {
-                this.banco.Setores.Add(setorAdicionado);
-                this.banco.SaveChanges();
-            }
-            return validacao;
-        }
-
-        public Validacao CadastrarFornecedor(Fornecedor fornecedorAdicionado)
-        {
-            Validacao validacao = new Validacao();
-            if (this.banco.Setores.Where(c => c.Nome == fornecedorAdicionado.Nome).Any())
-            {
-                validacao.Mensagens.Add("Nome", "Já existe um Fornecedor com esse Nome");
-            }
-            if (validacao.Valido)
-            {
-                this.banco.Fornecedores.Add(fornecedorAdicionado);
-                this.banco.SaveChanges();
-            }
             return validacao;
         }
 
@@ -99,29 +68,11 @@ namespace Patronum.Negocio
             return validacao;
         }
 
-        public Setor BuscaSetorPorId(long id)
-        {
-            return this.banco.Setores.Where(c => c.Id == id).FirstOrDefault();
-        }
-
-        public Fornecedor BuscaFornecedorPorId(long id)
-        {
-            return this.banco.Fornecedores.Where(c => c.Id == id).FirstOrDefault();
-        }
-
         public Patrimonio BuscaPatrimonioPorId(long id)
         {
             return this.banco.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
         }
 
-        public List<Setor> TodosOsSetores()
-        {
-            return this.banco.Setores.ToList();
-        }
-        public List<Fornecedor> TodosOsFornecedores()
-        {
-            return this.banco.Fornecedores.ToList();
-        }
          public List<Patrimonio> TodosOsPatrimonios()
         {
             return this.banco.Patrimonios.ToList();

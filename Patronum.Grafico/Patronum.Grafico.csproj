@@ -80,23 +80,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManterFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManterFornecedor.Designer.cs">
-      <DependentUpon>ManterFornecedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManterPatrimonio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManterPatrimonio.Designer.cs">
       <DependentUpon>ManterPatrimonio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManterSetor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManterSetor.Designer.cs">
-      <DependentUpon>ManterSetor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,14 +106,8 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ManterFornecedor.resx">
-      <DependentUpon>ManterFornecedor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManterPatrimonio.resx">
       <DependentUpon>ManterPatrimonio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManterSetor.resx">
-      <DependentUpon>ManterSetor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

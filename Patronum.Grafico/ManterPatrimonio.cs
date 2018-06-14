@@ -15,14 +15,8 @@ namespace Patronum.Grafico
 {
     public partial class ManterPatrimonio : Form
     {
-        public Fornecedor FornecedorSelecionado { get; set; }
-
-        public Setor SetorSelecionado { get; set; }
-
-        public virtual bool ReadOnly { get; set; }
-
         public Patrimonio PatrimonioSelecionado { get; set; }
-  
+
         public ManterPatrimonio()
         {
             InitializeComponent();
@@ -43,20 +37,23 @@ namespace Patronum.Grafico
 
             patrimonio.Nome = tbNome.Text;
             patrimonio.Nfe = tbNfe.Text;
+            patrimonio.Setor = cbSetor.Text;
+            patrimonio.Gestor = cbGestor.Text;
+            patrimonio.Fornecedor = cbFornecedor.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
             patrimonio.PrazoGarant = Convert.ToDateTime(tbPrazoGarant.Text);
             patrimonio.Obs = tbObs.Text;
 
             Validacao validacao;
-            if(PatrimonioSelecionado != null)
+            if (PatrimonioSelecionado != null)
             {
                 validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
             }
             else
             {
                 validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
-                
+
             }
 
             if (!validacao.Valido)
@@ -86,13 +83,13 @@ namespace Patronum.Grafico
 
         private void ManterPatrimonio_Shown(object sender, EventArgs e)
         {
-            if(PatrimonioSelecionado != null && SetorSelecionado !=null && FornecedorSelecionado!= null)
+            if(PatrimonioSelecionado != null)
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.cbSetor.Text = SetorSelecionado.Nome;
-                this.cbGestor.Text = SetorSelecionado.Gestor;
-                this.cbFornecedor.Text = FornecedorSelecionado.Nome;
+                this.cbSetor.Text = PatrimonioSelecionado.Nome;
+                this.cbGestor.Text = PatrimonioSelecionado.Gestor;
+                this.cbFornecedor.Text = PatrimonioSelecionado.Nome;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe.ToString();
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();

@@ -13,9 +13,5 @@ namespace Patronum.Negocio.Persistencia
     public class Banco : DbContext
     {
         public virtual DbSet<Patrimonio> Patrimonios { get; set; }
-        public virtual DbSet<Setor> Setores { get; set; }
-        public virtual DbSet<Fornecedor> Fornecedores { get; set; }
     }
-
-
 }

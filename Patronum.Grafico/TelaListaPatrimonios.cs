@@ -14,6 +14,7 @@ namespace Patronum.Grafico
 {
     public partial class TelaListaPatrimonios : Form
     {
+
         public TelaListaPatrimonios()
         {
             InitializeComponent();
