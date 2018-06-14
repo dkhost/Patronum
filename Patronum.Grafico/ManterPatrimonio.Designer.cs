@@ -52,12 +52,12 @@ namespace Patronum.Grafico
             this.btSalvar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbObs = new System.Windows.Forms.TextBox();
             this.Ativo = new System.Windows.Forms.CheckBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.Observacoes = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,7 +220,7 @@ namespace Patronum.Grafico
             // 
             // tbId
             // 
-            this.tbId.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tbId.BackColor = System.Drawing.Color.Silver;
             this.tbId.Location = new System.Drawing.Point(66, 7);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
@@ -281,6 +281,7 @@ namespace Patronum.Grafico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(824, 311);
             this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);

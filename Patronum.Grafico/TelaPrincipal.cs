@@ -111,15 +111,15 @@ namespace Patronum.Grafico
             tela.MdiParent = this;
         }
 
-        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Sobre tela = new Sobre();
-            tela.Show();
-        }
-
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sobre tela = new Sobre();
+            tela.Show();
         }
     }
 }

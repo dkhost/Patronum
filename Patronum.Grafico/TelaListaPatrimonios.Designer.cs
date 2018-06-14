@@ -90,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgPatrimonios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgPatrimonios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgPatrimonios.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgPatrimonios.BackgroundColor = System.Drawing.Color.Silver;
             this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -194,7 +194,7 @@
             // 
             // tbFiltro
             // 
-            this.tbFiltro.Location = new System.Drawing.Point(358, 12);
+            this.tbFiltro.Location = new System.Drawing.Point(358, 11);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(100, 20);
             this.tbFiltro.TabIndex = 8;
@@ -204,7 +204,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(325, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(325, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 18);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,16 +213,19 @@
             // 
             // btFiltro
             // 
+            this.btFiltro.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btFiltro.Location = new System.Drawing.Point(464, 9);
             this.btFiltro.Name = "btFiltro";
             this.btFiltro.Size = new System.Drawing.Size(75, 23);
             this.btFiltro.TabIndex = 0;
             this.btFiltro.Text = "Filtrar";
+            this.btFiltro.UseVisualStyleBackColor = true;
             // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1356, 741);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
