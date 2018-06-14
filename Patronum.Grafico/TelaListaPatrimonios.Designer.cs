@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
@@ -44,10 +43,11 @@
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tbPesquisa = new System.Windows.Forms.TextBox();
+            this.tbFiltro = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btFiltro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdicionar
@@ -109,7 +109,7 @@
             this.dgPatrimonios.ReadOnly = true;
             this.dgPatrimonios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgPatrimonios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1895, 1001);
+            this.dgPatrimonios.Size = new System.Drawing.Size(1335, 688);
             this.dgPatrimonios.TabIndex = 3;
             // 
             // Id
@@ -118,7 +118,7 @@
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 65;
+            this.Id.Width = 63;
             // 
             // Nome
             // 
@@ -126,7 +126,7 @@
             this.Nome.HeaderText = "Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 81;
+            this.Nome.Width = 79;
             // 
             // Setor
             // 
@@ -134,7 +134,7 @@
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
-            this.Setor.Width = 57;
+            this.Setor.Width = 55;
             // 
             // Gestor
             // 
@@ -142,7 +142,7 @@
             this.Gestor.HeaderText = "Gestor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 63;
+            this.Gestor.Width = 61;
             // 
             // Fornecedor
             // 
@@ -150,7 +150,7 @@
             this.Fornecedor.HeaderText = "Fornecedor";
             this.Fornecedor.Name = "Fornecedor";
             this.Fornecedor.ReadOnly = true;
-            this.Fornecedor.Width = 86;
+            this.Fornecedor.Width = 84;
             // 
             // Nfe
             // 
@@ -158,7 +158,7 @@
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 78;
+            this.Nfe.Width = 76;
             // 
             // ServiceTag
             // 
@@ -166,7 +166,7 @@
             this.ServiceTag.HeaderText = "ServiceTag";
             this.ServiceTag.Name = "ServiceTag";
             this.ServiceTag.ReadOnly = true;
-            this.ServiceTag.Width = 87;
+            this.ServiceTag.Width = 85;
             // 
             // DataAquisi
             // 
@@ -174,7 +174,7 @@
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 109;
+            this.DataAquisi.Width = 107;
             // 
             // PrazoGarant
             // 
@@ -182,7 +182,7 @@
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 107;
+            this.PrazoGarant.Width = 105;
             // 
             // Obs
             // 
@@ -192,24 +192,41 @@
             this.Obs.Name = "Obs";
             this.Obs.ReadOnly = true;
             // 
-            // tbPesquisa
+            // tbFiltro
             // 
-            this.tbPesquisa.BackColor = System.Drawing.SystemColors.InfoText;
-            this.tbPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tbPesquisa.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.tbPesquisa.Location = new System.Drawing.Point(488, 12);
-            this.tbPesquisa.Name = "tbPesquisa";
-            this.tbPesquisa.Size = new System.Drawing.Size(150, 20);
-            this.tbPesquisa.TabIndex = 4;
-            this.tbPesquisa.Text = "Pesquisar...";
-            this.tbPesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbFiltro.Location = new System.Drawing.Point(358, 12);
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Size = new System.Drawing.Size(100, 20);
+            this.tbFiltro.TabIndex = 8;
+            this.tbFiltro.Enter += new System.EventHandler(this.tbFiltro_Enter);
+            this.tbFiltro.Leave += new System.EventHandler(this.tbFiltro_Leave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(325, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 18);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btFiltro
+            // 
+            this.btFiltro.Location = new System.Drawing.Point(464, 9);
+            this.btFiltro.Name = "btFiltro";
+            this.btFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btFiltro.TabIndex = 0;
+            this.btFiltro.Text = "Filtrar";
             // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1916, 1054);
-            this.Controls.Add(this.tbPesquisa);
+            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.Controls.Add(this.btFiltro);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btRemover);
@@ -221,7 +238,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaListaPatrimonios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +260,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.TextBox tbPesquisa;
+        private System.Windows.Forms.TextBox tbFiltro;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btFiltro;
     }
 }
