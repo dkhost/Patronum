@@ -28,26 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
-            this.dgPatrimonios = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gestor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nfe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbFiltro = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btFiltro = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.patronumdbDataSet = new Patronum.Grafico.PatronumdbDataSet();
+            this.patronumdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patrimoniosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patrimoniosTableAdapter = new Patronum.Grafico.PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter();
+            this.patrimoniosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.setorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gestorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornecedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataAquisiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prazoGarantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdicionar
@@ -80,118 +88,6 @@
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
-            // dgPatrimonios
-            // 
-            this.dgPatrimonios.AllowUserToAddRows = false;
-            this.dgPatrimonios.AllowUserToDeleteRows = false;
-            this.dgPatrimonios.AllowUserToOrderColumns = true;
-            this.dgPatrimonios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgPatrimonios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgPatrimonios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgPatrimonios.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Nome,
-            this.Setor,
-            this.Gestor,
-            this.Fornecedor,
-            this.Nfe,
-            this.ServiceTag,
-            this.DataAquisi,
-            this.PrazoGarant,
-            this.Obs});
-            this.dgPatrimonios.Location = new System.Drawing.Point(12, 41);
-            this.dgPatrimonios.Margin = new System.Windows.Forms.Padding(0);
-            this.dgPatrimonios.Name = "dgPatrimonios";
-            this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgPatrimonios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1903, 1009);
-            this.dgPatrimonios.TabIndex = 3;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Código";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 65;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Patrimônio";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 81;
-            // 
-            // Setor
-            // 
-            this.Setor.DataPropertyName = "Setor";
-            this.Setor.HeaderText = "Setor";
-            this.Setor.Name = "Setor";
-            this.Setor.ReadOnly = true;
-            this.Setor.Width = 57;
-            // 
-            // Gestor
-            // 
-            this.Gestor.DataPropertyName = "Gestor";
-            this.Gestor.HeaderText = "Gestor";
-            this.Gestor.Name = "Gestor";
-            this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 63;
-            // 
-            // Fornecedor
-            // 
-            this.Fornecedor.DataPropertyName = "Fornecedor";
-            this.Fornecedor.HeaderText = "Fornecedor";
-            this.Fornecedor.Name = "Fornecedor";
-            this.Fornecedor.ReadOnly = true;
-            this.Fornecedor.Width = 86;
-            // 
-            // Nfe
-            // 
-            this.Nfe.DataPropertyName = "Nfe";
-            this.Nfe.HeaderText = "Nota Fiscal";
-            this.Nfe.Name = "Nfe";
-            this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 78;
-            // 
-            // ServiceTag
-            // 
-            this.ServiceTag.DataPropertyName = "ServiceTag";
-            this.ServiceTag.HeaderText = "ServiceTag";
-            this.ServiceTag.Name = "ServiceTag";
-            this.ServiceTag.ReadOnly = true;
-            this.ServiceTag.Width = 87;
-            // 
-            // DataAquisi
-            // 
-            this.DataAquisi.DataPropertyName = "DataAquisi";
-            this.DataAquisi.HeaderText = "Data de Aquisição";
-            this.DataAquisi.Name = "DataAquisi";
-            this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 109;
-            // 
-            // PrazoGarant
-            // 
-            this.PrazoGarant.DataPropertyName = "PrazoGarant";
-            this.PrazoGarant.HeaderText = "Prazo de Garantia";
-            this.PrazoGarant.Name = "PrazoGarant";
-            this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 107;
-            // 
-            // Obs
-            // 
-            this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Obs.DataPropertyName = "Obs";
-            this.Obs.HeaderText = "Observações";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
-            // 
             // tbFiltro
             // 
             this.tbFiltro.Location = new System.Drawing.Point(358, 11);
@@ -221,6 +117,109 @@
             this.btFiltro.Text = "Filtrar";
             this.btFiltro.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.setorDataGridViewTextBoxColumn,
+            this.gestorDataGridViewTextBoxColumn,
+            this.fornecedorDataGridViewTextBoxColumn,
+            this.dataAquisiDataGridViewTextBoxColumn,
+            this.prazoGarantDataGridViewTextBoxColumn,
+            this.obsDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.patrimoniosBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 42);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1900, 1008);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // patronumdbDataSet
+            // 
+            this.patronumdbDataSet.DataSetName = "PatronumdbDataSet";
+            this.patronumdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // patronumdbDataSetBindingSource
+            // 
+            this.patronumdbDataSetBindingSource.DataSource = this.patronumdbDataSet;
+            this.patronumdbDataSetBindingSource.Position = 0;
+            // 
+            // patrimoniosBindingSource
+            // 
+            this.patrimoniosBindingSource.DataMember = "Patrimonios";
+            this.patrimoniosBindingSource.DataSource = this.patronumdbDataSetBindingSource;
+            // 
+            // patrimoniosTableAdapter
+            // 
+            this.patrimoniosTableAdapter.ClearBeforeFill = true;
+            // 
+            // patrimoniosBindingSource1
+            // 
+            this.patrimoniosBindingSource1.DataMember = "Patrimonios";
+            this.patrimoniosBindingSource1.DataSource = this.patronumdbDataSet;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Patrimônio";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // setorDataGridViewTextBoxColumn
+            // 
+            this.setorDataGridViewTextBoxColumn.DataPropertyName = "Setor";
+            this.setorDataGridViewTextBoxColumn.HeaderText = "Setor";
+            this.setorDataGridViewTextBoxColumn.Name = "setorDataGridViewTextBoxColumn";
+            this.setorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gestorDataGridViewTextBoxColumn
+            // 
+            this.gestorDataGridViewTextBoxColumn.DataPropertyName = "Gestor";
+            this.gestorDataGridViewTextBoxColumn.HeaderText = "Gestor";
+            this.gestorDataGridViewTextBoxColumn.Name = "gestorDataGridViewTextBoxColumn";
+            this.gestorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fornecedorDataGridViewTextBoxColumn
+            // 
+            this.fornecedorDataGridViewTextBoxColumn.DataPropertyName = "Fornecedor";
+            this.fornecedorDataGridViewTextBoxColumn.HeaderText = "Fornecedor";
+            this.fornecedorDataGridViewTextBoxColumn.Name = "fornecedorDataGridViewTextBoxColumn";
+            this.fornecedorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataAquisiDataGridViewTextBoxColumn
+            // 
+            this.dataAquisiDataGridViewTextBoxColumn.DataPropertyName = "DataAquisi";
+            this.dataAquisiDataGridViewTextBoxColumn.HeaderText = "DataAquisi";
+            this.dataAquisiDataGridViewTextBoxColumn.Name = "dataAquisiDataGridViewTextBoxColumn";
+            this.dataAquisiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // prazoGarantDataGridViewTextBoxColumn
+            // 
+            this.prazoGarantDataGridViewTextBoxColumn.DataPropertyName = "PrazoGarant";
+            this.prazoGarantDataGridViewTextBoxColumn.HeaderText = "PrazoGarant";
+            this.prazoGarantDataGridViewTextBoxColumn.Name = "prazoGarantDataGridViewTextBoxColumn";
+            this.prazoGarantDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // obsDataGridViewTextBoxColumn
+            // 
+            this.obsDataGridViewTextBoxColumn.DataPropertyName = "Obs";
+            this.obsDataGridViewTextBoxColumn.HeaderText = "Observação";
+            this.obsDataGridViewTextBoxColumn.Name = "obsDataGridViewTextBoxColumn";
+            this.obsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,10 +227,10 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1924, 1062);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbFiltro);
-            this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
@@ -241,8 +240,12 @@
             this.Text = "Lista de Patrimônios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TelaListaPatrimonios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,19 +256,22 @@
         private System.Windows.Forms.Button btAdicionar;
         private System.Windows.Forms.Button btRemover;
         private System.Windows.Forms.Button btEditar;
-        private System.Windows.Forms.DataGridView dgPatrimonios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Setor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gestor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nfe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
         private System.Windows.Forms.TextBox tbFiltro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btFiltro;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource patronumdbDataSetBindingSource;
+        private PatronumdbDataSet patronumdbDataSet;
+        private System.Windows.Forms.BindingSource patrimoniosBindingSource;
+        private PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter patrimoniosTableAdapter;
+        private System.Windows.Forms.BindingSource patrimoniosBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn setorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gestorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fornecedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataAquisiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prazoGarantDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obsDataGridViewTextBoxColumn;
     }
 }

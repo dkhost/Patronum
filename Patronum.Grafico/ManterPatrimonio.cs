@@ -88,9 +88,9 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.tbSetor.Text = PatrimonioSelecionado.Setor;
-                this.tbGestor.Text = PatrimonioSelecionado.Gestor;
-                this.tbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
+                this.cbSetor.Text = PatrimonioSelecionado.Setor;
+                this.cbGestor.Text = PatrimonioSelecionado.Gestor;
+                this.cbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe.ToString();
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
@@ -103,6 +103,13 @@ namespace Patronum.Grafico
         {
             Properties.Settings.Default.checkbox = Ativo.Checked;
             Properties.Settings.Default.Save();
+        }
+
+        private void ManterPatrimonio_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'patronumdbDataSet.Patrimonios'. Você pode movê-la ou removê-la conforme necessário.
+            this.patrimoniosTableAdapter.Fill(this.patronumdbDataSet.Patrimonios);
+
         }
     }
 }
