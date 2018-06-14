@@ -30,7 +30,6 @@ namespace Patronum.Grafico
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManterPatrimonio));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,11 +56,6 @@ namespace Patronum.Grafico
             this.cbSetor = new System.Windows.Forms.ComboBox();
             this.cbGestor = new System.Windows.Forms.ComboBox();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
-            this.patrimoniosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patronumdbDataSet = new Patronum.Grafico.PatronumdbDataSet();
-            this.patrimoniosTableAdapter = new Patronum.Grafico.PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,7 +141,6 @@ namespace Patronum.Grafico
             // 
             // tbNome
             // 
-            this.tbNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Nome", true));
             this.tbNome.Location = new System.Drawing.Point(119, 34);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(669, 20);
@@ -155,7 +148,6 @@ namespace Patronum.Grafico
             // 
             // tbDataAquisi
             // 
-            this.tbDataAquisi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "DataAquisi", true));
             this.tbDataAquisi.Location = new System.Drawing.Point(115, 176);
             this.tbDataAquisi.Name = "tbDataAquisi";
             this.tbDataAquisi.Size = new System.Drawing.Size(100, 20);
@@ -163,7 +155,6 @@ namespace Patronum.Grafico
             // 
             // tbPrazoGarant
             // 
-            this.tbPrazoGarant.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "PrazoGarant", true));
             this.tbPrazoGarant.Location = new System.Drawing.Point(115, 201);
             this.tbPrazoGarant.Name = "tbPrazoGarant";
             this.tbPrazoGarant.Size = new System.Drawing.Size(100, 20);
@@ -171,7 +162,6 @@ namespace Patronum.Grafico
             // 
             // tbNfe
             // 
-            this.tbNfe.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Nfe", true));
             this.tbNfe.Location = new System.Drawing.Point(82, 129);
             this.tbNfe.Name = "tbNfe";
             this.tbNfe.Size = new System.Drawing.Size(706, 20);
@@ -179,7 +169,6 @@ namespace Patronum.Grafico
             // 
             // tbServiceTag
             // 
-            this.tbServiceTag.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "ServiceTag", true));
             this.tbServiceTag.Location = new System.Drawing.Point(82, 152);
             this.tbServiceTag.Name = "tbServiceTag";
             this.tbServiceTag.Size = new System.Drawing.Size(706, 20);
@@ -208,7 +197,6 @@ namespace Patronum.Grafico
             // tbId
             // 
             this.tbId.BackColor = System.Drawing.Color.LightGray;
-            this.tbId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Id", true));
             this.tbId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbId.Location = new System.Drawing.Point(66, 7);
             this.tbId.Name = "tbId";
@@ -219,7 +207,6 @@ namespace Patronum.Grafico
             // 
             // tbObs
             // 
-            this.tbObs.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Obs", true));
             this.tbObs.Location = new System.Drawing.Point(115, 227);
             this.tbObs.Multiline = true;
             this.tbObs.Name = "tbObs";
@@ -269,54 +256,34 @@ namespace Patronum.Grafico
             // 
             // cbSetor
             // 
-            this.cbSetor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Setor", true));
             this.cbSetor.FormattingEnabled = true;
             this.cbSetor.Location = new System.Drawing.Point(66, 57);
             this.cbSetor.Name = "cbSetor";
             this.cbSetor.Size = new System.Drawing.Size(722, 21);
             this.cbSetor.TabIndex = 105;
-            this.cbSetor.SelectedIndexChanged += new System.EventHandler(this.cbSetor_SelectedIndexChanged);
             // 
             // cbGestor
             // 
-            this.cbGestor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Gestor", true));
             this.cbGestor.FormattingEnabled = true;
             this.cbGestor.Location = new System.Drawing.Point(65, 81);
             this.cbGestor.Name = "cbGestor";
             this.cbGestor.Size = new System.Drawing.Size(723, 21);
             this.cbGestor.TabIndex = 106;
-            this.cbGestor.SelectedIndexChanged += new System.EventHandler(this.cbGestor_SelectedIndexChanged);
             // 
             // cbFornecedor
             // 
-            this.cbFornecedor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patrimoniosBindingSource, "Fornecedor", true));
             this.cbFornecedor.FormattingEnabled = true;
             this.cbFornecedor.Location = new System.Drawing.Point(81, 106);
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(707, 21);
             this.cbFornecedor.TabIndex = 107;
-            this.cbFornecedor.SelectedIndexChanged += new System.EventHandler(this.cbFornecedor_SelectedIndexChanged);
-            // 
-            // patrimoniosBindingSource
-            // 
-            this.patrimoniosBindingSource.DataMember = "Patrimonios";
-            this.patrimoniosBindingSource.DataSource = this.patronumdbDataSet;
-            // 
-            // patronumdbDataSet
-            // 
-            this.patronumdbDataSet.DataSetName = "PatronumdbDataSet";
-            this.patronumdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patrimoniosTableAdapter
-            // 
-            this.patrimoniosTableAdapter.ClearBeforeFill = true;
             // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(824, 311);
+            this.ClientSize = new System.Drawing.Size(834, 312);
             this.Controls.Add(this.cbFornecedor);
             this.Controls.Add(this.cbGestor);
             this.Controls.Add(this.cbSetor);
@@ -346,10 +313,9 @@ namespace Patronum.Grafico
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes do Patrimônio";
             this.Shown += new System.EventHandler(this.ManterPatrimonio_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -376,11 +342,8 @@ namespace Patronum.Grafico
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Observacoes;
-        private PatronumdbDataSet patronumdbDataSet;
-        private PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter patrimoniosTableAdapter;
         private System.Windows.Forms.ComboBox cbSetor;
         private System.Windows.Forms.ComboBox cbGestor;
         private System.Windows.Forms.ComboBox cbFornecedor;
-        private System.Windows.Forms.BindingSource patrimoniosBindingSource;
     }
 }

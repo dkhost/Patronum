@@ -1,4 +1,5 @@
-﻿using Patronum.Negocio;
+﻿using MySql.Data.MySqlClient;
+using Patronum.Negocio;
 using Patronum.Negocio.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,10 @@ namespace Patronum.Grafico
 {
     public partial class ManterPatrimonio : Form
     {
+        public Fornecedor FornecedorSelecionado { get; set; }
+
+        public Setor SetorSelecionado { get; set; }
+
         public virtual bool ReadOnly { get; set; }
 
         public Patrimonio PatrimonioSelecionado { get; set; }
@@ -37,9 +42,6 @@ namespace Patronum.Grafico
             }
 
             patrimonio.Nome = tbNome.Text;
-            patrimonio.Setor = cbSetor.Text;
-            patrimonio.Gestor = cbGestor.Text;
-            patrimonio.Fornecedor = cbFornecedor.Text;
             patrimonio.Nfe = tbNfe.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
@@ -84,13 +86,13 @@ namespace Patronum.Grafico
 
         private void ManterPatrimonio_Shown(object sender, EventArgs e)
         {
-            if(PatrimonioSelecionado != null)
+            if(PatrimonioSelecionado != null && SetorSelecionado !=null && FornecedorSelecionado!= null)
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.cbSetor.Text = PatrimonioSelecionado.Setor;
-                this.cbGestor.Text = PatrimonioSelecionado.Gestor;
-                this.cbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
+                this.cbSetor.Text = SetorSelecionado.Nome;
+                this.cbGestor.Text = SetorSelecionado.Gestor;
+                this.cbFornecedor.Text = FornecedorSelecionado.Nome;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe.ToString();
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
@@ -103,21 +105,6 @@ namespace Patronum.Grafico
         {
             Properties.Settings.Default.checkbox = Ativo.Checked;
             Properties.Settings.Default.Save();
-        }
-
-        private void cbSetor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbGestor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbFornecedor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

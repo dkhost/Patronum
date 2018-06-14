@@ -48,8 +48,6 @@ namespace Patronum.Grafico
 
         private void TelaListaPatrimonios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'patronumdbDataSet.Patrimonios'. Você pode movê-la ou removê-la conforme necessário.
-            patrimoniosTableAdapter.Fill(patronumdbDataSet.Patrimonios);
             CarregarPatrimonios();
         }
 

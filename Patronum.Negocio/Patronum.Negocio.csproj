@@ -61,7 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gerenciador.cs" />
+    <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\Patrimonio.cs" />
+    <Compile Include="Models\Setor.cs" />
     <Compile Include="Persistencia\Banco.cs" />
     <Compile Include="Persistencia\Dados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

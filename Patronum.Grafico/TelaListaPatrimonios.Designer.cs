@@ -45,17 +45,6 @@
             this.dataAquisiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prazoGarantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patrimoniosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.patronumdbDataSet = new Patronum.Grafico.PatronumdbDataSet();
-            this.patronumdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patrimoniosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patrimoniosTableAdapter = new Patronum.Grafico.PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btAdicionar
@@ -133,7 +122,6 @@
             this.dataAquisiDataGridViewTextBoxColumn,
             this.prazoGarantDataGridViewTextBoxColumn,
             this.obsDataGridViewTextBoxColumn});
-            this.dgPatrimonios.DataSource = this.patrimoniosBindingSource1;
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 42);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
@@ -196,30 +184,6 @@
             this.obsDataGridViewTextBoxColumn.Name = "obsDataGridViewTextBoxColumn";
             this.obsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // patrimoniosBindingSource1
-            // 
-            this.patrimoniosBindingSource1.DataMember = "Patrimonios";
-            this.patrimoniosBindingSource1.DataSource = this.patronumdbDataSet;
-            // 
-            // patronumdbDataSet
-            // 
-            this.patronumdbDataSet.DataSetName = "PatronumdbDataSet";
-            this.patronumdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patronumdbDataSetBindingSource
-            // 
-            this.patronumdbDataSetBindingSource.DataSource = this.patronumdbDataSet;
-            this.patronumdbDataSetBindingSource.Position = 0;
-            // 
-            // patrimoniosBindingSource
-            // 
-            this.patrimoniosBindingSource.DataMember = "Patrimonios";
-            this.patrimoniosBindingSource.DataSource = this.patronumdbDataSetBindingSource;
-            // 
-            // patrimoniosTableAdapter
-            // 
-            this.patrimoniosTableAdapter.ClearBeforeFill = true;
-            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,10 +206,6 @@
             this.Load += new System.EventHandler(this.TelaListaPatrimonios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patronumdbDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patrimoniosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,11 +220,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btFiltro;
         private System.Windows.Forms.DataGridView dgPatrimonios;
-        private System.Windows.Forms.BindingSource patronumdbDataSetBindingSource;
-        private PatronumdbDataSet patronumdbDataSet;
-        private System.Windows.Forms.BindingSource patrimoniosBindingSource;
-        private PatronumdbDataSetTableAdapters.PatrimoniosTableAdapter patrimoniosTableAdapter;
-        private System.Windows.Forms.BindingSource patrimoniosBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn setorDataGridViewTextBoxColumn;
