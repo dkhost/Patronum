@@ -86,10 +86,10 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.tbSetor.Text = PatrimonioSelecionado.Nome;
+                this.tbSetor.Text = PatrimonioSelecionado.Setor;
                 this.tbGestor.Text = PatrimonioSelecionado.Gestor;
-                this.tbFornecedor.Text = PatrimonioSelecionado.Nome;
-                this.tbNfe.Text = PatrimonioSelecionado.Nfe.ToString();
+                this.tbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
+                this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
                 this.tbPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();

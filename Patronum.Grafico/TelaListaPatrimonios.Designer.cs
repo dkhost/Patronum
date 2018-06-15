@@ -128,92 +128,100 @@
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 42);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1332, 687);
+            this.dgPatrimonios.Size = new System.Drawing.Size(1900, 1008);
             this.dgPatrimonios.TabIndex = 9;
             // 
             // Id
             // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Format = "00000000";
+            dataGridViewCellStyle1.Format = "00000";
             dataGridViewCellStyle1.NullValue = null;
             this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.FillWeight = 62.80566F;
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Width = 65;
             // 
             // Nome
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Nome.DataPropertyName = "Nome";
             this.Nome.FillWeight = 62.80566F;
             this.Nome.HeaderText = "Nome do Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Width = 116;
             // 
             // Setor
             // 
-            this.Setor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Setor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Setor.DataPropertyName = "Setor";
             this.Setor.FillWeight = 62.80566F;
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
+            this.Setor.Width = 57;
             // 
             // Gestor
             // 
-            this.Gestor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Gestor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Gestor.DataPropertyName = "Gestor";
             this.Gestor.FillWeight = 62.80566F;
             this.Gestor.HeaderText = "Gestor do Setor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
+            this.Gestor.Width = 75;
             // 
             // Nfe
             // 
-            this.Nfe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nfe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Nfe.DataPropertyName = "Nfe";
             this.Nfe.FillWeight = 62.80566F;
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
+            this.Nfe.Width = 78;
             // 
             // DataAquisi
             // 
-            this.DataAquisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataAquisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DataAquisi.DataPropertyName = "DataAquisi";
             this.DataAquisi.FillWeight = 62.80566F;
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
+            this.DataAquisi.Width = 109;
             // 
             // PrazoGarant
             // 
-            this.PrazoGarant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PrazoGarant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PrazoGarant.DataPropertyName = "PrazoGarant";
             this.PrazoGarant.FillWeight = 62.80566F;
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
+            this.PrazoGarant.Width = 107;
             // 
             // Ativo
             // 
-            this.Ativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Ativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Ativo.DataPropertyName = "ckAtivo";
             this.Ativo.HeaderText = "Está ativo ?";
             this.Ativo.Name = "Ativo";
             this.Ativo.ReadOnly = true;
             this.Ativo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Ativo.Width = 86;
+            this.Ativo.Width = 73;
             // 
             // Obs
             // 
-            this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Obs.DataPropertyName = "Obs";
             this.Obs.HeaderText = "Observações";
             this.Obs.Name = "Obs";
             this.Obs.ReadOnly = true;
+            this.Obs.Width = 95;
             // 
             // TelaListaPatrimonios
             // 
@@ -221,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.ClientSize = new System.Drawing.Size(1924, 1062);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);

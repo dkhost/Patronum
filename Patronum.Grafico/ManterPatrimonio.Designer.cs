@@ -145,7 +145,6 @@ namespace Patronum.Grafico
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(669, 20);
             this.tbNome.TabIndex = 9;
-            this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
             // 
             // tbDataAquisi
             // 
