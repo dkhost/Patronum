@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq.Dynamic;
 
 namespace Patronum.Grafico
 {
@@ -42,7 +43,7 @@ namespace Patronum.Grafico
             dgPatrimonios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgPatrimonios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgPatrimonios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgPatrimonios.AutoGenerateColumns = false;  
+            dgPatrimonios.AutoGenerateColumns = false;
             List<Patrimonio> patrimonios = Program.Gerenciador.TodosOsPatrimonios();
             dgPatrimonios.DataSource = patrimonios;
         }

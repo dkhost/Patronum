@@ -21,7 +21,6 @@ namespace Patronum.Grafico
         {
             InitializeComponent();
         }
-
         private void btSalvar_Click(object sender, EventArgs e)
         {
             Patrimonio patrimonio = new Patrimonio();
@@ -37,9 +36,9 @@ namespace Patronum.Grafico
 
             patrimonio.Nome = tbNome.Text;
             patrimonio.Nfe = tbNfe.Text;
-            patrimonio.Setor = cbSetor.Text;
-            patrimonio.Gestor = cbGestor.Text;
-            patrimonio.Fornecedor = cbFornecedor.Text;
+            patrimonio.Setor = tbSetor.Text;
+            patrimonio.Gestor = tbGestor.Text;
+            patrimonio.Fornecedor = tbFornecedor.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
             patrimonio.PrazoGarant = Convert.ToDateTime(tbPrazoGarant.Text);
@@ -87,9 +86,9 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.cbSetor.Text = PatrimonioSelecionado.Nome;
-                this.cbGestor.Text = PatrimonioSelecionado.Gestor;
-                this.cbFornecedor.Text = PatrimonioSelecionado.Nome;
+                this.tbSetor.Text = PatrimonioSelecionado.Nome;
+                this.tbGestor.Text = PatrimonioSelecionado.Gestor;
+                this.tbFornecedor.Text = PatrimonioSelecionado.Nome;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe.ToString();
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
@@ -98,10 +97,15 @@ namespace Patronum.Grafico
             }
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        public void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.checkbox = Ativo.Checked;
             Properties.Settings.Default.Save();
+
+            if (Ativo.Checked)
+            {
+
+            }
         }
     }
 }

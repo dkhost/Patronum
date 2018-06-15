@@ -53,9 +53,9 @@ namespace Patronum.Grafico
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.Observacoes = new System.Windows.Forms.Label();
-            this.cbSetor = new System.Windows.Forms.ComboBox();
-            this.cbGestor = new System.Windows.Forms.ComboBox();
-            this.cbFornecedor = new System.Windows.Forms.ComboBox();
+            this.tbFornecedor = new System.Windows.Forms.TextBox();
+            this.tbGestor = new System.Windows.Forms.TextBox();
+            this.tbSetor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -145,6 +145,7 @@ namespace Patronum.Grafico
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(669, 20);
             this.tbNome.TabIndex = 9;
+            this.tbNome.TextChanged += new System.EventHandler(this.tbNome_TextChanged);
             // 
             // tbDataAquisi
             // 
@@ -202,7 +203,7 @@ namespace Patronum.Grafico
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(100, 22);
-            this.tbId.TabIndex = 21;
+            this.tbId.TabIndex = 22;
             this.tbId.TabStop = false;
             // 
             // tbObs
@@ -216,12 +217,10 @@ namespace Patronum.Grafico
             // Ativo
             // 
             this.Ativo.AutoSize = true;
-            this.Ativo.Checked = true;
-            this.Ativo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.Ativo.Location = new System.Drawing.Point(192, 10);
             this.Ativo.Name = "Ativo";
             this.Ativo.Size = new System.Drawing.Size(50, 17);
-            this.Ativo.TabIndex = 103;
+            this.Ativo.TabIndex = 21;
             this.Ativo.Text = "Ativo";
             this.Ativo.UseVisualStyleBackColor = true;
             this.Ativo.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
@@ -254,29 +253,26 @@ namespace Patronum.Grafico
             this.Observacoes.TabIndex = 104;
             this.Observacoes.Text = "Observações: ";
             // 
-            // cbSetor
+            // tbFornecedor
             // 
-            this.cbSetor.FormattingEnabled = true;
-            this.cbSetor.Location = new System.Drawing.Point(66, 57);
-            this.cbSetor.Name = "cbSetor";
-            this.cbSetor.Size = new System.Drawing.Size(722, 21);
-            this.cbSetor.TabIndex = 105;
+            this.tbFornecedor.Location = new System.Drawing.Point(82, 103);
+            this.tbFornecedor.Name = "tbFornecedor";
+            this.tbFornecedor.Size = new System.Drawing.Size(706, 20);
+            this.tbFornecedor.TabIndex = 12;
             // 
-            // cbGestor
+            // tbGestor
             // 
-            this.cbGestor.FormattingEnabled = true;
-            this.cbGestor.Location = new System.Drawing.Point(65, 81);
-            this.cbGestor.Name = "cbGestor";
-            this.cbGestor.Size = new System.Drawing.Size(723, 21);
-            this.cbGestor.TabIndex = 106;
+            this.tbGestor.Location = new System.Drawing.Point(64, 79);
+            this.tbGestor.Name = "tbGestor";
+            this.tbGestor.Size = new System.Drawing.Size(724, 20);
+            this.tbGestor.TabIndex = 11;
             // 
-            // cbFornecedor
+            // tbSetor
             // 
-            this.cbFornecedor.FormattingEnabled = true;
-            this.cbFornecedor.Location = new System.Drawing.Point(81, 106);
-            this.cbFornecedor.Name = "cbFornecedor";
-            this.cbFornecedor.Size = new System.Drawing.Size(707, 21);
-            this.cbFornecedor.TabIndex = 107;
+            this.tbSetor.Location = new System.Drawing.Point(64, 57);
+            this.tbSetor.Name = "tbSetor";
+            this.tbSetor.Size = new System.Drawing.Size(724, 20);
+            this.tbSetor.TabIndex = 10;
             // 
             // ManterPatrimonio
             // 
@@ -284,9 +280,9 @@ namespace Patronum.Grafico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(834, 312);
-            this.Controls.Add(this.cbFornecedor);
-            this.Controls.Add(this.cbGestor);
-            this.Controls.Add(this.cbSetor);
+            this.Controls.Add(this.tbSetor);
+            this.Controls.Add(this.tbGestor);
+            this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Ativo);
@@ -342,8 +338,8 @@ namespace Patronum.Grafico
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Observacoes;
-        private System.Windows.Forms.ComboBox cbSetor;
-        private System.Windows.Forms.ComboBox cbGestor;
-        private System.Windows.Forms.ComboBox cbFornecedor;
+        private System.Windows.Forms.TextBox tbFornecedor;
+        private System.Windows.Forms.TextBox tbGestor;
+        private System.Windows.Forms.TextBox tbSetor;
     }
 }
