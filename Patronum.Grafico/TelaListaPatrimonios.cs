@@ -103,8 +103,8 @@ namespace Patronum.Grafico
 
         private void tbFiltro_Leave(object sender, System.EventArgs e)
         {
-            tbFiltro.ReadOnly = true; // Returns to being grayed out
-            tbFiltro.Text = GrayedText; // Returns old text if you want
+            tbFiltro.ReadOnly = true;
+            tbFiltro.Text = GrayedText;
             tbFiltro.Text = "Filtrar Patrimônio";
         }
     }
