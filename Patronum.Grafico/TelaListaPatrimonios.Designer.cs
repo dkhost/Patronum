@@ -128,7 +128,7 @@
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 42);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1900, 1008);
+            this.dgPatrimonios.Size = new System.Drawing.Size(1404, 811);
             this.dgPatrimonios.TabIndex = 9;
             // 
             // Id
@@ -229,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1924, 1062);
+            this.ClientSize = new System.Drawing.Size(1428, 865);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
