@@ -137,7 +137,8 @@
             this.textBoxDescription.Size = new System.Drawing.Size(149, 127);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Descrição";
+            this.textBoxDescription.Text = "Criadores do Software: \r\n\r\nAmanda Limas\r\nGuilherme Espindola\r\nLuan Roberto Nunes\r" +
+    "\n";
             // 
             // okButton
             // 

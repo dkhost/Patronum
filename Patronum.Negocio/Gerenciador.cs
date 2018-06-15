@@ -40,17 +40,21 @@ namespace Patronum.Negocio
         public Validacao CadastrarPatrimonio(Patrimonio patrimonioAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Patrimonios.Where(c => c.Id == patrimonioAdicionado.Id).Any())
-            {
-                validacao.Mensagens.Add("Id", "Já existe um patrimônio com esse Código");
-            }
-            if (this.banco.Patrimonios.Where(c => c.Id == patrimonioAdicionado.Id).Any())
+            if (this.banco.Patrimonios.Where(c => c.ServiceTag == patrimonioAdicionado.ServiceTag).Any())
             {
                 validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
             }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.Nome))
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Setor))
             {
-                validacao.Mensagens.Add("Nome", "O campo Nome não pode ser nulo");
+                validacao.Mensagens.Add("Setor", "O campo Setor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Fornecedor))
+            {
+                validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Gestor))
+            {
+                validacao.Mensagens.Add("Gestor", "O campo Gestor não pode ser nulo");
             }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
             {
