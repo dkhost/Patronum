@@ -18,5 +18,6 @@ namespace Patronum.Negocio.Models
         public String Nfe { get; set; }
         public String ServiceTag { get; set; }
         public String Obs { get; set; }
+        public bool Ativo { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace Patronum.Negocio
             patrimonioBanco.Nfe = patrimonioAlterado.Nfe;
             patrimonioBanco.ServiceTag = patrimonioAlterado.ServiceTag;
             patrimonioBanco.Obs = patrimonioAlterado.Obs;
+            patrimonioBanco.Ativo = patrimonioAlterado.Ativo;
             this.banco.SaveChanges();
             return validacao;
         }

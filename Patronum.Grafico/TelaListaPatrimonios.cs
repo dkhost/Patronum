@@ -93,19 +93,11 @@ namespace Patronum.Grafico
             }
         }
 
-        string GrayedText;
-        private void tbFiltro_Enter(object sender, System.EventArgs e)
+        private void btFiltro_Click(object sender, EventArgs e)
         {
-            GrayedText = tbFiltro.Text;
-            tbFiltro.Text = "";
-            tbFiltro.ReadOnly = false;
-        }
-
-        private void tbFiltro_Leave(object sender, System.EventArgs e)
-        {
-            tbFiltro.ReadOnly = true;
-            tbFiltro.Text = GrayedText;
-            tbFiltro.Text = "Filtrar Patrimônio";
+            var filtro = tbFiltro.Text;
+            var patrimoniosFiltrados = Program.Gerenciador.TodosOsPatrimonios().Where(m => m.Nome == filtro).ToList();
+            dgPatrimonios.DataSource = patrimoniosFiltrados;
         }
     }
 }

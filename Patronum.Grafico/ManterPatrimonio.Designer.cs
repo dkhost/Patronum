@@ -49,13 +49,13 @@ namespace Patronum.Grafico
             this.btCancelar = new System.Windows.Forms.Button();
             this.tbId = new System.Windows.Forms.TextBox();
             this.tbObs = new System.Windows.Forms.TextBox();
-            this.Ativo = new System.Windows.Forms.CheckBox();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.Observacoes = new System.Windows.Forms.Label();
             this.tbFornecedor = new System.Windows.Forms.TextBox();
             this.tbGestor = new System.Windows.Forms.TextBox();
             this.tbSetor = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -213,17 +213,6 @@ namespace Patronum.Grafico
             this.tbObs.Size = new System.Drawing.Size(490, 52);
             this.tbObs.TabIndex = 17;
             // 
-            // Ativo
-            // 
-            this.Ativo.AutoSize = true;
-            this.Ativo.Location = new System.Drawing.Point(192, 10);
-            this.Ativo.Name = "Ativo";
-            this.Ativo.Size = new System.Drawing.Size(50, 17);
-            this.Ativo.TabIndex = 21;
-            this.Ativo.Text = "Ativo";
-            this.Ativo.UseVisualStyleBackColor = true;
-            this.Ativo.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
-            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -273,18 +262,28 @@ namespace Patronum.Grafico
             this.tbSetor.Size = new System.Drawing.Size(724, 20);
             this.tbSetor.TabIndex = 10;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(172, 11);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(50, 17);
+            this.checkBox1.TabIndex = 105;
+            this.checkBox1.Text = "Ativo";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(834, 312);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tbSetor);
             this.Controls.Add(this.tbGestor);
             this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Ativo);
             this.Controls.Add(this.tbObs);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btSalvar);
@@ -333,12 +332,12 @@ namespace Patronum.Grafico
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.TextBox tbId;
         private System.Windows.Forms.TextBox tbObs;
-        private System.Windows.Forms.CheckBox Ativo;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Observacoes;
         private System.Windows.Forms.TextBox tbFornecedor;
         private System.Windows.Forms.TextBox tbGestor;
         private System.Windows.Forms.TextBox tbSetor;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

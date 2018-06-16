@@ -43,6 +43,7 @@ namespace Patronum.Grafico
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
             patrimonio.PrazoGarant = Convert.ToDateTime(tbPrazoGarant.Text);
             patrimonio.Obs = tbObs.Text;
+            patrimonio.Ativo = checkBox1.Checked;
 
             Validacao validacao;
             if (PatrimonioSelecionado != null)
@@ -94,17 +95,7 @@ namespace Patronum.Grafico
                 this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
                 this.tbPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
                 this.tbObs.Text = PatrimonioSelecionado.Obs;
-            }
-        }
-
-        public void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.checkbox = Ativo.Checked;
-            Properties.Settings.Default.Save();
-
-            if (Ativo.Checked)
-            {
-
+                this.checkBox1.Checked = PatrimonioSelecionado.Ativo;
             }
         }
     }

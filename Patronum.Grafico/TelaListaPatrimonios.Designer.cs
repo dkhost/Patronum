@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
@@ -44,7 +44,8 @@
             this.Nfe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
@@ -56,13 +57,13 @@
             this.btAdicionar.Name = "btAdicionar";
             this.btAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btAdicionar.TabIndex = 0;
-            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.Text = "Cadastrar";
             this.btAdicionar.UseVisualStyleBackColor = true;
             this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(93, 12);
+            this.btRemover.Location = new System.Drawing.Point(933, 13);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 1;
@@ -72,11 +73,11 @@
             // 
             // btEditar
             // 
-            this.btEditar.Location = new System.Drawing.Point(174, 12);
+            this.btEditar.Location = new System.Drawing.Point(93, 12);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(75, 23);
             this.btEditar.TabIndex = 2;
-            this.btEditar.Text = "Editar";
+            this.btEditar.Text = "Detalhes";
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
@@ -86,8 +87,6 @@
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(100, 20);
             this.tbFiltro.TabIndex = 8;
-            this.tbFiltro.Enter += new System.EventHandler(this.tbFiltro_Enter);
-            this.tbFiltro.Leave += new System.EventHandler(this.tbFiltro_Leave);
             // 
             // pictureBox1
             // 
@@ -108,6 +107,7 @@
             this.btFiltro.TabIndex = 0;
             this.btFiltro.Text = "Filtrar";
             this.btFiltro.UseVisualStyleBackColor = true;
+            this.btFiltro.Click += new System.EventHandler(this.btFiltro_Click);
             // 
             // dgPatrimonios
             // 
@@ -123,21 +123,22 @@
             this.Nfe,
             this.DataAquisi,
             this.PrazoGarant,
+            this.ServiceTag,
             this.Ativo,
             this.Obs});
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 42);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.Size = new System.Drawing.Size(1404, 811);
+            this.dgPatrimonios.Size = new System.Drawing.Size(996, 811);
             this.dgPatrimonios.TabIndex = 9;
             // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Format = "00000";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "00000";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
             this.Id.FillWeight = 62.80566F;
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
@@ -204,15 +205,19 @@
             this.PrazoGarant.ReadOnly = true;
             this.PrazoGarant.Width = 107;
             // 
+            // ServiceTag
+            // 
+            this.ServiceTag.DataPropertyName = "ServiceTag";
+            this.ServiceTag.HeaderText = "ServiceTag";
+            this.ServiceTag.Name = "ServiceTag";
+            this.ServiceTag.ReadOnly = true;
+            // 
             // Ativo
             // 
-            this.Ativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Ativo.DataPropertyName = "ckAtivo";
-            this.Ativo.HeaderText = "Está ativo ?";
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
             this.Ativo.Name = "Ativo";
             this.Ativo.ReadOnly = true;
-            this.Ativo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Ativo.Width = 73;
             // 
             // Obs
             // 
@@ -229,7 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1428, 865);
+            this.ClientSize = new System.Drawing.Size(1020, 741);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
@@ -266,7 +271,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nfe;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
     }
 }
