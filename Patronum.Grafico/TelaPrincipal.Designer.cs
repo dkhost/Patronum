@@ -117,7 +117,6 @@
             this.Name = "TelaPrincipal";
             this.Text = "Patronum - Gestão de Patrimônios";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
