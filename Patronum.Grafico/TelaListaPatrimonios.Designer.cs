@@ -47,6 +47,7 @@
             this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btRecarregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             this.SuspendLayout();
@@ -100,11 +101,10 @@
             // 
             // btFiltro
             // 
-            this.btFiltro.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btFiltro.Location = new System.Drawing.Point(464, 9);
             this.btFiltro.Name = "btFiltro";
             this.btFiltro.Size = new System.Drawing.Size(75, 23);
-            this.btFiltro.TabIndex = 0;
+            this.btFiltro.TabIndex = 10;
             this.btFiltro.Text = "Filtrar";
             this.btFiltro.UseVisualStyleBackColor = true;
             this.btFiltro.Click += new System.EventHandler(this.btFiltro_Click);
@@ -143,7 +143,7 @@
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 65;
+            this.Id.Width = 63;
             // 
             // Nome
             // 
@@ -153,7 +153,7 @@
             this.Nome.HeaderText = "Nome do Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 116;
+            this.Nome.Width = 114;
             // 
             // Setor
             // 
@@ -163,7 +163,7 @@
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
-            this.Setor.Width = 57;
+            this.Setor.Width = 55;
             // 
             // Gestor
             // 
@@ -173,7 +173,7 @@
             this.Gestor.HeaderText = "Gestor do Setor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 75;
+            this.Gestor.Width = 73;
             // 
             // Nfe
             // 
@@ -183,7 +183,7 @@
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 78;
+            this.Nfe.Width = 76;
             // 
             // DataAquisi
             // 
@@ -193,7 +193,7 @@
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 109;
+            this.DataAquisi.Width = 107;
             // 
             // PrazoGarant
             // 
@@ -203,7 +203,7 @@
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 107;
+            this.PrazoGarant.Width = 105;
             // 
             // ServiceTag
             // 
@@ -226,7 +226,17 @@
             this.Obs.HeaderText = "Observações";
             this.Obs.Name = "Obs";
             this.Obs.ReadOnly = true;
-            this.Obs.Width = 95;
+            this.Obs.Width = 93;
+            // 
+            // btRecarregar
+            // 
+            this.btRecarregar.Location = new System.Drawing.Point(545, 9);
+            this.btRecarregar.Name = "btRecarregar";
+            this.btRecarregar.Size = new System.Drawing.Size(75, 23);
+            this.btRecarregar.TabIndex = 11;
+            this.btRecarregar.Text = "Recarregar";
+            this.btRecarregar.UseVisualStyleBackColor = true;
+            this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // TelaListaPatrimonios
             // 
@@ -235,6 +245,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1020, 741);
+            this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
@@ -274,5 +285,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
+        private System.Windows.Forms.Button btRecarregar;
     }
 }

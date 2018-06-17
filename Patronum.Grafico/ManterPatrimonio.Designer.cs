@@ -55,7 +55,7 @@ namespace Patronum.Grafico
             this.tbFornecedor = new System.Windows.Forms.TextBox();
             this.tbGestor = new System.Windows.Forms.TextBox();
             this.tbSetor = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckbAtivo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -262,15 +262,17 @@ namespace Patronum.Grafico
             this.tbSetor.Size = new System.Drawing.Size(724, 20);
             this.tbSetor.TabIndex = 10;
             // 
-            // checkBox1
+            // ckbAtivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(172, 11);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 105;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbAtivo.AutoSize = true;
+            this.ckbAtivo.Checked = true;
+            this.ckbAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbAtivo.Location = new System.Drawing.Point(172, 11);
+            this.ckbAtivo.Name = "ckbAtivo";
+            this.ckbAtivo.Size = new System.Drawing.Size(50, 17);
+            this.ckbAtivo.TabIndex = 105;
+            this.ckbAtivo.Text = "Ativo";
+            this.ckbAtivo.UseVisualStyleBackColor = true;
             // 
             // ManterPatrimonio
             // 
@@ -278,7 +280,7 @@ namespace Patronum.Grafico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(834, 312);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.ckbAtivo);
             this.Controls.Add(this.tbSetor);
             this.Controls.Add(this.tbGestor);
             this.Controls.Add(this.tbFornecedor);
@@ -338,6 +340,6 @@ namespace Patronum.Grafico
         private System.Windows.Forms.TextBox tbFornecedor;
         private System.Windows.Forms.TextBox tbGestor;
         private System.Windows.Forms.TextBox tbSetor;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckbAtivo;
     }
 }
