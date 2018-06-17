@@ -89,6 +89,5 @@ namespace Patronum.Grafico
             Sobre tela = new Sobre();
             tela.Show();
         }
-        
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
@@ -37,17 +37,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btFiltro = new System.Windows.Forms.Button();
             this.dgPatrimonios = new System.Windows.Forms.DataGridView();
+            this.btRecarregar = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gestor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nfe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btRecarregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(933, 13);
+            this.btRemover.Location = new System.Drawing.Point(1252, 11);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 1;
@@ -113,37 +113,57 @@
             // 
             this.dgPatrimonios.AllowUserToAddRows = false;
             this.dgPatrimonios.AllowUserToDeleteRows = false;
-            this.dgPatrimonios.AllowUserToOrderColumns = true;
+            this.dgPatrimonios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgPatrimonios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgPatrimonios.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Ativo,
             this.Nome,
             this.Setor,
             this.Gestor,
             this.Nfe,
+            this.ServiceTag,
             this.DataAquisi,
             this.PrazoGarant,
-            this.ServiceTag,
-            this.Ativo,
             this.Obs});
             this.dgPatrimonios.Location = new System.Drawing.Point(12, 42);
             this.dgPatrimonios.Name = "dgPatrimonios";
             this.dgPatrimonios.ReadOnly = true;
-            this.dgPatrimonios.Size = new System.Drawing.Size(996, 811);
+            this.dgPatrimonios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgPatrimonios.Size = new System.Drawing.Size(1315, 800);
             this.dgPatrimonios.TabIndex = 9;
+            // 
+            // btRecarregar
+            // 
+            this.btRecarregar.Location = new System.Drawing.Point(545, 9);
+            this.btRecarregar.Name = "btRecarregar";
+            this.btRecarregar.Size = new System.Drawing.Size(75, 23);
+            this.btRecarregar.TabIndex = 11;
+            this.btRecarregar.Text = "Recarregar";
+            this.btRecarregar.UseVisualStyleBackColor = true;
+            this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Format = "00000";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "0000";
+            dataGridViewCellStyle8.NullValue = null;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle8;
             this.Id.FillWeight = 62.80566F;
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Width = 63;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
             // 
             // Nome
             // 
@@ -185,6 +205,13 @@
             this.Nfe.ReadOnly = true;
             this.Nfe.Width = 76;
             // 
+            // ServiceTag
+            // 
+            this.ServiceTag.DataPropertyName = "ServiceTag";
+            this.ServiceTag.HeaderText = "ServiceTag";
+            this.ServiceTag.Name = "ServiceTag";
+            this.ServiceTag.ReadOnly = true;
+            // 
             // DataAquisi
             // 
             this.DataAquisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -205,20 +232,6 @@
             this.PrazoGarant.ReadOnly = true;
             this.PrazoGarant.Width = 105;
             // 
-            // ServiceTag
-            // 
-            this.ServiceTag.DataPropertyName = "ServiceTag";
-            this.ServiceTag.HeaderText = "ServiceTag";
-            this.ServiceTag.Name = "ServiceTag";
-            this.ServiceTag.ReadOnly = true;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "Ativo";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            // 
             // Obs
             // 
             this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -228,23 +241,14 @@
             this.Obs.ReadOnly = true;
             this.Obs.Width = 93;
             // 
-            // btRecarregar
-            // 
-            this.btRecarregar.Location = new System.Drawing.Point(545, 9);
-            this.btRecarregar.Name = "btRecarregar";
-            this.btRecarregar.Size = new System.Drawing.Size(75, 23);
-            this.btRecarregar.TabIndex = 11;
-            this.btRecarregar.Text = "Recarregar";
-            this.btRecarregar.UseVisualStyleBackColor = true;
-            this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1020, 741);
+            this.ClientSize = new System.Drawing.Size(1356, 741);
             this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
@@ -275,16 +279,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btFiltro;
         private System.Windows.Forms.DataGridView dgPatrimonios;
+        private System.Windows.Forms.Button btRecarregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Setor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gestor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nfe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrazoGarant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obs;
-        private System.Windows.Forms.Button btRecarregar;
     }
 }

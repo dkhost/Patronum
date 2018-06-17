@@ -210,7 +210,7 @@ namespace Patronum.Grafico
             this.tbObs.Location = new System.Drawing.Point(115, 227);
             this.tbObs.Multiline = true;
             this.tbObs.Name = "tbObs";
-            this.tbObs.Size = new System.Drawing.Size(490, 52);
+            this.tbObs.Size = new System.Drawing.Size(418, 52);
             this.tbObs.TabIndex = 17;
             // 
             // printPreviewDialog1
@@ -225,7 +225,7 @@ namespace Patronum.Grafico
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, 195);
+            this.button1.Location = new System.Drawing.Point(713, 204);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 20;

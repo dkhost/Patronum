@@ -95,11 +95,9 @@ namespace Patronum.Grafico
 
         private void btFiltro_Click(object sender, EventArgs e)
         {
-            var filtro = tbFiltro.Text;
-            var nomeFiltrado = Program.Gerenciador.TodosOsPatrimonios().Where(m => m.Nome == filtro).ToList();
-            var setorFiltrado = Program.Gerenciador.TodosOsPatrimonios().Where(m => m.Nome == filtro).ToList();
-            dgPatrimonios.DataSource = nomeFiltrado;
-            dgPatrimonios.DataSource = setorFiltrado;
+            string filtro = tbFiltro.Text;
+            var patrimonioFiltrado = Program.Gerenciador.TodosOsPatrimonios().Where(m => m.Nome == filtro).ToList();
+            dgPatrimonios.DataSource = patrimonioFiltrado;
         }
 
         private void button1_Click(object sender, EventArgs e)
