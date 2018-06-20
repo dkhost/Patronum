@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gestor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nfe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,6 +124,7 @@
             this.Nome,
             this.Setor,
             this.Gestor,
+            this.Fornecedor,
             this.Nfe,
             this.ServiceTag,
             this.DataAquisi,
@@ -149,14 +151,14 @@
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle8.Format = "0000";
-            dataGridViewCellStyle8.NullValue = null;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Format = "0000";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.FillWeight = 62.80566F;
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 63;
+            this.Id.Width = 65;
             // 
             // Ativo
             // 
@@ -173,7 +175,7 @@
             this.Nome.HeaderText = "Nome do Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 114;
+            this.Nome.Width = 116;
             // 
             // Setor
             // 
@@ -183,7 +185,7 @@
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
-            this.Setor.Width = 55;
+            this.Setor.Width = 57;
             // 
             // Gestor
             // 
@@ -193,7 +195,14 @@
             this.Gestor.HeaderText = "Gestor do Setor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 73;
+            this.Gestor.Width = 75;
+            // 
+            // Fornecedor
+            // 
+            this.Fornecedor.DataPropertyName = "Fornecedor";
+            this.Fornecedor.HeaderText = "Fornecedor";
+            this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.ReadOnly = true;
             // 
             // Nfe
             // 
@@ -203,7 +212,7 @@
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 76;
+            this.Nfe.Width = 78;
             // 
             // ServiceTag
             // 
@@ -220,7 +229,7 @@
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 107;
+            this.DataAquisi.Width = 109;
             // 
             // PrazoGarant
             // 
@@ -230,7 +239,7 @@
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 105;
+            this.PrazoGarant.Width = 107;
             // 
             // Obs
             // 
@@ -239,7 +248,7 @@
             this.Obs.HeaderText = "Observações";
             this.Obs.Name = "Obs";
             this.Obs.ReadOnly = true;
-            this.Obs.Width = 93;
+            this.Obs.Width = 95;
             // 
             // TelaListaPatrimonios
             // 
@@ -285,6 +294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Setor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gestor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nfe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataAquisi;

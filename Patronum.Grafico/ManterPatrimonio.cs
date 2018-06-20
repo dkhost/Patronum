@@ -21,6 +21,21 @@ namespace Patronum.Grafico
         {
             InitializeComponent();
         }
+
+        private void ManterPatrimonio_Load(object sender, EventArgs e)
+        {
+            CarregarComboBoxes();
+        }
+
+        private void CarregarComboBoxes()
+        {
+            {
+                cbTeste.DisplayMember = "Descricao";
+                cbTeste.ValueMember = "Fornecedor";
+                cbTeste.DataSource = Program.Gerenciador.TodosOsPatrimonios();
+            }
+        }
+
         private void btSalvar_Click(object sender, EventArgs e)
         {
             Patrimonio patrimonio = new Patrimonio();

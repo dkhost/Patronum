@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,14 @@ namespace Patronum.Negocio.Models
         public String ServiceTag { get; set; }
         public String Obs { get; set; }
         public bool Ativo { get; set; }
+
+        [NotMapped]
+        public String Descricao
+        {
+            get
+            {
+                return this.Setor + " - " + this.Nome;
+            }
+        }
     }
 }

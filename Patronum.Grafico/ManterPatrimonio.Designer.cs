@@ -56,6 +56,7 @@ namespace Patronum.Grafico
             this.tbGestor = new System.Windows.Forms.TextBox();
             this.tbSetor = new System.Windows.Forms.TextBox();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
+            this.cbTeste = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -274,12 +275,21 @@ namespace Patronum.Grafico
             this.ckbAtivo.Text = "Ativo";
             this.ckbAtivo.UseVisualStyleBackColor = true;
             // 
+            // cbTeste
+            // 
+            this.cbTeste.FormattingEnabled = true;
+            this.cbTeste.Location = new System.Drawing.Point(438, 179);
+            this.cbTeste.Name = "cbTeste";
+            this.cbTeste.Size = new System.Drawing.Size(121, 21);
+            this.cbTeste.TabIndex = 106;
+            // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(834, 312);
+            this.Controls.Add(this.cbTeste);
             this.Controls.Add(this.ckbAtivo);
             this.Controls.Add(this.tbSetor);
             this.Controls.Add(this.tbGestor);
@@ -308,6 +318,7 @@ namespace Patronum.Grafico
             this.Name = "ManterPatrimonio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes do Patrimônio";
+            this.Load += new System.EventHandler(this.ManterPatrimonio_Load);
             this.Shown += new System.EventHandler(this.ManterPatrimonio_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -341,5 +352,6 @@ namespace Patronum.Grafico
         private System.Windows.Forms.TextBox tbGestor;
         private System.Windows.Forms.TextBox tbSetor;
         private System.Windows.Forms.CheckBox ckbAtivo;
+        private System.Windows.Forms.ComboBox cbTeste;
     }
 }
