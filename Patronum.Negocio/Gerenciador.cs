@@ -10,15 +10,13 @@ namespace Patronum.Negocio
 {
     public class Gerenciador
     {
-        private BancoPatrimonio bancoPatrimonio = new BancoPatrimonio();
-
-        private BancoSetor bancoSetor = new BancoSetor();
+        private Banco banco = new Banco();
 
         public Validacao RemoverPatrimonio(Patrimonio patrimonio)
         {
             Validacao validacao = new Validacao();
-            bancoPatrimonio.Patrimonios.Remove(patrimonio);
-            bancoPatrimonio.SaveChanges();
+            banco.Patrimonios.Remove(patrimonio);
+            banco.SaveChanges();
             return validacao;
         }
 
@@ -28,7 +26,7 @@ namespace Patronum.Negocio
             Setor setorBanco = BuscaSetorPorId(setorAlterado.SetorId);
             setorBanco.NomeSetor = setorAlterado.NomeSetor;
             setorBanco.NomeGestor = setorAlterado.NomeGestor;
-            this.bancoPatrimonio.SaveChanges();
+            this.banco.SaveChanges();
             return validacao;
         }
 
@@ -46,25 +44,25 @@ namespace Patronum.Negocio
             patrimonioBanco.ServiceTag = patrimonioAlterado.ServiceTag;
             patrimonioBanco.Obs = patrimonioAlterado.Obs;
             patrimonioBanco.Ativo = patrimonioAlterado.Ativo;
-            this.bancoPatrimonio.SaveChanges();
+            this.banco.SaveChanges();
             return validacao;
         }
 
         public Validacao CadastrarSetor(Setor setorAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.bancoSetor.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any())
+            if (this.banco.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any())
             {
                 validacao.Mensagens.Add("Nome do Setor", "Já existe um Setor com esse Nome");
             }
-            if(this.bancoSetor.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any())
+            if(this.banco.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any())
             {
                 validacao.Mensagens.Add("Nome do Gestor", "Já existe um Gestor com esse Nome");
             }
             if (validacao.Valido)
             {
-                this.bancoSetor.Setores.Add(setorAdicionado);
-                this.bancoSetor.SaveChanges();
+                this.banco.Setores.Add(setorAdicionado);
+                this.banco.SaveChanges();
             }
             return validacao;
         }
@@ -72,7 +70,7 @@ namespace Patronum.Negocio
         public Validacao CadastrarPatrimonio(Patrimonio patrimonioAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.bancoPatrimonio.Patrimonios.Where(c => c.ServiceTag == patrimonioAdicionado.ServiceTag).Any())
+            if (this.banco.Patrimonios.Where(c => c.ServiceTag == patrimonioAdicionado.ServiceTag).Any())
             {
                 validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
             }
@@ -98,30 +96,30 @@ namespace Patronum.Negocio
             }
             if (validacao.Valido)
             {
-                this.bancoPatrimonio.Patrimonios.Add(patrimonioAdicionado);
-                this.bancoPatrimonio.SaveChanges();
+                this.banco.Patrimonios.Add(patrimonioAdicionado);
+                this.banco.SaveChanges();
             }
             return validacao;
         }
 
         public Patrimonio BuscaPatrimonioPorId(long id)
         {
-            return this.bancoPatrimonio.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
+            return this.banco.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public Setor BuscaSetorPorId(long id)
         {
-            return this.bancoSetor.Setores.Where(c => c.SetorId == id).FirstOrDefault();
+            return this.banco.Setores.Where(c => c.SetorId == id).FirstOrDefault();
         }
 
          public List<Patrimonio> TodosOsPatrimonios()
         {
-            return this.bancoPatrimonio.Patrimonios.ToList();
+            return this.banco.Patrimonios.ToList();
         }
 
         public List<Setor> TodosOsSetores()
         {
-            return this.bancoSetor.Setores.ToList();
+            return this.banco.Setores.ToList();
         }
     }
 }

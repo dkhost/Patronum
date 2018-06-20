@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Patronum.Negocio.Models
 {
+    [Table(name: "Patrimonios")]
     public class Patrimonio : Setor
     {
         public long Id { get; set; }

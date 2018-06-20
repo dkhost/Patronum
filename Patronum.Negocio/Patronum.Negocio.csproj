@@ -66,8 +66,7 @@
     <Compile Include="Gerenciador.cs" />
     <Compile Include="Models\Patrimonio.cs" />
     <Compile Include="Models\Setor.cs" />
-    <Compile Include="Persistencia\BancoSetor.cs" />
-    <Compile Include="Persistencia\BancoPatrimonio.cs" />
+    <Compile Include="Persistencia\Banco.cs" />
     <Compile Include="Persistencia\Dados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validacao.cs" />
