@@ -92,7 +92,7 @@ namespace Patronum.Grafico
 
         private void setoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarSetor tela = new CadastrarSetor();
+            ManterSetor tela = new ManterSetor();
             tela.Show();
         }
     }

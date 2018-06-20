@@ -54,7 +54,6 @@ namespace Patronum.Grafico
             this.Observacoes = new System.Windows.Forms.Label();
             this.tbFornecedor = new System.Windows.Forms.TextBox();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.cbSetores = new System.Windows.Forms.ComboBox();
             this.cbGestores = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -261,13 +260,6 @@ namespace Patronum.Grafico
             this.ckbAtivo.Text = "Ativo";
             this.ckbAtivo.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 110;
-            // 
             // cbSetores
             // 
             this.cbSetores.FormattingEnabled = true;
@@ -292,7 +284,6 @@ namespace Patronum.Grafico
             this.ClientSize = new System.Drawing.Size(834, 312);
             this.Controls.Add(this.cbGestores);
             this.Controls.Add(this.cbSetores);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.ckbAtivo);
             this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.Observacoes);
@@ -351,7 +342,6 @@ namespace Patronum.Grafico
         private System.Windows.Forms.Label Observacoes;
         private System.Windows.Forms.TextBox tbFornecedor;
         private System.Windows.Forms.CheckBox ckbAtivo;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cbSetores;
         private System.Windows.Forms.ComboBox cbGestores;
     }

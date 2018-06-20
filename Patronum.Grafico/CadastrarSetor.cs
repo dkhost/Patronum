@@ -12,14 +12,31 @@ using System.Windows.Forms;
 
 namespace Patronum.Grafico
 {
-    public partial class CadastrarSetor : Form
+    public partial class ManterSetor : Form
     {
-        public CadastrarSetor()
+        public ManterSetor()
         {
             InitializeComponent();
         }
 
-        private void btSalvar_Click(object sender, EventArgs e)
+        private void ManterSetor_Load(object sender, EventArgs e)
+        {
+            CarregarSetores();
+        }
+
+        private void ManterSetor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CarregarSetores();
+        }
+
+        private void CarregarSetores()
+        {
+            dgSetores.AutoGenerateColumns = false;
+            List<Setor> setores = Program.Gerenciador.TodosOsSetores();
+            dgSetores.DataSource = setores;
+        }
+
+    private void btSalvar_Click(object sender, EventArgs e)
         {
             Setor setor = new Setor();
 
@@ -47,7 +64,46 @@ namespace Patronum.Grafico
                 MessageBox.Show("Setor cadastrado com sucesso!");
 
             }
-            this.Close();
+        }
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                Setor setorSelecionado = (Setor)dgSetores.SelectedRows[0].DataBoundItem;
+                AbreTelaInclusaoAlteracao(setorSelecionado);
+            }
+        }
+
+        private bool VerificarSelecao()
+        {
+            if (dgSetores.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Selecione uma linha");
+                return false;
+            }
+            return true;
+        }
+
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+            if (VerificarSelecao())
+            {
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja remover esse patrimônio da lista ?", "Você está prestes a remover o patrimônio selecionado", MessageBoxButtons.OKCancel);
+                if (resultado == DialogResult.OK)
+                {
+                    Setor setorSelecionado = (Setor)dgSetores.SelectedRows[0].DataBoundItem;
+                    var validacao = Program.Gerenciador.RemoverPatrimonio(setorSelecionado);
+                    if (validacao.Valido)
+                    {
+                        MessageBox.Show("Setor removido com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocorreu um erro ao remover esse patrimônio!");
+                    }
+                    CarregarSetores();
+                }
+            }
         }
     }
-}
