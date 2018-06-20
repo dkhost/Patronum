@@ -89,5 +89,11 @@ namespace Patronum.Grafico
             Sobre tela = new Sobre();
             tela.Show();
         }
+
+        private void setoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarSetor tela = new CadastrarSetor();
+            tela.Show();
+        }
     }
 }

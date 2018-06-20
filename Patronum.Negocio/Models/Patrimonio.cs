@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace Patronum.Negocio.Models
 {
-    public class Patrimonio
+    public class Patrimonio : Setor
     {
         public long Id { get; set; }
         public String Nome { get; set; }
-        public String Setor { get; set; }
-        public String Gestor { get; set; }
         public String Fornecedor { get; set; }
         public DateTime DataAquisi { get; set; }
         public DateTime PrazoGarant { get; set; }
@@ -20,14 +18,7 @@ namespace Patronum.Negocio.Models
         public String ServiceTag { get; set; }
         public String Obs { get; set; }
         public bool Ativo { get; set; }
+        public Object Teste { get; set; }
 
-        [NotMapped]
-        public String Descricao
-        {
-            get
-            {
-                return this.Setor + " - " + this.Nome;
-            }
-        }
     }
 }

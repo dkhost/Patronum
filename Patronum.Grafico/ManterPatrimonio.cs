@@ -17,6 +17,8 @@ namespace Patronum.Grafico
     {
         public Patrimonio PatrimonioSelecionado { get; set; }
 
+        Patrimonio patrimonio = new Patrimonio();
+
         public ManterPatrimonio()
         {
             InitializeComponent();
@@ -30,16 +32,18 @@ namespace Patronum.Grafico
         private void CarregarComboBoxes()
         {
             {
-                cbTeste.DisplayMember = "Descricao";
-                cbTeste.ValueMember = "Id";
-                cbTeste.DataSource = Program.Gerenciador.TodosOsPatrimonios();
+                cbSetores.DisplayMember = "DescricaoSetor";
+                cbSetores.ValueMember = "Id";
+                cbSetores.DataSource = Program.Gerenciador.TodosOsSetores();
+
+                cbGestores.DisplayMember = "DescricaoGestor";
+                cbGestores.ValueMember = "Id";
+                cbGestores.DataSource = Program.Gerenciador.TodosOsSetores();
             }
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            Patrimonio patrimonio = new Patrimonio();
-
             if (Int64.TryParse(tbId.Text, out long value))
             {
                 patrimonio.Id = value;
@@ -51,8 +55,8 @@ namespace Patronum.Grafico
 
             patrimonio.Nome = tbNome.Text;
             patrimonio.Nfe = tbNfe.Text;
-            patrimonio.Setor = tbSetor.Text;
-            patrimonio.Gestor = tbGestor.Text;
+            patrimonio.NomeSetor = cbSetores.Text;
+            patrimonio.NomeGestor = cbGestores.Text;
             patrimonio.Fornecedor = tbFornecedor.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
@@ -102,8 +106,8 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.tbSetor.Text = PatrimonioSelecionado.Setor;
-                this.tbGestor.Text = PatrimonioSelecionado.Gestor;
+                this.cbSetores.Text = PatrimonioSelecionado.NomeSetor;
+                this.cbGestores.Text = PatrimonioSelecionado.NomeGestor;
                 this.tbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;

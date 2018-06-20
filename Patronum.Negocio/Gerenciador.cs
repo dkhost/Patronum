@@ -10,13 +10,25 @@ namespace Patronum.Negocio
 {
     public class Gerenciador
     {
-        private Banco banco = new Banco();
+        private BancoPatrimonio bancoPatrimonio = new BancoPatrimonio();
+
+        private BancoSetor bancoSetor = new BancoSetor();
 
         public Validacao RemoverPatrimonio(Patrimonio patrimonio)
         {
             Validacao validacao = new Validacao();
-            banco.Patrimonios.Remove(patrimonio);
-            banco.SaveChanges();
+            bancoPatrimonio.Patrimonios.Remove(patrimonio);
+            bancoPatrimonio.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao AlterarSetor(Setor setorAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Setor setorBanco = BuscaSetorPorId(setorAlterado.SetorId);
+            setorBanco.NomeSetor = setorAlterado.NomeSetor;
+            setorBanco.NomeGestor = setorAlterado.NomeGestor;
+            this.bancoPatrimonio.SaveChanges();
             return validacao;
         }
 
@@ -25,8 +37,8 @@ namespace Patronum.Negocio
             Validacao validacao = new Validacao();
             Patrimonio patrimonioBanco = BuscaPatrimonioPorId(patrimonioAlterado.Id);
             patrimonioBanco.Nome = patrimonioAlterado.Nome;
-            patrimonioBanco.Setor = patrimonioAlterado.Setor;
-            patrimonioBanco.Gestor = patrimonioAlterado.Gestor;
+            patrimonioBanco.NomeSetor = patrimonioAlterado.NomeSetor;
+            patrimonioBanco.NomeGestor = patrimonioAlterado.NomeGestor;
             patrimonioBanco.Fornecedor = patrimonioAlterado.Fornecedor;
             patrimonioBanco.DataAquisi = Convert.ToDateTime(patrimonioAlterado.DataAquisi);
             patrimonioBanco.PrazoGarant = Convert.ToDateTime(patrimonioAlterado.PrazoGarant);
@@ -34,18 +46,37 @@ namespace Patronum.Negocio
             patrimonioBanco.ServiceTag = patrimonioAlterado.ServiceTag;
             patrimonioBanco.Obs = patrimonioAlterado.Obs;
             patrimonioBanco.Ativo = patrimonioAlterado.Ativo;
-            this.banco.SaveChanges();
+            this.bancoPatrimonio.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao CadastrarSetor(Setor setorAdicionado)
+        {
+            Validacao validacao = new Validacao();
+            if (this.bancoSetor.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any())
+            {
+                validacao.Mensagens.Add("Nome do Setor", "Já existe um Setor com esse Nome");
+            }
+            if(this.bancoSetor.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any())
+            {
+                validacao.Mensagens.Add("Nome do Gestor", "Já existe um Gestor com esse Nome");
+            }
+            if (validacao.Valido)
+            {
+                this.bancoSetor.Setores.Add(setorAdicionado);
+                this.bancoSetor.SaveChanges();
+            }
             return validacao;
         }
 
         public Validacao CadastrarPatrimonio(Patrimonio patrimonioAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Patrimonios.Where(c => c.ServiceTag == patrimonioAdicionado.ServiceTag).Any())
+            if (this.bancoPatrimonio.Patrimonios.Where(c => c.ServiceTag == patrimonioAdicionado.ServiceTag).Any())
             {
                 validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
             }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.Setor))
+            if (String.IsNullOrEmpty(patrimonioAdicionado.NomeSetor))
             {
                 validacao.Mensagens.Add("Setor", "O campo Setor não pode ser nulo");
             }
@@ -53,7 +84,7 @@ namespace Patronum.Negocio
             {
                 validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
             }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.Gestor))
+            if (String.IsNullOrEmpty(patrimonioAdicionado.NomeGestor))
             {
                 validacao.Mensagens.Add("Gestor", "O campo Gestor não pode ser nulo");
             }
@@ -67,20 +98,30 @@ namespace Patronum.Negocio
             }
             if (validacao.Valido)
             {
-                this.banco.Patrimonios.Add(patrimonioAdicionado);
-                this.banco.SaveChanges();
+                this.bancoPatrimonio.Patrimonios.Add(patrimonioAdicionado);
+                this.bancoPatrimonio.SaveChanges();
             }
             return validacao;
         }
 
         public Patrimonio BuscaPatrimonioPorId(long id)
         {
-            return this.banco.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
+            return this.bancoPatrimonio.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
+        }
+
+        public Setor BuscaSetorPorId(long id)
+        {
+            return this.bancoSetor.Setores.Where(c => c.SetorId == id).FirstOrDefault();
         }
 
          public List<Patrimonio> TodosOsPatrimonios()
         {
-            return this.banco.Patrimonios.ToList();
+            return this.bancoPatrimonio.Patrimonios.ToList();
+        }
+
+        public List<Setor> TodosOsSetores()
+        {
+            return this.bancoSetor.Setores.ToList();
         }
     }
 }

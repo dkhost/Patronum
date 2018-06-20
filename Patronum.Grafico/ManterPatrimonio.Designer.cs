@@ -53,10 +53,10 @@ namespace Patronum.Grafico
             this.button1 = new System.Windows.Forms.Button();
             this.Observacoes = new System.Windows.Forms.Label();
             this.tbFornecedor = new System.Windows.Forms.TextBox();
-            this.tbGestor = new System.Windows.Forms.TextBox();
-            this.tbSetor = new System.Windows.Forms.TextBox();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
-            this.cbTeste = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cbSetores = new System.Windows.Forms.ComboBox();
+            this.cbGestores = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -249,20 +249,6 @@ namespace Patronum.Grafico
             this.tbFornecedor.Size = new System.Drawing.Size(706, 20);
             this.tbFornecedor.TabIndex = 12;
             // 
-            // tbGestor
-            // 
-            this.tbGestor.Location = new System.Drawing.Point(64, 79);
-            this.tbGestor.Name = "tbGestor";
-            this.tbGestor.Size = new System.Drawing.Size(724, 20);
-            this.tbGestor.TabIndex = 11;
-            // 
-            // tbSetor
-            // 
-            this.tbSetor.Location = new System.Drawing.Point(64, 57);
-            this.tbSetor.Name = "tbSetor";
-            this.tbSetor.Size = new System.Drawing.Size(724, 20);
-            this.tbSetor.TabIndex = 10;
-            // 
             // ckbAtivo
             // 
             this.ckbAtivo.AutoSize = true;
@@ -275,13 +261,28 @@ namespace Patronum.Grafico
             this.ckbAtivo.Text = "Ativo";
             this.ckbAtivo.UseVisualStyleBackColor = true;
             // 
-            // cbTeste
+            // button2
             // 
-            this.cbTeste.FormattingEnabled = true;
-            this.cbTeste.Location = new System.Drawing.Point(438, 179);
-            this.cbTeste.Name = "cbTeste";
-            this.cbTeste.Size = new System.Drawing.Size(121, 21);
-            this.cbTeste.TabIndex = 106;
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 110;
+            // 
+            // cbSetores
+            // 
+            this.cbSetores.FormattingEnabled = true;
+            this.cbSetores.Location = new System.Drawing.Point(66, 56);
+            this.cbSetores.Name = "cbSetores";
+            this.cbSetores.Size = new System.Drawing.Size(722, 21);
+            this.cbSetores.TabIndex = 109;
+            // 
+            // cbGestores
+            // 
+            this.cbGestores.FormattingEnabled = true;
+            this.cbGestores.Location = new System.Drawing.Point(66, 79);
+            this.cbGestores.Name = "cbGestores";
+            this.cbGestores.Size = new System.Drawing.Size(722, 21);
+            this.cbGestores.TabIndex = 111;
             // 
             // ManterPatrimonio
             // 
@@ -289,10 +290,10 @@ namespace Patronum.Grafico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(834, 312);
-            this.Controls.Add(this.cbTeste);
+            this.Controls.Add(this.cbGestores);
+            this.Controls.Add(this.cbSetores);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.ckbAtivo);
-            this.Controls.Add(this.tbSetor);
-            this.Controls.Add(this.tbGestor);
             this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);
@@ -349,9 +350,9 @@ namespace Patronum.Grafico
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Observacoes;
         private System.Windows.Forms.TextBox tbFornecedor;
-        private System.Windows.Forms.TextBox tbGestor;
-        private System.Windows.Forms.TextBox tbSetor;
         private System.Windows.Forms.CheckBox ckbAtivo;
-        private System.Windows.Forms.ComboBox cbTeste;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbSetores;
+        private System.Windows.Forms.ComboBox cbGestores;
     }
 }

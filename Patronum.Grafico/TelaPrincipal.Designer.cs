@@ -36,6 +36,7 @@
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.setoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,8 @@
             // 
             this.cadastrosToolStripMenuItem.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.patrimôniosToolStripMenuItem});
+            this.patrimôniosToolStripMenuItem,
+            this.setoresToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -65,7 +67,7 @@
             // patrimôniosToolStripMenuItem
             // 
             this.patrimôniosToolStripMenuItem.Name = "patrimôniosToolStripMenuItem";
-            this.patrimôniosToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.patrimôniosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.patrimôniosToolStripMenuItem.Text = "Patrimônios";
             this.patrimôniosToolStripMenuItem.Click += new System.EventHandler(this.patrimoniosToolStripMenuItem_Click);
             // 
@@ -81,6 +83,13 @@
             this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
+            // 
+            // setoresToolStripMenuItem
+            // 
+            this.setoresToolStripMenuItem.Name = "setoresToolStripMenuItem";
+            this.setoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setoresToolStripMenuItem.Text = "Setores";
+            this.setoresToolStripMenuItem.Click += new System.EventHandler(this.setoresToolStripMenuItem_Click);
             // 
             // TelaPrincipal
             // 
@@ -112,6 +121,7 @@
         private System.Windows.Forms.ToolStripMenuItem patrimôniosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setoresToolStripMenuItem;
     }
 }
 

@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace Patronum.Negocio.Persistencia
 {
-    public class Banco : DbContext
+    public class BancoPatrimonio : DbContext
     {
         public virtual DbSet<Patrimonio> Patrimonios { get; set; }
     }
