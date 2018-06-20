@@ -20,6 +20,14 @@ namespace Patronum.Negocio
             return validacao;
         }
 
+        public Validacao RemoverSetor(Setor setor)
+        {
+            Validacao validacao = new Validacao();
+            banco.Setores.Remove(setor);
+            banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AlterarSetor(Setor setorAlterado)
         {
             Validacao validacao = new Validacao();

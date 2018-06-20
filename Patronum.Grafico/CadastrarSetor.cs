@@ -21,6 +21,7 @@ namespace Patronum.Grafico
 
         private void ManterSetor_Load(object sender, EventArgs e)
         {
+            AbreTelaInclusaoAlteracao(null);
             CarregarSetores();
         }
 
@@ -36,7 +37,7 @@ namespace Patronum.Grafico
             dgSetores.DataSource = setores;
         }
 
-    private void btSalvar_Click(object sender, EventArgs e)
+        private void btSalvar_Click(object sender, EventArgs e)
         {
             Setor setor = new Setor();
 
@@ -93,7 +94,7 @@ namespace Patronum.Grafico
                 if (resultado == DialogResult.OK)
                 {
                     Setor setorSelecionado = (Setor)dgSetores.SelectedRows[0].DataBoundItem;
-                    var validacao = Program.Gerenciador.RemoverPatrimonio(setorSelecionado);
+                    var validacao = Program.Gerenciador.RemoverSetor(setorSelecionado);
                     if (validacao.Valido)
                     {
                         MessageBox.Show("Setor removido com sucesso!");
@@ -107,3 +108,4 @@ namespace Patronum.Grafico
             }
         }
     }
+}
