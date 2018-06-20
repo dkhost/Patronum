@@ -44,6 +44,8 @@ namespace Patronum.Grafico
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
+            Patrimonio patrimonio = new Patrimonio();
+
             if (Int64.TryParse(tbId.Text, out long value))
             {
                 patrimonio.Id = value;
