@@ -31,7 +31,7 @@ namespace Patronum.Grafico
         {
             {
                 cbTeste.DisplayMember = "Descricao";
-                cbTeste.ValueMember = "Fornecedor";
+                cbTeste.ValueMember = "Id";
                 cbTeste.DataSource = Program.Gerenciador.TodosOsPatrimonios();
             }
         }
