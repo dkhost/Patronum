@@ -20,6 +20,7 @@ namespace Patronum.Grafico
         {
             InitializeComponent();
         }
+
         private void AbreTelaInclusaoAlteracao(Patrimonio patrimonioSelecionado)
         {
             ManterPatrimonio tela = new ManterPatrimonio();
@@ -95,7 +96,7 @@ namespace Patronum.Grafico
 
         private void btFiltro_Click(object sender, EventArgs e)
         {
-            var filtro = tbFiltro.Text;
+            var filtro = tbFiltroPatrimonios.Text;
             var patrimonioFiltrado = Program.Gerenciador.TodosOsPatrimonios().Where(m => m.Nome == filtro).ToList();
             dgPatrimonios.DataSource = patrimonioFiltrado;
         }

@@ -14,6 +14,8 @@ namespace Patronum.Grafico
 {
     public partial class ManterSetor : Form
     {
+        public Setor SetorSelecionado { get; set; }
+
         public ManterSetor()
         {
             InitializeComponent();
@@ -21,7 +23,6 @@ namespace Patronum.Grafico
 
         private void ManterSetor_Load(object sender, EventArgs e)
         {
-            AbreTelaInclusaoAlteracao(null);
             CarregarSetores();
         }
 
@@ -41,11 +42,10 @@ namespace Patronum.Grafico
         {
             Setor setor = new Setor();
 
-            setor.NomeSetor = textBox1.Text;
-            setor.NomeGestor = textBox2.Text;
+            setor.NomeSetor = tbNomeSetor.Text;
+            setor.NomeGestor = tbNomeGestor.Text;
 
             Validacao validacao;
-
             validacao = Program.Gerenciador.CadastrarSetor(setor);
 
             if (!validacao.Valido)
@@ -65,6 +65,7 @@ namespace Patronum.Grafico
                 MessageBox.Show("Setor cadastrado com sucesso!");
 
             }
+            CarregarSetores();
         }
 
         private void btEditar_Click(object sender, EventArgs e)
@@ -72,7 +73,6 @@ namespace Patronum.Grafico
             if (VerificarSelecao())
             {
                 Setor setorSelecionado = (Setor)dgSetores.SelectedRows[0].DataBoundItem;
-                AbreTelaInclusaoAlteracao(setorSelecionado);
             }
         }
 
@@ -90,7 +90,7 @@ namespace Patronum.Grafico
         {
             if (VerificarSelecao())
             {
-                DialogResult resultado = MessageBox.Show("Tem certeza que deseja remover esse patrimônio da lista ?", "Você está prestes a remover o patrimônio selecionado", MessageBoxButtons.OKCancel);
+                DialogResult resultado = MessageBox.Show("Tem certeza que deseja remover esse Setor da lista ?", "Você está prestes a remover o setor selecionado", MessageBoxButtons.OKCancel);
                 if (resultado == DialogResult.OK)
                 {
                     Setor setorSelecionado = (Setor)dgSetores.SelectedRows[0].DataBoundItem;
@@ -106,6 +106,22 @@ namespace Patronum.Grafico
                     CarregarSetores();
                 }
             }
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tbFiltroSetores_Click(object sender, EventArgs e)
+        {
+            var filtro = tbFiltroSetores.Text;
+            dgSetores.DataSource = Program.Gerenciador.TodosOsSetores().Where(m => m.NomeSetor == filtro).ToList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CarregarSetores();
         }
     }
 }

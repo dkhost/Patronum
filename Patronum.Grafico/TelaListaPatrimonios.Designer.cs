@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
-            this.tbFiltro = new System.Windows.Forms.TextBox();
+            this.tbFiltroPatrimonios = new System.Windows.Forms.TextBox();
             this.btFiltro = new System.Windows.Forms.Button();
             this.dgPatrimonios = new System.Windows.Forms.DataGridView();
-            this.btRecarregar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,8 @@
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btRecarregar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -83,12 +83,12 @@
             this.btEditar.UseVisualStyleBackColor = true;
             this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
-            // tbFiltro
+            // tbFiltroPatrimonios
             // 
-            this.tbFiltro.Location = new System.Drawing.Point(358, 11);
-            this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Size = new System.Drawing.Size(100, 20);
-            this.tbFiltro.TabIndex = 8;
+            this.tbFiltroPatrimonios.Location = new System.Drawing.Point(358, 11);
+            this.tbFiltroPatrimonios.Name = "tbFiltroPatrimonios";
+            this.tbFiltroPatrimonios.Size = new System.Drawing.Size(100, 20);
+            this.tbFiltroPatrimonios.TabIndex = 8;
             // 
             // btFiltro
             // 
@@ -127,26 +127,6 @@
             this.dgPatrimonios.Size = new System.Drawing.Size(1315, 800);
             this.dgPatrimonios.TabIndex = 9;
             // 
-            // btRecarregar
-            // 
-            this.btRecarregar.Location = new System.Drawing.Point(545, 9);
-            this.btRecarregar.Name = "btRecarregar";
-            this.btRecarregar.Size = new System.Drawing.Size(75, 23);
-            this.btRecarregar.TabIndex = 11;
-            this.btRecarregar.Text = "Recarregar";
-            this.btRecarregar.UseVisualStyleBackColor = true;
-            this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(325, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 18);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -158,7 +138,7 @@
             this.Id.HeaderText = "Código";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 65;
+            this.Id.Width = 63;
             // 
             // Ativo
             // 
@@ -177,7 +157,7 @@
             this.Nome.HeaderText = "Nome do Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 116;
+            this.Nome.Width = 114;
             // 
             // Setor
             // 
@@ -187,7 +167,7 @@
             this.Setor.HeaderText = "Setor";
             this.Setor.Name = "Setor";
             this.Setor.ReadOnly = true;
-            this.Setor.Width = 57;
+            this.Setor.Width = 55;
             // 
             // Gestor
             // 
@@ -197,7 +177,7 @@
             this.Gestor.HeaderText = "Gestor do Setor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 75;
+            this.Gestor.Width = 73;
             // 
             // Fornecedor
             // 
@@ -214,7 +194,7 @@
             this.Nfe.HeaderText = "Nota Fiscal";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 78;
+            this.Nfe.Width = 76;
             // 
             // ServiceTag
             // 
@@ -231,7 +211,7 @@
             this.DataAquisi.HeaderText = "Data de Aquisição";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 109;
+            this.DataAquisi.Width = 107;
             // 
             // PrazoGarant
             // 
@@ -241,7 +221,7 @@
             this.PrazoGarant.HeaderText = "Prazo de Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 107;
+            this.PrazoGarant.Width = 105;
             // 
             // Obs
             // 
@@ -250,7 +230,27 @@
             this.Obs.HeaderText = "Observações";
             this.Obs.Name = "Obs";
             this.Obs.ReadOnly = true;
-            this.Obs.Width = 95;
+            this.Obs.Width = 93;
+            // 
+            // btRecarregar
+            // 
+            this.btRecarregar.Location = new System.Drawing.Point(545, 9);
+            this.btRecarregar.Name = "btRecarregar";
+            this.btRecarregar.Size = new System.Drawing.Size(75, 23);
+            this.btRecarregar.TabIndex = 11;
+            this.btRecarregar.Text = "Recarregar";
+            this.btRecarregar.UseVisualStyleBackColor = true;
+            this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(325, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // TelaListaPatrimonios
             // 
@@ -259,12 +259,12 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.ClientSize = new System.Drawing.Size(1373, 741);
             this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tbFiltro);
+            this.Controls.Add(this.tbFiltroPatrimonios);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.btRemover);
             this.Controls.Add(this.btAdicionar);
@@ -286,7 +286,7 @@
         private System.Windows.Forms.Button btAdicionar;
         private System.Windows.Forms.Button btRemover;
         private System.Windows.Forms.Button btEditar;
-        private System.Windows.Forms.TextBox tbFiltro;
+        private System.Windows.Forms.TextBox tbFiltroPatrimonios;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btFiltro;
         private System.Windows.Forms.DataGridView dgPatrimonios;

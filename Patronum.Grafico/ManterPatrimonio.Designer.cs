@@ -97,7 +97,7 @@ namespace Patronum.Grafico
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 106);
+            this.label5.Location = new System.Drawing.Point(15, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 13);
             this.label5.TabIndex = 4;
@@ -243,7 +243,7 @@ namespace Patronum.Grafico
             // 
             // tbFornecedor
             // 
-            this.tbFornecedor.Location = new System.Drawing.Point(82, 103);
+            this.tbFornecedor.Location = new System.Drawing.Point(82, 104);
             this.tbFornecedor.Name = "tbFornecedor";
             this.tbFornecedor.Size = new System.Drawing.Size(706, 20);
             this.tbFornecedor.TabIndex = 12;
@@ -262,19 +262,25 @@ namespace Patronum.Grafico
             // 
             // cbSetores
             // 
+            this.cbSetores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbSetores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSetores.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSetores.FormattingEnabled = true;
             this.cbSetores.Location = new System.Drawing.Point(66, 56);
             this.cbSetores.Name = "cbSetores";
             this.cbSetores.Size = new System.Drawing.Size(722, 21);
-            this.cbSetores.TabIndex = 109;
+            this.cbSetores.TabIndex = 10;
             // 
             // cbGestores
             // 
+            this.cbGestores.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbGestores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGestores.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbGestores.FormattingEnabled = true;
             this.cbGestores.Location = new System.Drawing.Point(66, 79);
             this.cbGestores.Name = "cbGestores";
             this.cbGestores.Size = new System.Drawing.Size(722, 21);
-            this.cbGestores.TabIndex = 111;
+            this.cbGestores.TabIndex = 11;
             // 
             // ManterPatrimonio
             // 
