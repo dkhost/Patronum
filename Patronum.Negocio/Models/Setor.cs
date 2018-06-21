@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Patronum.Negocio.Models
 {
-    [Table(name: "Setores")]
     public class Setor
     {
         public virtual ICollection<Setor> Setores { get; set; }
