@@ -95,5 +95,11 @@ namespace Patronum.Grafico
             ManterSetor tela = new ManterSetor();
             tela.Show();
         }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarFornecedor tela = new CadastrarFornecedor();
+            tela.Show();
+        }
     }
 }

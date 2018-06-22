@@ -14,5 +14,6 @@ namespace Patronum.Negocio.Persistencia
     {
         public virtual DbSet<Patrimonio> Patrimonios { get; set; }
         public virtual DbSet<Setor> Setores { get; set; }
+        public virtual DbSet<Fornecedor> Fornecedores { get; set; }
     }
 }

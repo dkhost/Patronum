@@ -14,7 +14,6 @@ namespace Patronum.Grafico
 {
     public partial class ManterSetor : Form
     {
-        public Setor SetorSelecionado { get; set; }
 
         public ManterSetor()
         {
@@ -66,14 +65,6 @@ namespace Patronum.Grafico
 
             }
             CarregarSetores();
-        }
-
-        private void btEditar_Click(object sender, EventArgs e)
-        {
-            if (VerificarSelecao())
-            {
-                Setor setorSelecionado = (Setor)dgSetores.SelectedRows[0].DataBoundItem;
-            }
         }
 
         private bool VerificarSelecao()

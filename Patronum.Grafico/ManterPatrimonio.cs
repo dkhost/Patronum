@@ -39,6 +39,10 @@ namespace Patronum.Grafico
                 cbGestores.DisplayMember = "DescricaoGestor";
                 cbGestores.ValueMember = "Id";
                 cbGestores.DataSource = Program.Gerenciador.TodosOsSetores();
+
+                cbFornecedores.DisplayMember = "DescricaoFornecedor";
+                cbFornecedores.ValueMember = "Id";
+                cbFornecedores.DataSource = Program.Gerenciador.TodosOsFornecedores();
             }
         }
 
@@ -59,10 +63,10 @@ namespace Patronum.Grafico
             patrimonio.Nfe = tbNfe.Text;
             patrimonio.Setor = cbSetores.Text;
             patrimonio.Gestor = cbGestores.Text;
-            patrimonio.Fornecedor = tbFornecedor.Text;
+            patrimonio.Fornecedor = cbFornecedores.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
-            patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
-            patrimonio.PrazoGarant = Convert.ToDateTime(tbPrazoGarant.Text);
+            patrimonio.DataAquisi = Convert.ToDateTime(dtpDataAquisi.Text);
+            patrimonio.PrazoGarant = Convert.ToDateTime(dtpPrazoGarant.Text);
             patrimonio.Obs = tbObs.Text;
             patrimonio.Ativo = ckbAtivo.Checked;
 
@@ -94,7 +98,6 @@ namespace Patronum.Grafico
                 MessageBox.Show("Patrimônio salvo com sucesso!");
 
             }
-            this.Close();
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -110,11 +113,11 @@ namespace Patronum.Grafico
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
                 this.cbSetores.Text = PatrimonioSelecionado.Setor;
                 this.cbGestores.Text = PatrimonioSelecionado.Gestor;
-                this.tbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
+                this.cbFornecedores.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
-                this.tbDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
-                this.tbPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
+                this.dtpDataAquisi.Text = PatrimonioSelecionado.DataAquisi.ToShortDateString();
+                this.dtpPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
                 this.tbObs.Text = PatrimonioSelecionado.Obs;
                 this.ckbAtivo.Checked = PatrimonioSelecionado.Ativo;
             }
