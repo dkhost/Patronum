@@ -32,6 +32,5 @@ namespace Patronum.Negocio.Models
                 return this.NomeGestor;
             }
         }
-
     }
 }

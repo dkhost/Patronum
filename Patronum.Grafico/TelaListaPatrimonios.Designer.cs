@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
             this.tbFiltroPatrimonios = new System.Windows.Forms.TextBox();
             this.btFiltro = new System.Windows.Forms.Button();
             this.dgPatrimonios = new System.Windows.Forms.DataGridView();
+            this.btRecarregar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +49,6 @@
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btRecarregar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -127,111 +127,6 @@
             this.dgPatrimonios.Size = new System.Drawing.Size(1315, 800);
             this.dgPatrimonios.TabIndex = 9;
             // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Id.DataPropertyName = "Id";
-            dataGridViewCellStyle1.Format = "0000";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Id.FillWeight = 62.80566F;
-            this.Id.HeaderText = "Código";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 63;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "Ativo";
-            this.Ativo.FalseValue = "Não";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.TrueValue = "Sim";
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.FillWeight = 62.80566F;
-            this.Nome.HeaderText = "Nome do Patrimônio";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 114;
-            // 
-            // Setor
-            // 
-            this.Setor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Setor.DataPropertyName = "NomeSetor";
-            this.Setor.FillWeight = 62.80566F;
-            this.Setor.HeaderText = "Setor";
-            this.Setor.Name = "Setor";
-            this.Setor.ReadOnly = true;
-            this.Setor.Width = 55;
-            // 
-            // Gestor
-            // 
-            this.Gestor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Gestor.DataPropertyName = "NomeGestor";
-            this.Gestor.FillWeight = 62.80566F;
-            this.Gestor.HeaderText = "Gestor do Setor";
-            this.Gestor.Name = "Gestor";
-            this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 73;
-            // 
-            // Fornecedor
-            // 
-            this.Fornecedor.DataPropertyName = "Fornecedor";
-            this.Fornecedor.HeaderText = "Fornecedor";
-            this.Fornecedor.Name = "Fornecedor";
-            this.Fornecedor.ReadOnly = true;
-            // 
-            // Nfe
-            // 
-            this.Nfe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Nfe.DataPropertyName = "Nfe";
-            this.Nfe.FillWeight = 62.80566F;
-            this.Nfe.HeaderText = "Nota Fiscal";
-            this.Nfe.Name = "Nfe";
-            this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 76;
-            // 
-            // ServiceTag
-            // 
-            this.ServiceTag.DataPropertyName = "ServiceTag";
-            this.ServiceTag.HeaderText = "ServiceTag";
-            this.ServiceTag.Name = "ServiceTag";
-            this.ServiceTag.ReadOnly = true;
-            // 
-            // DataAquisi
-            // 
-            this.DataAquisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.DataAquisi.DataPropertyName = "DataAquisi";
-            this.DataAquisi.FillWeight = 62.80566F;
-            this.DataAquisi.HeaderText = "Data de Aquisição";
-            this.DataAquisi.Name = "DataAquisi";
-            this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 107;
-            // 
-            // PrazoGarant
-            // 
-            this.PrazoGarant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PrazoGarant.DataPropertyName = "PrazoGarant";
-            this.PrazoGarant.FillWeight = 62.80566F;
-            this.PrazoGarant.HeaderText = "Prazo de Garantia";
-            this.PrazoGarant.Name = "PrazoGarant";
-            this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 105;
-            // 
-            // Obs
-            // 
-            this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Obs.DataPropertyName = "Obs";
-            this.Obs.HeaderText = "Observações";
-            this.Obs.Name = "Obs";
-            this.Obs.ReadOnly = true;
-            this.Obs.Width = 93;
-            // 
             // btRecarregar
             // 
             this.btRecarregar.Location = new System.Drawing.Point(545, 9);
@@ -251,6 +146,111 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Id.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Format = "0000";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Id.FillWeight = 62.80566F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 65;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.FalseValue = "Não";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.TrueValue = "Sim";
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.FillWeight = 62.80566F;
+            this.Nome.HeaderText = "Nome do Patrimônio";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 116;
+            // 
+            // Setor
+            // 
+            this.Setor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Setor.DataPropertyName = "Setor";
+            this.Setor.FillWeight = 62.80566F;
+            this.Setor.HeaderText = "Setor";
+            this.Setor.Name = "Setor";
+            this.Setor.ReadOnly = true;
+            this.Setor.Width = 57;
+            // 
+            // Gestor
+            // 
+            this.Gestor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Gestor.DataPropertyName = "Gestor";
+            this.Gestor.FillWeight = 62.80566F;
+            this.Gestor.HeaderText = "Gestor do Setor";
+            this.Gestor.Name = "Gestor";
+            this.Gestor.ReadOnly = true;
+            this.Gestor.Width = 75;
+            // 
+            // Fornecedor
+            // 
+            this.Fornecedor.DataPropertyName = "Fornecedor";
+            this.Fornecedor.HeaderText = "Fornecedor";
+            this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.ReadOnly = true;
+            // 
+            // Nfe
+            // 
+            this.Nfe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Nfe.DataPropertyName = "Nfe";
+            this.Nfe.FillWeight = 62.80566F;
+            this.Nfe.HeaderText = "Nota Fiscal";
+            this.Nfe.Name = "Nfe";
+            this.Nfe.ReadOnly = true;
+            this.Nfe.Width = 78;
+            // 
+            // ServiceTag
+            // 
+            this.ServiceTag.DataPropertyName = "ServiceTag";
+            this.ServiceTag.HeaderText = "ServiceTag";
+            this.ServiceTag.Name = "ServiceTag";
+            this.ServiceTag.ReadOnly = true;
+            // 
+            // DataAquisi
+            // 
+            this.DataAquisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.DataAquisi.DataPropertyName = "DataAquisi";
+            this.DataAquisi.FillWeight = 62.80566F;
+            this.DataAquisi.HeaderText = "Data de Aquisição";
+            this.DataAquisi.Name = "DataAquisi";
+            this.DataAquisi.ReadOnly = true;
+            this.DataAquisi.Width = 109;
+            // 
+            // PrazoGarant
+            // 
+            this.PrazoGarant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PrazoGarant.DataPropertyName = "PrazoGarant";
+            this.PrazoGarant.FillWeight = 62.80566F;
+            this.PrazoGarant.HeaderText = "Prazo de Garantia";
+            this.PrazoGarant.Name = "PrazoGarant";
+            this.PrazoGarant.ReadOnly = true;
+            this.PrazoGarant.Width = 107;
+            // 
+            // Obs
+            // 
+            this.Obs.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Obs.DataPropertyName = "Obs";
+            this.Obs.HeaderText = "Observações";
+            this.Obs.Name = "Obs";
+            this.Obs.ReadOnly = true;
+            this.Obs.Width = 95;
             // 
             // TelaListaPatrimonios
             // 
