@@ -43,8 +43,6 @@ namespace Patronum.Negocio
             Validacao validacao = new Validacao();
             Patrimonio patrimonioBanco = BuscaPatrimonioPorId(patrimonioAlterado.Id);
             patrimonioBanco.Nome = patrimonioAlterado.Nome;
-            patrimonioBanco.NomeSetor = patrimonioAlterado.NomeSetor;
-            patrimonioBanco.NomeGestor = patrimonioAlterado.NomeGestor;
             patrimonioBanco.Fornecedor = patrimonioAlterado.Fornecedor;
             patrimonioBanco.DataAquisi = Convert.ToDateTime(patrimonioAlterado.DataAquisi);
             patrimonioBanco.PrazoGarant = Convert.ToDateTime(patrimonioAlterado.PrazoGarant);
@@ -82,17 +80,9 @@ namespace Patronum.Negocio
             {
                 validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
             }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.NomeSetor))
-            {
-                validacao.Mensagens.Add("Setor", "O campo Setor não pode ser nulo");
-            }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Fornecedor))
             {
                 validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
-            }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.NomeGestor))
-            {
-                validacao.Mensagens.Add("Gestor", "O campo Gestor não pode ser nulo");
             }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
             {

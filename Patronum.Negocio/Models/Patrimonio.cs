@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 namespace Patronum.Negocio.Models
 {
     [Table(name: "Patrimonios")]
-    public class Patrimonio : Setor
+    public class Patrimonio
     {
         public long Id { get; set; }
         public String Nome { get; set; }
+        public Setor Setor { get; set; }
+        public Setor Gestor { get; set; }
         public String Fornecedor { get; set; }
         public DateTime DataAquisi { get; set; }
         public DateTime PrazoGarant { get; set; }
@@ -19,6 +21,6 @@ namespace Patronum.Negocio.Models
         public String ServiceTag { get; set; }
         public String Obs { get; set; }
         public bool Ativo { get; set; }
-    
+
     }
 }

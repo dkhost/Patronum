@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Patronum.Negocio.Models
 {
+    [Table(name: "Setores")]
     public class Setor
     {
-        public virtual ICollection<Setor> Setores { get; set; }
+
         public long SetorId { get; set; }
         public String NomeSetor { get; set; }
         public String NomeGestor { get; set; }
@@ -32,9 +33,5 @@ namespace Patronum.Negocio.Models
             }
         }
 
-        public Setor()
-        {
-            this.Setores = new List<Setor>();
-        }
     }
 }

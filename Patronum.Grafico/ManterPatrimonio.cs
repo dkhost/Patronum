@@ -57,8 +57,6 @@ namespace Patronum.Grafico
 
             patrimonio.Nome = tbNome.Text;
             patrimonio.Nfe = tbNfe.Text;
-            patrimonio.NomeSetor = cbSetores.Text;
-            patrimonio.NomeGestor = cbGestores.Text;
             patrimonio.Fornecedor = tbFornecedor.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(tbDataAquisi.Text);
@@ -108,8 +106,6 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.cbSetores.Text = PatrimonioSelecionado.NomeSetor;
-                this.cbGestores.Text = PatrimonioSelecionado.NomeGestor;
                 this.tbFornecedor.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
