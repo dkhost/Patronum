@@ -15,7 +15,6 @@ namespace Patronum.Grafico
 {
     public partial class TelaListaPatrimonios : Form
     {
-
         public TelaListaPatrimonios()
         {
             InitializeComponent();
@@ -39,7 +38,7 @@ namespace Patronum.Grafico
             CarregarPatrimonios();
         }
 
-        private void CarregarPatrimonios()
+        public void CarregarPatrimonios()
         {
             dgPatrimonios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgPatrimonios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;

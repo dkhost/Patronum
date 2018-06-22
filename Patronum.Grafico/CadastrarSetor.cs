@@ -31,7 +31,7 @@ namespace Patronum.Grafico
             CarregarSetores();
         }
 
-        private void CarregarSetores()
+        public void CarregarSetores()
         {
             dgSetores.AutoGenerateColumns = false;
             List<Setor> setores = Program.Gerenciador.TodosOsSetores();
