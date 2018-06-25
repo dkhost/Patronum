@@ -101,5 +101,12 @@ namespace Patronum.Grafico
             CadastrarFornecedor tela = new CadastrarFornecedor();
             tela.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastrarCliente tela = new CadastrarCliente();
+            tela.Show();
+            tela.MdiParent = this;
+        }
     }
 }

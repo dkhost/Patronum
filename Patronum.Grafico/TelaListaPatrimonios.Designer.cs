@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaListaPatrimonios));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
@@ -37,18 +37,21 @@
             this.btFiltro = new System.Windows.Forms.Button();
             this.dgPatrimonios = new System.Windows.Forms.DataGridView();
             this.btRecarregar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Setor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gestor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SetorEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nfe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceTag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataAquisi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrazoGarant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPatrimonios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -111,9 +114,12 @@
             this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Ativo,
+            this.Empresa,
             this.Nome,
             this.Setor,
             this.Gestor,
+            this.SetorEmpresa,
+            this.Responsavel,
             this.Fornecedor,
             this.Nfe,
             this.ServiceTag,
@@ -137,6 +143,16 @@
             this.btRecarregar.UseVisualStyleBackColor = true;
             this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(325, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // Id
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -159,15 +175,22 @@
             this.Ativo.ReadOnly = true;
             this.Ativo.TrueValue = "Sim";
             // 
+            // Empresa
+            // 
+            this.Empresa.DataPropertyName = "NomeCliente";
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.ReadOnly = true;
+            // 
             // Nome
             // 
             this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Nome.DataPropertyName = "Nome";
             this.Nome.FillWeight = 62.80566F;
-            this.Nome.HeaderText = "Nome do Patrimônio";
+            this.Nome.HeaderText = "Patrimônio";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 116;
+            this.Nome.Width = 81;
             // 
             // Setor
             // 
@@ -184,10 +207,24 @@
             this.Gestor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Gestor.DataPropertyName = "Gestor";
             this.Gestor.FillWeight = 62.80566F;
-            this.Gestor.HeaderText = "Gestor do Setor";
+            this.Gestor.HeaderText = "Gestor";
             this.Gestor.Name = "Gestor";
             this.Gestor.ReadOnly = true;
-            this.Gestor.Width = 75;
+            this.Gestor.Width = 63;
+            // 
+            // SetorEmpresa
+            // 
+            this.SetorEmpresa.DataPropertyName = "SetorCliente";
+            this.SetorEmpresa.HeaderText = "Setor Empresa";
+            this.SetorEmpresa.Name = "SetorEmpresa";
+            this.SetorEmpresa.ReadOnly = true;
+            // 
+            // Responsavel
+            // 
+            this.Responsavel.DataPropertyName = "RespCliente";
+            this.Responsavel.HeaderText = "Responsavel";
+            this.Responsavel.Name = "Responsavel";
+            this.Responsavel.ReadOnly = true;
             // 
             // Fornecedor
             // 
@@ -201,10 +238,10 @@
             this.Nfe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Nfe.DataPropertyName = "Nfe";
             this.Nfe.FillWeight = 62.80566F;
-            this.Nfe.HeaderText = "Nota Fiscal";
+            this.Nfe.HeaderText = "Nfe";
             this.Nfe.Name = "Nfe";
             this.Nfe.ReadOnly = true;
-            this.Nfe.Width = 78;
+            this.Nfe.Width = 49;
             // 
             // ServiceTag
             // 
@@ -218,20 +255,20 @@
             this.DataAquisi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.DataAquisi.DataPropertyName = "DataAquisi";
             this.DataAquisi.FillWeight = 62.80566F;
-            this.DataAquisi.HeaderText = "Data de Aquisição";
+            this.DataAquisi.HeaderText = "Adquirido em";
             this.DataAquisi.Name = "DataAquisi";
             this.DataAquisi.ReadOnly = true;
-            this.DataAquisi.Width = 109;
+            this.DataAquisi.Width = 93;
             // 
             // PrazoGarant
             // 
             this.PrazoGarant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.PrazoGarant.DataPropertyName = "PrazoGarant";
             this.PrazoGarant.FillWeight = 62.80566F;
-            this.PrazoGarant.HeaderText = "Prazo de Garantia";
+            this.PrazoGarant.HeaderText = "Garantia";
             this.PrazoGarant.Name = "PrazoGarant";
             this.PrazoGarant.ReadOnly = true;
-            this.PrazoGarant.Width = 107;
+            this.PrazoGarant.Width = 72;
             // 
             // Obs
             // 
@@ -242,16 +279,6 @@
             this.Obs.ReadOnly = true;
             this.Obs.Width = 95;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(325, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // TelaListaPatrimonios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +286,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1373, 741);
+            this.ClientSize = new System.Drawing.Size(1356, 741);
             this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
@@ -293,9 +320,12 @@
         private System.Windows.Forms.Button btRecarregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Setor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gestor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SetorEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Responsavel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nfe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceTag;

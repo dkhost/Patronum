@@ -36,11 +36,28 @@ namespace Patronum.Negocio
             return validacao;
         }
 
+        public Validacao RemoverCliente(Cliente cliente)
+        {
+            Validacao validacao = new Validacao();
+            banco.Clientes.Remove(cliente);
+            banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AlterarFornecedor(Fornecedor fornecedorAlterado)
         {
             Validacao validacao = new Validacao();
             Fornecedor fornecedorBanco = BuscaFornecedorPorId(fornecedorAlterado.FornecedorId);
             fornecedorBanco.NomeFornecedor = fornecedorAlterado.NomeFornecedor;
+            this.banco.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao AlterarCliente(Cliente clienteAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Cliente clienteBanco = BuscaClientePorId(clienteAlterado.ClienteId);
+            clienteBanco.NomeCliente = clienteAlterado.NomeCliente;
             this.banco.SaveChanges();
             return validacao;
         }
@@ -126,6 +143,22 @@ namespace Patronum.Negocio
             return validacao;
         }
 
+        public Validacao CadastrarCliente(Cliente clienteAdicionado)
+        {
+            Validacao validacao = new Validacao();
+            if (validacao.Valido)
+            {
+                this.banco.Clientes.Add(clienteAdicionado);
+                this.banco.SaveChanges();
+            }
+            return validacao;
+        }
+
+        public Cliente BuscaClientePorId(long id)
+        {
+            return this.banco.Clientes.Where(c => c.ClienteId == id).FirstOrDefault();
+        }
+
         public Patrimonio BuscaPatrimonioPorId(long id)
         {
             return this.banco.Patrimonios.Where(c => c.Id == id).FirstOrDefault();
@@ -154,6 +187,10 @@ namespace Patronum.Negocio
         public List<Fornecedor> TodosOsFornecedores()
         {
             return this.banco.Fornecedores.ToList();
+        }
+        public List<Cliente> TodosOsClientes()
+        {
+            return this.banco.Clientes.ToList();
         }
     }
 }

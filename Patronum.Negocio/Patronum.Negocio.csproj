@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gerenciador.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Fornecedor.cs" />
     <Compile Include="Models\Patrimonio.cs" />
     <Compile Include="Models\Setor.cs" />

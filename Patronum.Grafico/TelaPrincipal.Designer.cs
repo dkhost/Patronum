@@ -34,10 +34,11 @@
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.patrimôniosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,8 @@
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.patrimôniosToolStripMenuItem,
             this.setoresToolStripMenuItem,
-            this.fornecedoresToolStripMenuItem});
+            this.fornecedoresToolStripMenuItem,
+            this.clientesToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -69,16 +71,23 @@
             // patrimôniosToolStripMenuItem
             // 
             this.patrimôniosToolStripMenuItem.Name = "patrimôniosToolStripMenuItem";
-            this.patrimôniosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.patrimôniosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.patrimôniosToolStripMenuItem.Text = "Patrimônios";
             this.patrimôniosToolStripMenuItem.Click += new System.EventHandler(this.patrimoniosToolStripMenuItem_Click);
             // 
             // setoresToolStripMenuItem
             // 
             this.setoresToolStripMenuItem.Name = "setoresToolStripMenuItem";
-            this.setoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.setoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setoresToolStripMenuItem.Text = "Setores";
             this.setoresToolStripMenuItem.Click += new System.EventHandler(this.setoresToolStripMenuItem_Click);
+            // 
+            // fornecedoresToolStripMenuItem
+            // 
+            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
             // sobreToolStripMenuItem1
             // 
@@ -93,12 +102,12 @@
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
-            // fornecedoresToolStripMenuItem
+            // clientesToolStripMenuItem
             // 
-            this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
-            this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // TelaPrincipal
             // 
@@ -132,6 +141,7 @@
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
     }
 }
 

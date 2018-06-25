@@ -26,6 +26,7 @@ namespace Patronum.Grafico
 
         private void ManterPatrimonio_Load(object sender, EventArgs e)
         {
+            CarregaExterno();
             CarregarComboBoxes();
         }
 
@@ -43,6 +44,18 @@ namespace Patronum.Grafico
                 cbFornecedores.DisplayMember = "DescricaoFornecedor";
                 cbFornecedores.ValueMember = "Id";
                 cbFornecedores.DataSource = Program.Gerenciador.TodosOsFornecedores();
+
+                cbEmpresa.DisplayMember = "DescricaoEmpresa";
+                cbEmpresa.ValueMember = "Id";
+                cbEmpresa.DataSource = Program.Gerenciador.TodosOsClientes();
+
+                cbSetorEmpresa.DisplayMember = "DescricaoSetorEmpresa";
+                cbSetorEmpresa.ValueMember = "Id";
+                cbSetorEmpresa.DataSource = Program.Gerenciador.TodosOsClientes();
+
+                cbResp.DisplayMember = "DescricaoResp";
+                cbResp.ValueMember = "Id";
+                cbResp.DataSource = Program.Gerenciador.TodosOsClientes();
             }
         }
 
@@ -61,8 +74,12 @@ namespace Patronum.Grafico
 
             patrimonio.Nome = tbNome.Text;
             patrimonio.Nfe = tbNfe.Text;
+
             patrimonio.Setor = cbSetores.Text;
             patrimonio.Gestor = cbGestores.Text;
+            patrimonio.RespCliente = cbResp.Text;
+            patrimonio.NomeCliente = cbEmpresa.Text;
+            patrimonio.SetorCliente = cbSetorEmpresa.Text;
             patrimonio.Fornecedor = cbFornecedores.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(dtpDataAquisi.Text);
@@ -113,6 +130,9 @@ namespace Patronum.Grafico
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
                 this.cbSetores.Text = PatrimonioSelecionado.Setor;
                 this.cbGestores.Text = PatrimonioSelecionado.Gestor;
+                this.cbSetorEmpresa.Text = PatrimonioSelecionado.SetorCliente;
+                this.cbEmpresa.Text = PatrimonioSelecionado.NomeCliente;
+                this.cbResp.Text = PatrimonioSelecionado.RespCliente;
                 this.cbFornecedores.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
@@ -120,6 +140,29 @@ namespace Patronum.Grafico
                 this.dtpPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
                 this.tbObs.Text = PatrimonioSelecionado.Obs;
                 this.ckbAtivo.Checked = PatrimonioSelecionado.Ativo;
+            }
+        }
+
+        private void ckbExterno_CheckStateChanged(object sender, EventArgs e)
+        {
+            CarregaExterno();
+        }
+
+        private void CarregaExterno()
+        {
+            if (ckbExterno.Checked)
+            {
+                cbSetorEmpresa.Enabled = true;
+                cbResp.Enabled = true;
+                cbSetores.Enabled = false;
+                cbGestores.Enabled = false;
+            }
+            else
+            {
+                cbSetorEmpresa.Enabled = false;
+                cbResp.Enabled = false;
+                cbSetores.Enabled = true;
+                cbGestores.Enabled = true;
             }
         }
     }
