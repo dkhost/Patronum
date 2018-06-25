@@ -24,7 +24,7 @@ namespace Patronum.Negocio.Models
         {
             get
             {
-                return this.CNPJ + " - " + this.NomeCliente;
+                return this.NomeCliente + " - " + this.CNPJ;
             }
         }
 

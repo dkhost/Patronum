@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Patronum.Grafico
 {
@@ -51,7 +52,7 @@ namespace Patronum.Grafico
             }
             else
             {
-                MessageBox.Show("Cliente cadastrado com sucesso!");
+                MessageBox.Show("Cliente salvo com sucesso!");
 
             }
             CarregarClientes();
@@ -107,6 +108,17 @@ namespace Patronum.Grafico
         }
 
         private void CadastrarCliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CarregarClientes();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var filtro = tbFiltroCliente.Text;
+            dgClientes.DataSource = Program.Gerenciador.TodosOsClientes().Where(m => m.NomeCliente == filtro).ToList();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             CarregarClientes();
         }

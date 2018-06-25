@@ -72,14 +72,24 @@ namespace Patronum.Grafico
                 patrimonio.Id = -1;
             }
 
-            patrimonio.Nome = tbNome.Text;
-            patrimonio.Nfe = tbNfe.Text;
+            if (ckbExterno.CheckState == CheckState.Checked)
+            {
+                patrimonio.SetorCliente = cbSetorEmpresa.Text;
+                patrimonio.RespCliente = cbResp.Text;
+            }
+            else
+            {
+                patrimonio.Setor = cbSetores.Text;
+                patrimonio.Gestor = cbGestores.Text;
+            }
 
+            patrimonio.Nome = tbNome.Text;
+            patrimonio.NomeCliente = cbEmpresa.Text;
             patrimonio.Setor = cbSetores.Text;
+            patrimonio.SetorCliente = cbSetorEmpresa.Text;
             patrimonio.Gestor = cbGestores.Text;
             patrimonio.RespCliente = cbResp.Text;
-            patrimonio.NomeCliente = cbEmpresa.Text;
-            patrimonio.SetorCliente = cbSetorEmpresa.Text;
+            patrimonio.Nfe = tbNfe.Text;
             patrimonio.Fornecedor = cbFornecedores.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(dtpDataAquisi.Text);

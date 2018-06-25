@@ -146,6 +146,38 @@ namespace Patronum.Negocio
         public Validacao CadastrarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
+            if (this.banco.Clientes.Where(c => c.NomeCliente == clienteAdicionado.NomeCliente).Any())
+            {
+                validacao.Mensagens.Add("Nome do Cliente", "Já existe um Cliente com esse Nome");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.NomeCliente))
+            {
+                validacao.Mensagens.Add("Nome do Cliente", "O campo Nome do Cliente não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.SetorCliente))
+            {
+                validacao.Mensagens.Add("Nome do Setor", "O campo Nome do Setor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.CNPJ))
+            {
+                validacao.Mensagens.Add("CNPJ", "O campo CNPJ não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Email))
+            {
+                validacao.Mensagens.Add("Email", "O campo Email não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Endereco))
+            {
+                validacao.Mensagens.Add("Endereço", "O campo Endereço não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Telefone))
+            {
+                validacao.Mensagens.Add("Telefone", "O campo Telefone não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Resp))
+            {
+                validacao.Mensagens.Add("Resp", "O campo Resp não pode ser nulo");
+            }
             if (validacao.Valido)
             {
                 this.banco.Clientes.Add(clienteAdicionado);
