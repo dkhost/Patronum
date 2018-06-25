@@ -12,8 +12,8 @@ namespace Patronum.Negocio.Models
     {
         public long Id { get; set; }
         public String Nome { get; set; }
-        public Setor Setor { get; set; }
-        public Setor Gestor { get; set; }
+        public String Setor { get; set; }
+        public String Gestor { get; set; }
         public String Fornecedor { get; set; }
         public DateTime DataAquisi { get; set; }
         public DateTime PrazoGarant { get; set; }

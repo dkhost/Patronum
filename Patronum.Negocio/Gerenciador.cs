@@ -28,6 +28,23 @@ namespace Patronum.Negocio
             return validacao;
         }
 
+        public Validacao RemoverFornecedor(Fornecedor fornecedor)
+        {
+            Validacao validacao = new Validacao();
+            banco.Fornecedores.Remove(fornecedor);
+            banco.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao AlterarFornecedor(Fornecedor fornecedorAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Fornecedor fornecedorBanco = BuscaFornecedorPorId(fornecedorAlterado.FornecedorId);
+            fornecedorBanco.NomeFornecedor = fornecedorAlterado.NomeFornecedor;
+            this.banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AlterarSetor(Setor setorAlterado)
         {
             Validacao validacao = new Validacao();
@@ -43,6 +60,8 @@ namespace Patronum.Negocio
             Validacao validacao = new Validacao();
             Patrimonio patrimonioBanco = BuscaPatrimonioPorId(patrimonioAlterado.Id);
             patrimonioBanco.Nome = patrimonioAlterado.Nome;
+            patrimonioBanco.Setor = patrimonioAlterado.Setor;
+            patrimonioBanco.Gestor = patrimonioAlterado.Gestor;
             patrimonioBanco.Fornecedor = patrimonioAlterado.Fornecedor;
             patrimonioBanco.DataAquisi = Convert.ToDateTime(patrimonioAlterado.DataAquisi);
             patrimonioBanco.PrazoGarant = Convert.ToDateTime(patrimonioAlterado.PrazoGarant);
@@ -51,6 +70,21 @@ namespace Patronum.Negocio
             patrimonioBanco.Obs = patrimonioAlterado.Obs;
             patrimonioBanco.Ativo = patrimonioAlterado.Ativo;
             this.banco.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao CadastrarFornecedor(Fornecedor fornecedorAdicionado)
+        {
+            Validacao validacao = new Validacao();
+            if (this.banco.Setores.Where(c => c.NomeSetor == fornecedorAdicionado.NomeFornecedor).Any())
+            {
+                validacao.Mensagens.Add("Nome do Fornecedor", "Já existe um Fornecedor com esse Nome");
+            }
+            if (validacao.Valido)
+            {
+                this.banco.Fornecedores.Add(fornecedorAdicionado);
+                this.banco.SaveChanges();
+            }
             return validacao;
         }
 
@@ -76,14 +110,6 @@ namespace Patronum.Negocio
         public Validacao CadastrarPatrimonio(Patrimonio patrimonioAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Patrimonios.Where(c => c.ServiceTag == patrimonioAdicionado.ServiceTag).Any())
-            {
-                validacao.Mensagens.Add("ServiceTag", "Já existe um patrimônio com essa ServiceTag");
-            }
-            if (String.IsNullOrEmpty(patrimonioAdicionado.Fornecedor))
-            {
-                validacao.Mensagens.Add("Fornecedor", "O campo Fornecedor não pode ser nulo");
-            }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
             {
                 validacao.Mensagens.Add("Nfe", "O campo Nfe não pode ser nulo");
@@ -110,6 +136,11 @@ namespace Patronum.Negocio
             return this.banco.Setores.Where(c => c.SetorId == id).FirstOrDefault();
         }
 
+        public Fornecedor BuscaFornecedorPorId(long id)
+        {
+            return this.banco.Fornecedores.Where(c => c.FornecedorId == id).FirstOrDefault();
+        }
+
          public List<Patrimonio> TodosOsPatrimonios()
         {
             return this.banco.Patrimonios.ToList();
@@ -118,6 +149,11 @@ namespace Patronum.Negocio
         public List<Setor> TodosOsSetores()
         {
             return this.banco.Setores.ToList();
+        }
+
+        public List<Fornecedor> TodosOsFornecedores()
+        {
+            return this.banco.Fornecedores.ToList();
         }
     }
 }

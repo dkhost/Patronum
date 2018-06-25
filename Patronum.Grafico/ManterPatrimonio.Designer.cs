@@ -41,8 +41,6 @@ namespace Patronum.Grafico
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.tbDataAquisi = new System.Windows.Forms.TextBox();
-            this.tbPrazoGarant = new System.Windows.Forms.TextBox();
             this.tbNfe = new System.Windows.Forms.TextBox();
             this.tbServiceTag = new System.Windows.Forms.TextBox();
             this.btSalvar = new System.Windows.Forms.Button();
@@ -52,10 +50,12 @@ namespace Patronum.Grafico
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.button1 = new System.Windows.Forms.Button();
             this.Observacoes = new System.Windows.Forms.Label();
-            this.tbFornecedor = new System.Windows.Forms.TextBox();
             this.ckbAtivo = new System.Windows.Forms.CheckBox();
             this.cbSetores = new System.Windows.Forms.ComboBox();
             this.cbGestores = new System.Windows.Forms.ComboBox();
+            this.cbFornecedores = new System.Windows.Forms.ComboBox();
+            this.dtpDataAquisi = new System.Windows.Forms.DateTimePicker();
+            this.dtpPrazoGarant = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -146,20 +146,6 @@ namespace Patronum.Grafico
             this.tbNome.Size = new System.Drawing.Size(669, 20);
             this.tbNome.TabIndex = 9;
             // 
-            // tbDataAquisi
-            // 
-            this.tbDataAquisi.Location = new System.Drawing.Point(115, 176);
-            this.tbDataAquisi.Name = "tbDataAquisi";
-            this.tbDataAquisi.Size = new System.Drawing.Size(100, 20);
-            this.tbDataAquisi.TabIndex = 15;
-            // 
-            // tbPrazoGarant
-            // 
-            this.tbPrazoGarant.Location = new System.Drawing.Point(115, 201);
-            this.tbPrazoGarant.Name = "tbPrazoGarant";
-            this.tbPrazoGarant.Size = new System.Drawing.Size(100, 20);
-            this.tbPrazoGarant.TabIndex = 16;
-            // 
             // tbNfe
             // 
             this.tbNfe.Location = new System.Drawing.Point(82, 129);
@@ -190,7 +176,7 @@ namespace Patronum.Grafico
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 18;
-            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.Text = "Fechar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
@@ -241,13 +227,6 @@ namespace Patronum.Grafico
             this.Observacoes.TabIndex = 104;
             this.Observacoes.Text = "Observações: ";
             // 
-            // tbFornecedor
-            // 
-            this.tbFornecedor.Location = new System.Drawing.Point(82, 104);
-            this.tbFornecedor.Name = "tbFornecedor";
-            this.tbFornecedor.Size = new System.Drawing.Size(706, 20);
-            this.tbFornecedor.TabIndex = 12;
-            // 
             // ckbAtivo
             // 
             this.ckbAtivo.AutoSize = true;
@@ -282,16 +261,44 @@ namespace Patronum.Grafico
             this.cbGestores.Size = new System.Drawing.Size(722, 21);
             this.cbGestores.TabIndex = 11;
             // 
+            // cbFornecedores
+            // 
+            this.cbFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbFornecedores.FormattingEnabled = true;
+            this.cbFornecedores.Location = new System.Drawing.Point(82, 103);
+            this.cbFornecedores.Name = "cbFornecedores";
+            this.cbFornecedores.Size = new System.Drawing.Size(706, 21);
+            this.cbFornecedores.TabIndex = 106;
+            // 
+            // dtpDataAquisi
+            // 
+            this.dtpDataAquisi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDataAquisi.Location = new System.Drawing.Point(116, 177);
+            this.dtpDataAquisi.Name = "dtpDataAquisi";
+            this.dtpDataAquisi.Size = new System.Drawing.Size(101, 20);
+            this.dtpDataAquisi.TabIndex = 107;
+            // 
+            // dtpPrazoGarant
+            // 
+            this.dtpPrazoGarant.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpPrazoGarant.Location = new System.Drawing.Point(116, 201);
+            this.dtpPrazoGarant.Name = "dtpPrazoGarant";
+            this.dtpPrazoGarant.Size = new System.Drawing.Size(101, 20);
+            this.dtpPrazoGarant.TabIndex = 108;
+            // 
             // ManterPatrimonio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(834, 312);
+            this.Controls.Add(this.dtpPrazoGarant);
+            this.Controls.Add(this.dtpDataAquisi);
+            this.Controls.Add(this.cbFornecedores);
             this.Controls.Add(this.cbGestores);
             this.Controls.Add(this.cbSetores);
             this.Controls.Add(this.ckbAtivo);
-            this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.Observacoes);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbObs);
@@ -299,8 +306,6 @@ namespace Patronum.Grafico
             this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.tbServiceTag);
             this.Controls.Add(this.tbNfe);
-            this.Controls.Add(this.tbPrazoGarant);
-            this.Controls.Add(this.tbDataAquisi);
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.tbId);
             this.Controls.Add(this.label9);
@@ -335,8 +340,6 @@ namespace Patronum.Grafico
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.TextBox tbDataAquisi;
-        private System.Windows.Forms.TextBox tbPrazoGarant;
         private System.Windows.Forms.TextBox tbNfe;
         private System.Windows.Forms.TextBox tbServiceTag;
         private System.Windows.Forms.Button btSalvar;
@@ -346,9 +349,11 @@ namespace Patronum.Grafico
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Observacoes;
-        private System.Windows.Forms.TextBox tbFornecedor;
         private System.Windows.Forms.CheckBox ckbAtivo;
         private System.Windows.Forms.ComboBox cbSetores;
         private System.Windows.Forms.ComboBox cbGestores;
+        private System.Windows.Forms.ComboBox cbFornecedores;
+        private System.Windows.Forms.DateTimePicker dtpDataAquisi;
+        private System.Windows.Forms.DateTimePicker dtpPrazoGarant;
     }
 }
