@@ -85,10 +85,6 @@ namespace Patronum.Grafico
 
             patrimonio.Nome = tbNome.Text;
             patrimonio.NomeCliente = cbEmpresa.Text;
-            patrimonio.Setor = cbSetores.Text;
-            patrimonio.SetorCliente = cbSetorEmpresa.Text;
-            patrimonio.Gestor = cbGestores.Text;
-            patrimonio.RespCliente = cbResp.Text;
             patrimonio.Nfe = tbNfe.Text;
             patrimonio.Fornecedor = cbFornecedores.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
@@ -98,14 +94,13 @@ namespace Patronum.Grafico
             patrimonio.Ativo = ckbAtivo.Checked;
 
             Validacao validacao;
-            if (PatrimonioSelecionado != null)
+            if (PatrimonioSelecionado == null)
             {
-                validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
+                validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
             }
             else
             {
-                validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
-
+                validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
             }
 
             if (!validacao.Valido)
@@ -160,7 +155,14 @@ namespace Patronum.Grafico
 
         private void CarregaExterno()
         {
-            if (ckbExterno.Checked)
+            if (ckbExterno.CheckState == CheckState.Indeterminate)
+            {
+                cbSetorEmpresa.Enabled = true;
+                cbResp.Enabled = true;
+                cbSetores.Enabled = true;
+                cbGestores.Enabled = true;
+            }
+            else if (ckbExterno.CheckState == CheckState.Checked)
             {
                 cbSetorEmpresa.Enabled = true;
                 cbResp.Enabled = true;

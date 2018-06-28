@@ -24,5 +24,7 @@ namespace Patronum.Negocio.Models
         public String RespCliente { get; set; }
         public String NomeCliente { get; set; }
         public String SetorCliente { get; set; }
+        public bool Externo { get; set; }
+
     }
 }

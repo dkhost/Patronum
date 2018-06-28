@@ -39,6 +39,7 @@
             this.btRecarregar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Externo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,6 +114,7 @@
             this.dgPatrimonios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPatrimonios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Externo,
             this.Ativo,
             this.Empresa,
             this.Nome,
@@ -166,6 +168,17 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Width = 65;
+            // 
+            // Externo
+            // 
+            this.Externo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Externo.DataPropertyName = "Externo";
+            this.Externo.FalseValue = "Não";
+            this.Externo.HeaderText = "Externo";
+            this.Externo.Name = "Externo";
+            this.Externo.ReadOnly = true;
+            this.Externo.TrueValue = "Sim";
+            this.Externo.Width = 49;
             // 
             // Ativo
             // 
@@ -286,7 +299,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.ClientSize = new System.Drawing.Size(1276, 741);
             this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.dgPatrimonios);
             this.Controls.Add(this.btFiltro);
@@ -319,6 +332,7 @@
         private System.Windows.Forms.DataGridView dgPatrimonios;
         private System.Windows.Forms.Button btRecarregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Externo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Ativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;

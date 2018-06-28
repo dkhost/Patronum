@@ -240,6 +240,7 @@ namespace Patronum.Grafico
             this.ckbAtivo.AutoSize = true;
             this.ckbAtivo.Checked = true;
             this.ckbAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbAtivo.Location = new System.Drawing.Point(255, 13);
             this.ckbAtivo.Name = "ckbAtivo";
             this.ckbAtivo.Size = new System.Drawing.Size(50, 17);
@@ -299,6 +300,7 @@ namespace Patronum.Grafico
             // ckbExterno
             // 
             this.ckbExterno.AutoSize = true;
+            this.ckbExterno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckbExterno.Location = new System.Drawing.Point(311, 13);
             this.ckbExterno.Name = "ckbExterno";
             this.ckbExterno.Size = new System.Drawing.Size(62, 17);
