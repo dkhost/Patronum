@@ -201,10 +201,10 @@ namespace Patronum.Grafico
             // 
             // tbObs
             // 
-            this.tbObs.Location = new System.Drawing.Point(130, 332);
+            this.tbObs.Location = new System.Drawing.Point(128, 332);
             this.tbObs.Multiline = true;
             this.tbObs.Name = "tbObs";
-            this.tbObs.Size = new System.Drawing.Size(592, 50);
+            this.tbObs.Size = new System.Drawing.Size(594, 50);
             this.tbObs.TabIndex = 14;
             // 
             // printPreviewDialog1
@@ -292,7 +292,7 @@ namespace Patronum.Grafico
             // dtpPrazoGarant
             // 
             this.dtpPrazoGarant.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPrazoGarant.Location = new System.Drawing.Point(130, 306);
+            this.dtpPrazoGarant.Location = new System.Drawing.Point(128, 306);
             this.dtpPrazoGarant.Name = "dtpPrazoGarant";
             this.dtpPrazoGarant.Size = new System.Drawing.Size(101, 20);
             this.dtpPrazoGarant.TabIndex = 13;
@@ -308,7 +308,7 @@ namespace Patronum.Grafico
             this.ckbExterno.Text = "Externo";
             this.ckbExterno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ckbExterno.UseVisualStyleBackColor = true;
-            this.ckbExterno.CheckStateChanged += new System.EventHandler(this.ckbExterno_CheckStateChanged);
+            this.ckbExterno.CheckedChanged += new System.EventHandler(this.ckbExterno_CheckedChanged);
             // 
             // cbEmpresa
             // 

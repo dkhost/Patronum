@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using Patronum.Negocio;
+﻿using Patronum.Negocio;
 using Patronum.Negocio.Models;
 using System;
 using System.Collections.Generic;
@@ -26,7 +25,7 @@ namespace Patronum.Grafico
 
         private void ManterPatrimonio_Load(object sender, EventArgs e)
         {
-            CarregaExterno();
+            ckbExterno_CheckedChanged();
             CarregarComboBoxes();
         }
 
@@ -77,10 +76,14 @@ namespace Patronum.Grafico
                 patrimonio.SetorCliente = cbSetorEmpresa.Text;
                 patrimonio.RespCliente = cbResp.Text;
             }
-            else
+            else if (ckbExterno.CheckState == CheckState.Unchecked)
             {
                 patrimonio.Setor = cbSetores.Text;
                 patrimonio.Gestor = cbGestores.Text;
+            }
+            else
+            {
+
             }
 
             patrimonio.Nome = tbNome.Text;
@@ -145,36 +148,34 @@ namespace Patronum.Grafico
                 this.dtpPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
                 this.tbObs.Text = PatrimonioSelecionado.Obs;
                 this.ckbAtivo.Checked = PatrimonioSelecionado.Ativo;
+                this.ckbExterno.Checked = PatrimonioSelecionado.Externo;
             }
         }
 
-        private void ckbExterno_CheckStateChanged(object sender, EventArgs e)
+        private void ckbExterno_CheckedChanged(object sender, EventArgs e)
         {
-            CarregaExterno();
+            ckbExterno_CheckedChanged();
         }
 
-        private void CarregaExterno()
+        private void ckbExterno_CheckedChanged()
         {
-            if (ckbExterno.CheckState == CheckState.Indeterminate)
-            {
-                cbSetorEmpresa.Enabled = true;
-                cbResp.Enabled = true;
-                cbSetores.Enabled = true;
-                cbGestores.Enabled = true;
-            }
-            else if (ckbExterno.CheckState == CheckState.Checked)
+            if (ckbExterno.CheckState == CheckState.Checked)
             {
                 cbSetorEmpresa.Enabled = true;
                 cbResp.Enabled = true;
                 cbSetores.Enabled = false;
                 cbGestores.Enabled = false;
             }
-            else
+            else if (ckbExterno.CheckState == CheckState.Unchecked)
             {
                 cbSetorEmpresa.Enabled = false;
                 cbResp.Enabled = false;
                 cbSetores.Enabled = true;
                 cbGestores.Enabled = true;
+            }
+            else
+            {
+
             }
         }
     }
