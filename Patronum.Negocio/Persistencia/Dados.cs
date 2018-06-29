@@ -12,5 +12,6 @@ namespace Patronum.Negocio.Persistencia
         public List<Patrimonio> Patrimonios;
         public List<Setor> Setores;
         public List<Fornecedor> Fornecedores;
+        public List<Cliente> Clientes;
     }
 }

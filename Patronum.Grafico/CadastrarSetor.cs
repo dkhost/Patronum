@@ -45,6 +45,7 @@ namespace Patronum.Grafico
             setor.NomeGestor = tbNomeGestor.Text;
 
             Validacao validacao;
+
             validacao = Program.Gerenciador.CadastrarSetor(setor);
 
             if (!validacao.Valido)

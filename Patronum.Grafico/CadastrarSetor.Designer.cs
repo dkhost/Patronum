@@ -43,7 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tbFiltro = new System.Windows.Forms.Button();
             this.btRecarregar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgSetores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 40);
+            this.label2.Location = new System.Drawing.Point(12, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 13);
             this.label2.TabIndex = 1;
@@ -68,31 +67,31 @@
             // 
             // tbNomeSetor
             // 
-            this.tbNomeSetor.Location = new System.Drawing.Point(100, 10);
+            this.tbNomeSetor.Location = new System.Drawing.Point(110, 12);
             this.tbNomeSetor.Name = "tbNomeSetor";
             this.tbNomeSetor.Size = new System.Drawing.Size(347, 20);
             this.tbNomeSetor.TabIndex = 2;
             // 
             // tbNomeGestor
             // 
-            this.tbNomeGestor.Location = new System.Drawing.Point(100, 37);
+            this.tbNomeGestor.Location = new System.Drawing.Point(110, 38);
             this.tbNomeGestor.Name = "tbNomeGestor";
             this.tbNomeGestor.Size = new System.Drawing.Size(347, 20);
             this.tbNomeGestor.TabIndex = 3;
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(371, 74);
+            this.btSalvar.Location = new System.Drawing.Point(535, 327);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 4;
-            this.btSalvar.Text = "Salvar";
+            this.btSalvar.Text = "Adicionar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(281, 74);
+            this.btCancelar.Location = new System.Drawing.Point(456, 327);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 5;
@@ -105,16 +104,19 @@
             this.dgSetores.AllowUserToAddRows = false;
             this.dgSetores.AllowUserToDeleteRows = false;
             this.dgSetores.AllowUserToOrderColumns = true;
+            this.dgSetores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgSetores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgSetores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgSetores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSetores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeSetor,
             this.NomeGestor});
-            this.dgSetores.Location = new System.Drawing.Point(12, 114);
+            this.dgSetores.Location = new System.Drawing.Point(12, 64);
             this.dgSetores.Name = "dgSetores";
             this.dgSetores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSetores.Size = new System.Drawing.Size(760, 435);
+            this.dgSetores.Size = new System.Drawing.Size(600, 256);
             this.dgSetores.TabIndex = 6;
             // 
             // NomeSetor
@@ -131,7 +133,7 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(12, 74);
+            this.btRemover.Location = new System.Drawing.Point(535, 23);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 8;
@@ -141,7 +143,7 @@
             // 
             // tbFiltroSetores
             // 
-            this.tbFiltroSetores.Location = new System.Drawing.Point(649, 48);
+            this.tbFiltroSetores.Location = new System.Drawing.Point(45, 329);
             this.tbFiltroSetores.Name = "tbFiltroSetores";
             this.tbFiltroSetores.Size = new System.Drawing.Size(123, 20);
             this.tbFiltroSetores.TabIndex = 9;
@@ -149,7 +151,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(616, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 329);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,7 +160,7 @@
             // 
             // tbFiltro
             // 
-            this.tbFiltro.Location = new System.Drawing.Point(697, 74);
+            this.tbFiltro.Location = new System.Drawing.Point(174, 327);
             this.tbFiltro.Name = "tbFiltro";
             this.tbFiltro.Size = new System.Drawing.Size(75, 23);
             this.tbFiltro.TabIndex = 11;
@@ -168,7 +170,7 @@
             // 
             // btRecarregar
             // 
-            this.btRecarregar.Location = new System.Drawing.Point(616, 74);
+            this.btRecarregar.Location = new System.Drawing.Point(255, 327);
             this.btRecarregar.Name = "btRecarregar";
             this.btRecarregar.Size = new System.Drawing.Size(75, 23);
             this.btRecarregar.TabIndex = 12;
@@ -176,21 +178,11 @@
             this.btRecarregar.UseVisualStyleBackColor = true;
             this.btRecarregar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(668, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Filtrar por Setor:";
-            // 
             // ManterSetor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(624, 361);
             this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.tbFiltro);
             this.Controls.Add(this.pictureBox1);
@@ -204,8 +196,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(640, 400);
+            this.MinimumSize = new System.Drawing.Size(640, 400);
             this.Name = "ManterSetor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detalhes do Setor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManterSetor_FormClosed);
             this.Load += new System.EventHandler(this.ManterSetor_Load);
@@ -232,6 +226,5 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button tbFiltro;
         private System.Windows.Forms.Button btRecarregar;
-        private System.Windows.Forms.Label label3;
     }
 }

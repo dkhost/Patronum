@@ -21,6 +21,10 @@ namespace Patronum.Negocio.Models
         public String ServiceTag { get; set; }
         public String Obs { get; set; }
         public bool Ativo { get; set; }
+        public String RespCliente { get; set; }
+        public String NomeCliente { get; set; }
+        public String SetorCliente { get; set; }
+        public bool Externo { get; set; }
 
     }
 }

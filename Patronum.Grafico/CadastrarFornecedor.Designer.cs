@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbFornecedor = new System.Windows.Forms.TextBox();
             this.dgFornecedores = new System.Windows.Forms.DataGridView();
+            this.NomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
             this.tbFiltroFornecedor = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.btFiltro = new System.Windows.Forms.Button();
             this.btRecarregar = new System.Windows.Forms.Button();
             this.btAdicionar = new System.Windows.Forms.Button();
-            this.NomeFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFornecedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,9 @@
             this.dgFornecedores.AllowUserToAddRows = false;
             this.dgFornecedores.AllowUserToDeleteRows = false;
             this.dgFornecedores.AllowUserToOrderColumns = true;
+            this.dgFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFornecedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -73,12 +76,18 @@
             this.dgFornecedores.Location = new System.Drawing.Point(15, 32);
             this.dgFornecedores.Name = "dgFornecedores";
             this.dgFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgFornecedores.Size = new System.Drawing.Size(633, 217);
+            this.dgFornecedores.Size = new System.Drawing.Size(597, 289);
             this.dgFornecedores.TabIndex = 2;
+            // 
+            // NomeFornecedor
+            // 
+            this.NomeFornecedor.DataPropertyName = "NomeFornecedor";
+            this.NomeFornecedor.HeaderText = "Nome do Fornecedor";
+            this.NomeFornecedor.Name = "NomeFornecedor";
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(573, 257);
+            this.btCancelar.Location = new System.Drawing.Point(537, 327);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 3;
@@ -88,7 +97,7 @@
             // 
             // btRemover
             // 
-            this.btRemover.Location = new System.Drawing.Point(573, 3);
+            this.btRemover.Location = new System.Drawing.Point(537, 4);
             this.btRemover.Name = "btRemover";
             this.btRemover.Size = new System.Drawing.Size(75, 23);
             this.btRemover.TabIndex = 5;
@@ -98,7 +107,7 @@
             // 
             // tbFiltroFornecedor
             // 
-            this.tbFiltroFornecedor.Location = new System.Drawing.Point(45, 257);
+            this.tbFiltroFornecedor.Location = new System.Drawing.Point(45, 329);
             this.tbFiltroFornecedor.Name = "tbFiltroFornecedor";
             this.tbFiltroFornecedor.Size = new System.Drawing.Size(100, 20);
             this.tbFiltroFornecedor.TabIndex = 6;
@@ -106,7 +115,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 257);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 329);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,7 +124,7 @@
             // 
             // btFiltro
             // 
-            this.btFiltro.Location = new System.Drawing.Point(151, 257);
+            this.btFiltro.Location = new System.Drawing.Point(151, 327);
             this.btFiltro.Name = "btFiltro";
             this.btFiltro.Size = new System.Drawing.Size(75, 23);
             this.btFiltro.TabIndex = 12;
@@ -125,7 +134,7 @@
             // 
             // btRecarregar
             // 
-            this.btRecarregar.Location = new System.Drawing.Point(232, 257);
+            this.btRecarregar.Location = new System.Drawing.Point(232, 327);
             this.btRecarregar.Name = "btRecarregar";
             this.btRecarregar.Size = new System.Drawing.Size(75, 23);
             this.btRecarregar.TabIndex = 13;
@@ -143,17 +152,11 @@
             this.btAdicionar.UseVisualStyleBackColor = true;
             this.btAdicionar.Click += new System.EventHandler(this.btAdicionar_Click);
             // 
-            // NomeFornecedor
-            // 
-            this.NomeFornecedor.DataPropertyName = "NomeFornecedor";
-            this.NomeFornecedor.HeaderText = "Nome do Fornecedor";
-            this.NomeFornecedor.Name = "NomeFornecedor";
-            // 
             // CadastrarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 286);
+            this.ClientSize = new System.Drawing.Size(624, 361);
             this.Controls.Add(this.btAdicionar);
             this.Controls.Add(this.btRecarregar);
             this.Controls.Add(this.btFiltro);
@@ -165,8 +168,10 @@
             this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(640, 400);
+            this.MinimumSize = new System.Drawing.Size(640, 400);
             this.Name = "CadastrarFornecedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detalhes do Fornecedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CadastrarFornecedor_FormClosed);
             this.Load += new System.EventHandler(this.CadastrarFornecedor_Load);

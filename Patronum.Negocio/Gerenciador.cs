@@ -36,11 +36,28 @@ namespace Patronum.Negocio
             return validacao;
         }
 
+        public Validacao RemoverCliente(Cliente cliente)
+        {
+            Validacao validacao = new Validacao();
+            banco.Clientes.Remove(cliente);
+            banco.SaveChanges();
+            return validacao;
+        }
+
         public Validacao AlterarFornecedor(Fornecedor fornecedorAlterado)
         {
             Validacao validacao = new Validacao();
             Fornecedor fornecedorBanco = BuscaFornecedorPorId(fornecedorAlterado.FornecedorId);
             fornecedorBanco.NomeFornecedor = fornecedorAlterado.NomeFornecedor;
+            this.banco.SaveChanges();
+            return validacao;
+        }
+
+        public Validacao AlterarCliente(Cliente clienteAlterado)
+        {
+            Validacao validacao = new Validacao();
+            Cliente clienteBanco = BuscaClientePorId(clienteAlterado.ClienteId);
+            clienteBanco.NomeCliente = clienteAlterado.NomeCliente;
             this.banco.SaveChanges();
             return validacao;
         }
@@ -76,7 +93,7 @@ namespace Patronum.Negocio
         public Validacao CadastrarFornecedor(Fornecedor fornecedorAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Setores.Where(c => c.NomeSetor == fornecedorAdicionado.NomeFornecedor).Any())
+            if (this.banco.Setores.Where(c => c.NomeSetor == fornecedorAdicionado.NomeFornecedor).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Fornecedor", "Já existe um Fornecedor com esse Nome");
             }
@@ -91,11 +108,11 @@ namespace Patronum.Negocio
         public Validacao CadastrarSetor(Setor setorAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any())
+            if (this.banco.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Setor", "Já existe um Setor com esse Nome");
             }
-            if(this.banco.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any())
+            if(this.banco.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Gestor", "Já existe um Gestor com esse Nome");
             }
@@ -112,6 +129,10 @@ namespace Patronum.Negocio
             Validacao validacao = new Validacao();
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
             {
+                validacao.Mensagens.Add("Nome", "O campo Nome não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
+            {
                 validacao.Mensagens.Add("Nfe", "O campo Nfe não pode ser nulo");
             }
             if (String.IsNullOrEmpty(patrimonioAdicionado.ServiceTag))
@@ -124,6 +145,58 @@ namespace Patronum.Negocio
                 this.banco.SaveChanges();
             }
             return validacao;
+        }
+
+        public Validacao CadastrarCliente(Cliente clienteAdicionado)
+        {
+            Validacao validacao = new Validacao();
+            if (this.banco.Clientes.Where(c => c.NomeCliente == clienteAdicionado.NomeCliente).Any() && validacao.Mensagens.Count == 0)
+            {
+                validacao.Mensagens.Add("Nome do Cliente", "Já existe um Cliente com esse Nome");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.NomeCliente))
+            {
+                validacao.Mensagens.Add("Nome do Cliente", "O campo Nome do Cliente não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.SetorCliente))
+            {
+                validacao.Mensagens.Add("Nome do Setor", "O campo Nome do Setor não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.CNPJ))
+            {
+                validacao.Mensagens.Add("CNPJ", "O campo CNPJ não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Email))
+            {
+                validacao.Mensagens.Add("Email", "O campo Email não pode ser nulo");
+            }
+            if (!clienteAdicionado.Email.Contains("@") && validacao.Mensagens.Count == 0)
+            {
+                validacao.Mensagens.Add("Email", "Email no formato inválido");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Endereco))
+            {
+                validacao.Mensagens.Add("Endereço", "O campo Endereço não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Telefone))
+            {
+                validacao.Mensagens.Add("Telefone", "O campo Telefone não pode ser nulo");
+            }
+            if (String.IsNullOrEmpty(clienteAdicionado.Resp))
+            {
+                validacao.Mensagens.Add("Resp", "O campo Resp não pode ser nulo");
+            }
+            if (validacao.Valido)
+            {
+                this.banco.Clientes.Add(clienteAdicionado);
+                this.banco.SaveChanges();
+            }
+            return validacao;
+        }
+
+        public Cliente BuscaClientePorId(long id)
+        {
+            return this.banco.Clientes.Where(c => c.ClienteId == id).FirstOrDefault();
         }
 
         public Patrimonio BuscaPatrimonioPorId(long id)
@@ -154,6 +227,10 @@ namespace Patronum.Negocio
         public List<Fornecedor> TodosOsFornecedores()
         {
             return this.banco.Fornecedores.ToList();
+        }
+        public List<Cliente> TodosOsClientes()
+        {
+            return this.banco.Clientes.ToList();
         }
     }
 }

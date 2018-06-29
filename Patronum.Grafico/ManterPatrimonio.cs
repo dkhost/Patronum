@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using Patronum.Negocio;
+﻿using Patronum.Negocio;
 using Patronum.Negocio.Models;
 using System;
 using System.Collections.Generic;
@@ -26,6 +25,7 @@ namespace Patronum.Grafico
 
         private void ManterPatrimonio_Load(object sender, EventArgs e)
         {
+            ckbExterno_CheckedChanged();
             CarregarComboBoxes();
         }
 
@@ -43,6 +43,18 @@ namespace Patronum.Grafico
                 cbFornecedores.DisplayMember = "DescricaoFornecedor";
                 cbFornecedores.ValueMember = "Id";
                 cbFornecedores.DataSource = Program.Gerenciador.TodosOsFornecedores();
+
+                cbEmpresa.DisplayMember = "DescricaoEmpresa";
+                cbEmpresa.ValueMember = "Id";
+                cbEmpresa.DataSource = Program.Gerenciador.TodosOsClientes();
+
+                cbSetorEmpresa.DisplayMember = "DescricaoSetorEmpresa";
+                cbSetorEmpresa.ValueMember = "Id";
+                cbSetorEmpresa.DataSource = Program.Gerenciador.TodosOsClientes();
+
+                cbResp.DisplayMember = "DescricaoResp";
+                cbResp.ValueMember = "Id";
+                cbResp.DataSource = Program.Gerenciador.TodosOsClientes();
             }
         }
 
@@ -60,9 +72,22 @@ namespace Patronum.Grafico
             }
 
             patrimonio.Nome = tbNome.Text;
+            patrimonio.NomeCliente = cbEmpresa.Text;
+            if (ckbExterno.CheckState == CheckState.Checked)
+            {
+                patrimonio.SetorCliente = cbSetorEmpresa.Text;
+                patrimonio.RespCliente = cbResp.Text;
+                patrimonio.Setor = "N/A";
+                patrimonio.Gestor = "N/A";
+            }
+            else if (ckbExterno.CheckState == CheckState.Unchecked)
+            {
+                patrimonio.Setor = cbSetores.Text;
+                patrimonio.Gestor = cbGestores.Text;
+                patrimonio.SetorCliente = "N/A";
+                patrimonio.RespCliente = "N/A";
+            }
             patrimonio.Nfe = tbNfe.Text;
-            patrimonio.Setor = cbSetores.Text;
-            patrimonio.Gestor = cbGestores.Text;
             patrimonio.Fornecedor = cbFornecedores.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
             patrimonio.DataAquisi = Convert.ToDateTime(dtpDataAquisi.Text);
@@ -71,14 +96,13 @@ namespace Patronum.Grafico
             patrimonio.Ativo = ckbAtivo.Checked;
 
             Validacao validacao;
-            if (PatrimonioSelecionado != null)
+            if (PatrimonioSelecionado == null)
             {
-                validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
+                validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
             }
             else
             {
-                validacao = Program.Gerenciador.CadastrarPatrimonio(patrimonio);
-
+                validacao = Program.Gerenciador.AlterarPatrimonio(patrimonio);
             }
 
             if (!validacao.Valido)
@@ -111,8 +135,21 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.cbSetores.Text = PatrimonioSelecionado.Setor;
-                this.cbGestores.Text = PatrimonioSelecionado.Gestor;
+                if (ckbExterno.CheckState == CheckState.Checked)
+                {
+                    this.cbSetorEmpresa.Text = PatrimonioSelecionado.SetorCliente;
+                    this.cbResp.Text = PatrimonioSelecionado.RespCliente;
+                    this.cbSetores.Text = "N/A";
+                    this.cbGestores.Text = "N/A";
+                }
+                else if (ckbExterno.CheckState == CheckState.Unchecked)
+                {
+                    this.cbSetores.Text = PatrimonioSelecionado.Setor;
+                    this.cbGestores.Text = PatrimonioSelecionado.Gestor;
+                    this.cbSetorEmpresa.Text = "N/A";
+                    this.cbResp.Text = "N/A";
+                }
+                this.cbEmpresa.Text = PatrimonioSelecionado.NomeCliente;
                 this.cbFornecedores.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
@@ -120,6 +157,30 @@ namespace Patronum.Grafico
                 this.dtpPrazoGarant.Text = PatrimonioSelecionado.PrazoGarant.ToShortDateString();
                 this.tbObs.Text = PatrimonioSelecionado.Obs;
                 this.ckbAtivo.Checked = PatrimonioSelecionado.Ativo;
+                this.ckbExterno.Checked = PatrimonioSelecionado.Externo;
+            }
+        }
+
+        private void ckbExterno_CheckedChanged(object sender, EventArgs e)
+        {
+            ckbExterno_CheckedChanged();
+        }
+
+        private void ckbExterno_CheckedChanged()
+        {
+            if (ckbExterno.CheckState == CheckState.Checked)
+            {
+                cbSetorEmpresa.Enabled = true;
+                cbResp.Enabled = true;
+                cbSetores.Enabled = false;
+                cbGestores.Enabled = false;
+            }
+            else if (ckbExterno.CheckState == CheckState.Unchecked)
+            {
+                cbSetorEmpresa.Enabled = false;
+                cbResp.Enabled = false;
+                cbSetores.Enabled = true;
+                cbGestores.Enabled = true;
             }
         }
     }
