@@ -150,26 +150,26 @@ namespace Patronum.Grafico
             // 
             this.tbNome.Location = new System.Drawing.Point(128, 40);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(594, 20);
+            this.tbNome.Size = new System.Drawing.Size(607, 20);
             this.tbNome.TabIndex = 3;
             // 
             // tbNfe
             // 
             this.tbNfe.Location = new System.Drawing.Point(128, 228);
             this.tbNfe.Name = "tbNfe";
-            this.tbNfe.Size = new System.Drawing.Size(594, 20);
+            this.tbNfe.Size = new System.Drawing.Size(607, 20);
             this.tbNfe.TabIndex = 10;
             // 
             // tbServiceTag
             // 
             this.tbServiceTag.Location = new System.Drawing.Point(128, 254);
             this.tbServiceTag.Name = "tbServiceTag";
-            this.tbServiceTag.Size = new System.Drawing.Size(594, 20);
+            this.tbServiceTag.Size = new System.Drawing.Size(607, 20);
             this.tbServiceTag.TabIndex = 11;
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(647, 388);
+            this.btSalvar.Location = new System.Drawing.Point(660, 392);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(75, 23);
             this.btSalvar.TabIndex = 17;
@@ -179,7 +179,9 @@ namespace Patronum.Grafico
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(566, 388);
+            this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btCancelar.Location = new System.Drawing.Point(579, 392);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 16;
@@ -204,7 +206,7 @@ namespace Patronum.Grafico
             this.tbObs.Location = new System.Drawing.Point(128, 332);
             this.tbObs.Multiline = true;
             this.tbObs.Name = "tbObs";
-            this.tbObs.Size = new System.Drawing.Size(594, 50);
+            this.tbObs.Size = new System.Drawing.Size(607, 50);
             this.tbObs.TabIndex = 14;
             // 
             // printPreviewDialog1
@@ -219,7 +221,9 @@ namespace Patronum.Grafico
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 388);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Location = new System.Drawing.Point(12, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 15;
@@ -251,34 +255,33 @@ namespace Patronum.Grafico
             // cbSetores
             // 
             this.cbSetores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbSetores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSetores.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSetores.FormattingEnabled = true;
             this.cbSetores.Location = new System.Drawing.Point(128, 147);
             this.cbSetores.Name = "cbSetores";
-            this.cbSetores.Size = new System.Drawing.Size(594, 21);
+            this.cbSetores.Size = new System.Drawing.Size(607, 21);
             this.cbSetores.TabIndex = 7;
             // 
             // cbGestores
             // 
             this.cbGestores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbGestores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGestores.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbGestores.FormattingEnabled = true;
+            this.cbGestores.Items.AddRange(new object[] {
+            ""});
             this.cbGestores.Location = new System.Drawing.Point(128, 174);
             this.cbGestores.Name = "cbGestores";
-            this.cbGestores.Size = new System.Drawing.Size(594, 21);
+            this.cbGestores.Size = new System.Drawing.Size(607, 21);
             this.cbGestores.TabIndex = 8;
             // 
             // cbFornecedores
             // 
             this.cbFornecedores.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbFornecedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbFornecedores.FormattingEnabled = true;
             this.cbFornecedores.Location = new System.Drawing.Point(128, 201);
             this.cbFornecedores.Name = "cbFornecedores";
-            this.cbFornecedores.Size = new System.Drawing.Size(594, 21);
+            this.cbFornecedores.Size = new System.Drawing.Size(607, 21);
             this.cbFornecedores.TabIndex = 9;
             // 
             // dtpDataAquisi
@@ -313,23 +316,23 @@ namespace Patronum.Grafico
             // cbEmpresa
             // 
             this.cbEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbEmpresa.FormattingEnabled = true;
+            this.cbEmpresa.Items.AddRange(new object[] {
+            "Selecione uma empresa..."});
             this.cbEmpresa.Location = new System.Drawing.Point(128, 66);
             this.cbEmpresa.Name = "cbEmpresa";
-            this.cbEmpresa.Size = new System.Drawing.Size(594, 21);
+            this.cbEmpresa.Size = new System.Drawing.Size(607, 21);
             this.cbEmpresa.TabIndex = 4;
             // 
             // cbSetorEmpresa
             // 
             this.cbSetorEmpresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbSetorEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSetorEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbSetorEmpresa.FormattingEnabled = true;
             this.cbSetorEmpresa.Location = new System.Drawing.Point(128, 93);
             this.cbSetorEmpresa.Name = "cbSetorEmpresa";
-            this.cbSetorEmpresa.Size = new System.Drawing.Size(594, 21);
+            this.cbSetorEmpresa.Size = new System.Drawing.Size(607, 21);
             this.cbSetorEmpresa.TabIndex = 5;
             // 
             // label10
@@ -353,12 +356,11 @@ namespace Patronum.Grafico
             // cbResp
             // 
             this.cbResp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbResp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbResp.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbResp.FormattingEnabled = true;
             this.cbResp.Location = new System.Drawing.Point(128, 120);
             this.cbResp.Name = "cbResp";
-            this.cbResp.Size = new System.Drawing.Size(594, 21);
+            this.cbResp.Size = new System.Drawing.Size(607, 21);
             this.cbResp.TabIndex = 6;
             // 
             // label12
@@ -376,6 +378,7 @@ namespace Patronum.Grafico
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(747, 427);
+            this.ControlBox = false;
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cbResp);
             this.Controls.Add(this.label11);
@@ -408,7 +411,11 @@ namespace Patronum.Grafico
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(763, 466);
+            this.MinimumSize = new System.Drawing.Size(763, 466);
             this.Name = "ManterPatrimonio";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes do Patrimônio";
             this.Load += new System.EventHandler(this.ManterPatrimonio_Load);

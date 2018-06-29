@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarCliente));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,14 +43,6 @@
             this.tbEndereco = new System.Windows.Forms.TextBox();
             this.tbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.dgClientes = new System.Windows.Forms.DataGridView();
-            this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SetorEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Responsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btFechar = new System.Windows.Forms.Button();
             this.btAdicionar = new System.Windows.Forms.Button();
             this.btRemover = new System.Windows.Forms.Button();
@@ -61,6 +53,14 @@
             this.tbFiltroCliente = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ClienteId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cnpj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Empresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SetorEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -168,6 +168,9 @@
             // 
             this.dgClientes.AllowUserToAddRows = false;
             this.dgClientes.AllowUserToDeleteRows = false;
+            this.dgClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -183,69 +186,8 @@
             this.dgClientes.Location = new System.Drawing.Point(15, 214);
             this.dgClientes.Name = "dgClientes";
             this.dgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgClientes.Size = new System.Drawing.Size(1329, 515);
+            this.dgClientes.Size = new System.Drawing.Size(981, 503);
             this.dgClientes.TabIndex = 16;
-            // 
-            // ClienteId
-            // 
-            this.ClienteId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ClienteId.DataPropertyName = "ClienteId";
-            dataGridViewCellStyle2.Format = "0000";
-            dataGridViewCellStyle2.NullValue = "0000";
-            this.ClienteId.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ClienteId.HeaderText = "Código da Empresa";
-            this.ClienteId.Name = "ClienteId";
-            this.ClienteId.ReadOnly = true;
-            this.ClienteId.Width = 114;
-            // 
-            // Cnpj
-            // 
-            this.Cnpj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cnpj.DataPropertyName = "CNPJ";
-            this.Cnpj.HeaderText = "CNPJ";
-            this.Cnpj.Name = "Cnpj";
-            // 
-            // Empresa
-            // 
-            this.Empresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Empresa.DataPropertyName = "NomeCliente";
-            this.Empresa.HeaderText = "Empresa";
-            this.Empresa.Name = "Empresa";
-            // 
-            // SetorEmpresa
-            // 
-            this.SetorEmpresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SetorEmpresa.DataPropertyName = "SetorCliente";
-            this.SetorEmpresa.HeaderText = "Setor da Empresa";
-            this.SetorEmpresa.Name = "SetorEmpresa";
-            // 
-            // Endereco
-            // 
-            this.Endereco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Endereco.DataPropertyName = "Endereco";
-            this.Endereco.HeaderText = "Endereço";
-            this.Endereco.Name = "Endereco";
-            // 
-            // Email
-            // 
-            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // Telefone
-            // 
-            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Telefone.DataPropertyName = "Telefone";
-            this.Telefone.HeaderText = "Telefone";
-            this.Telefone.Name = "Telefone";
-            // 
-            // Responsavel
-            // 
-            this.Responsavel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Responsavel.DataPropertyName = "Resp";
-            this.Responsavel.HeaderText = "Responsável";
-            this.Responsavel.Name = "Responsavel";
             // 
             // btFechar
             // 
@@ -295,7 +237,7 @@
             // 
             // btFiltrar
             // 
-            this.btFiltrar.Location = new System.Drawing.Point(1085, 91);
+            this.btFiltrar.Location = new System.Drawing.Point(749, 65);
             this.btFiltrar.Name = "btFiltrar";
             this.btFiltrar.Size = new System.Drawing.Size(75, 23);
             this.btFiltrar.TabIndex = 21;
@@ -305,7 +247,7 @@
             // 
             // btCarregar
             // 
-            this.btCarregar.Location = new System.Drawing.Point(1166, 91);
+            this.btCarregar.Location = new System.Drawing.Point(830, 65);
             this.btCarregar.Name = "btCarregar";
             this.btCarregar.Size = new System.Drawing.Size(75, 23);
             this.btCarregar.TabIndex = 22;
@@ -315,7 +257,7 @@
             // 
             // tbFiltroCliente
             // 
-            this.tbFiltroCliente.Location = new System.Drawing.Point(963, 93);
+            this.tbFiltroCliente.Location = new System.Drawing.Point(627, 67);
             this.tbFiltroCliente.Name = "tbFiltroCliente";
             this.tbFiltroCliente.Size = new System.Drawing.Size(116, 20);
             this.tbFiltroCliente.TabIndex = 23;
@@ -323,7 +265,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(930, 94);
+            this.pictureBox1.Location = new System.Drawing.Point(594, 67);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -333,18 +275,86 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(983, 74);
+            this.label1.Location = new System.Drawing.Point(695, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 25;
             this.label1.Text = "Filtrar por nome";
+            // 
+            // ClienteId
+            // 
+            this.ClienteId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ClienteId.DataPropertyName = "ClienteId";
+            dataGridViewCellStyle1.Format = "0000";
+            dataGridViewCellStyle1.NullValue = "0000";
+            this.ClienteId.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ClienteId.HeaderText = "Código da Empresa";
+            this.ClienteId.Name = "ClienteId";
+            this.ClienteId.ReadOnly = true;
+            this.ClienteId.Width = 114;
+            // 
+            // Cnpj
+            // 
+            this.Cnpj.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Cnpj.DataPropertyName = "CNPJ";
+            this.Cnpj.HeaderText = "CNPJ";
+            this.Cnpj.Name = "Cnpj";
+            this.Cnpj.Width = 59;
+            // 
+            // Empresa
+            // 
+            this.Empresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Empresa.DataPropertyName = "NomeCliente";
+            this.Empresa.HeaderText = "Empresa";
+            this.Empresa.Name = "Empresa";
+            this.Empresa.Width = 73;
+            // 
+            // SetorEmpresa
+            // 
+            this.SetorEmpresa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.SetorEmpresa.DataPropertyName = "SetorCliente";
+            this.SetorEmpresa.HeaderText = "Setor da Empresa";
+            this.SetorEmpresa.Name = "SetorEmpresa";
+            this.SetorEmpresa.Width = 106;
+            // 
+            // Endereco
+            // 
+            this.Endereco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Endereco.DataPropertyName = "Endereco";
+            this.Endereco.HeaderText = "Endereço";
+            this.Endereco.Name = "Endereco";
+            this.Endereco.Width = 78;
+            // 
+            // Email
+            // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.Width = 57;
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Telefone.DataPropertyName = "Telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.Width = 74;
+            // 
+            // Responsavel
+            // 
+            this.Responsavel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Responsavel.DataPropertyName = "Resp";
+            this.Responsavel.HeaderText = "Responsável";
+            this.Responsavel.Name = "Responsavel";
+            this.Responsavel.Width = 94;
             // 
             // CadastrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbFiltroCliente);
@@ -368,7 +378,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 736);
             this.Name = "CadastrarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detalhes do Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CadastrarCliente_FormClosed);

@@ -65,6 +65,9 @@
             this.dgFornecedores.AllowUserToAddRows = false;
             this.dgFornecedores.AllowUserToDeleteRows = false;
             this.dgFornecedores.AllowUserToOrderColumns = true;
+            this.dgFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgFornecedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -165,8 +168,10 @@
             this.Controls.Add(this.tbFornecedor);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(640, 400);
+            this.MinimumSize = new System.Drawing.Size(640, 400);
             this.Name = "CadastrarFornecedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Detalhes do Fornecedor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CadastrarFornecedor_FormClosed);
             this.Load += new System.EventHandler(this.CadastrarFornecedor_Load);

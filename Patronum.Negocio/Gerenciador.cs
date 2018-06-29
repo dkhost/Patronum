@@ -93,7 +93,7 @@ namespace Patronum.Negocio
         public Validacao CadastrarFornecedor(Fornecedor fornecedorAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Setores.Where(c => c.NomeSetor == fornecedorAdicionado.NomeFornecedor).Any())
+            if (this.banco.Setores.Where(c => c.NomeSetor == fornecedorAdicionado.NomeFornecedor).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Fornecedor", "Já existe um Fornecedor com esse Nome");
             }
@@ -108,11 +108,11 @@ namespace Patronum.Negocio
         public Validacao CadastrarSetor(Setor setorAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any())
+            if (this.banco.Setores.Where(c => c.NomeSetor == setorAdicionado.NomeSetor).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Setor", "Já existe um Setor com esse Nome");
             }
-            if(this.banco.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any())
+            if(this.banco.Setores.Where(c => c.NomeGestor == setorAdicionado.NomeGestor).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Gestor", "Já existe um Gestor com esse Nome");
             }
@@ -127,6 +127,10 @@ namespace Patronum.Negocio
         public Validacao CadastrarPatrimonio(Patrimonio patrimonioAdicionado)
         {
             Validacao validacao = new Validacao();
+            if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
+            {
+                validacao.Mensagens.Add("Nome", "O campo Nome não pode ser nulo");
+            }
             if (String.IsNullOrEmpty(patrimonioAdicionado.Nfe))
             {
                 validacao.Mensagens.Add("Nfe", "O campo Nfe não pode ser nulo");
@@ -146,7 +150,7 @@ namespace Patronum.Negocio
         public Validacao CadastrarCliente(Cliente clienteAdicionado)
         {
             Validacao validacao = new Validacao();
-            if (this.banco.Clientes.Where(c => c.NomeCliente == clienteAdicionado.NomeCliente).Any())
+            if (this.banco.Clientes.Where(c => c.NomeCliente == clienteAdicionado.NomeCliente).Any() && validacao.Mensagens.Count == 0)
             {
                 validacao.Mensagens.Add("Nome do Cliente", "Já existe um Cliente com esse Nome");
             }
@@ -165,6 +169,10 @@ namespace Patronum.Negocio
             if (String.IsNullOrEmpty(clienteAdicionado.Email))
             {
                 validacao.Mensagens.Add("Email", "O campo Email não pode ser nulo");
+            }
+            if (!clienteAdicionado.Email.Contains("@") && validacao.Mensagens.Count == 0)
+            {
+                validacao.Mensagens.Add("Email", "Email no formato inválido");
             }
             if (String.IsNullOrEmpty(clienteAdicionado.Endereco))
             {

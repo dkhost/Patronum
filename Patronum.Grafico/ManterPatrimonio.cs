@@ -71,23 +71,22 @@ namespace Patronum.Grafico
                 patrimonio.Id = -1;
             }
 
+            patrimonio.Nome = tbNome.Text;
+            patrimonio.NomeCliente = cbEmpresa.Text;
             if (ckbExterno.CheckState == CheckState.Checked)
             {
                 patrimonio.SetorCliente = cbSetorEmpresa.Text;
                 patrimonio.RespCliente = cbResp.Text;
+                patrimonio.Setor = "N/A";
+                patrimonio.Gestor = "N/A";
             }
             else if (ckbExterno.CheckState == CheckState.Unchecked)
             {
                 patrimonio.Setor = cbSetores.Text;
                 patrimonio.Gestor = cbGestores.Text;
+                patrimonio.SetorCliente = "N/A";
+                patrimonio.RespCliente = "N/A";
             }
-            else
-            {
-
-            }
-
-            patrimonio.Nome = tbNome.Text;
-            patrimonio.NomeCliente = cbEmpresa.Text;
             patrimonio.Nfe = tbNfe.Text;
             patrimonio.Fornecedor = cbFornecedores.Text;
             patrimonio.ServiceTag = tbServiceTag.Text;
@@ -136,11 +135,21 @@ namespace Patronum.Grafico
             {
                 this.tbId.Text = PatrimonioSelecionado.Id.ToString();
                 this.tbNome.Text = PatrimonioSelecionado.Nome;
-                this.cbSetores.Text = PatrimonioSelecionado.Setor;
-                this.cbGestores.Text = PatrimonioSelecionado.Gestor;
-                this.cbSetorEmpresa.Text = PatrimonioSelecionado.SetorCliente;
+                if (ckbExterno.CheckState == CheckState.Checked)
+                {
+                    this.cbSetorEmpresa.Text = PatrimonioSelecionado.SetorCliente;
+                    this.cbResp.Text = PatrimonioSelecionado.RespCliente;
+                    this.cbSetores.Text = "N/A";
+                    this.cbGestores.Text = "N/A";
+                }
+                else if (ckbExterno.CheckState == CheckState.Unchecked)
+                {
+                    this.cbSetores.Text = PatrimonioSelecionado.Setor;
+                    this.cbGestores.Text = PatrimonioSelecionado.Gestor;
+                    this.cbSetorEmpresa.Text = "N/A";
+                    this.cbResp.Text = "N/A";
+                }
                 this.cbEmpresa.Text = PatrimonioSelecionado.NomeCliente;
-                this.cbResp.Text = PatrimonioSelecionado.RespCliente;
                 this.cbFornecedores.Text = PatrimonioSelecionado.Fornecedor;
                 this.tbNfe.Text = PatrimonioSelecionado.Nfe;
                 this.tbServiceTag.Text = PatrimonioSelecionado.ServiceTag;
@@ -172,10 +181,6 @@ namespace Patronum.Grafico
                 cbResp.Enabled = false;
                 cbSetores.Enabled = true;
                 cbGestores.Enabled = true;
-            }
-            else
-            {
-
             }
         }
     }
