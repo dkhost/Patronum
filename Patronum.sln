@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patronum.Negocio", "Patronu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patronum.Grafico", "Patronum.Grafico\Patronum.Grafico.csproj", "{F064D6B1-E818-440F-9F5C-5690BE0420F8}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Patronum-Installer", "Patronum-Installer\Patronum-Installer.vdproj", "{2EF1475E-1483-4AD9-838D-AA88703E3D7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F064D6B1-E818-440F-9F5C-5690BE0420F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF1475E-1483-4AD9-838D-AA88703E3D7A}.Debug|Any CPU.ActiveCfg = Debug
+		{2EF1475E-1483-4AD9-838D-AA88703E3D7A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
