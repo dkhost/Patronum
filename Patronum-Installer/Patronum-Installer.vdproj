@@ -87,8 +87,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6799B9D8B35DDCCA0B272E8DDF5C4D64"
+        "MsmKey" = "8:_DE6AF29142B640E7BC87BC7F3A0ACB2C"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -139,6 +139,12 @@
         "OwnerKey" = "8:_AC52AA1B34A1B84D3EDD48B62E090024"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6799B9D8B35DDCCA0B272E8DDF5C4D64"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -157,6 +163,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -173,6 +195,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -450,6 +480,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DE6AF29142B640E7BC87BC7F3A0ACB2C"
+            {
+            "SourcePath" = "8:C:\\Users\\guies\\Downloads\\Logo Patronum Oficial.ico"
+            "TargetName" = "8:Logo Patronum Oficial.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_F73C24551A9747F7BC3FBA96F4AA5522"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -507,7 +557,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Patronum"
         "ProductCode" = "8:{9F5C6C9D-C5F5-40AF-B5C6-9D5756DBD0ED}"
-        "PackageCode" = "8:{3571B3B8-458A-4065-A0E6-1BC8F968FCBE}"
+        "PackageCode" = "8:{30D944BD-4709-495C-AF5A-D50CDF6957A9}"
         "UpgradeCode" = "8:{9B5C63DD-2DCD-4DD2-A47F-6DBE13DC572A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -638,7 +688,7 @@
             "Target" = "8:_B27867C314194B18896CD163A0CB7CDB"
             "Folder" = "8:_525E9E22A6AE4DF8BD724D85DFE647CD"
             "WorkingFolder" = "8:_F73C24551A9747F7BC3FBA96F4AA5522"
-            "Icon" = "8:"
+            "Icon" = "8:_DE6AF29142B640E7BC87BC7F3A0ACB2C"
             "Feature" = "8:"
             }
         }
